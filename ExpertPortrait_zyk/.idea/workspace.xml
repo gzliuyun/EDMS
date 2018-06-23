@@ -11,11 +11,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ExpertPortrait/spiders/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="57" column="89" lean-forward="true" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="89" />
+            <state relative-caret-position="115">
+              <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -23,7 +23,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="main.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ExpertPortrait/main.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="108">
@@ -35,17 +35,8 @@
       <file leaf-file-name="items.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ExpertPortrait/items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="32" column="5" selection-start-line="31" selection-start-column="10" selection-end-line="32" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="expert_intro_crawl.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../EDMS/expert_intro_crawl.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="147" column="10" lean-forward="true" selection-start-line="147" selection-start-column="10" selection-end-line="147" selection-end-column="10" />
+            <state relative-caret-position="30">
+              <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="40" />
             </state>
           </provider>
         </entry>
@@ -54,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/ExpertPortrait/pipelines.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="468">
-              <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+              <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
               <folding>
                 <element signature="e#193#207#0" expanded="true" />
               </folding>
@@ -62,11 +53,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="pipelines.py" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/leader/leader/pipelines.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ExpertPortrait/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1755">
-              <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+            <state relative-caret-position="2403">
+              <caret line="89" selection-start-line="89" selection-end-line="89" />
             </state>
           </provider>
         </entry>
@@ -79,6 +79,8 @@
       <find>f</find>
       <find>杜宪兵</find>
       <find>test</find>
+      <find>政治</find>
+      <find>start</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -86,13 +88,13 @@
       <list>
         <option value="$PROJECT_DIR$/ExpertPortrait/test.py" />
         <option value="$PROJECT_DIR$/ExpertPortrait/middlewares.py" />
-        <option value="$PROJECT_DIR$/ExpertPortrait/main.py" />
         <option value="$PROJECT_DIR$/ExpertPortrait/settings.py" />
-        <option value="$PROJECT_DIR$/ExpertPortrait/items.py" />
         <option value="$PROJECT_DIR$/ExpertPortrait/pipelines.py" />
         <option value="$PROJECT_DIR$/../EDMS/school_id/crawl.py" />
         <option value="$PROJECT_DIR$/../EDMS/expert_intro_crawl.py" />
+        <option value="$PROJECT_DIR$/ExpertPortrait/items.py" />
         <option value="$PROJECT_DIR$/ExpertPortrait/spiders/test.py" />
+        <option value="$PROJECT_DIR$/ExpertPortrait/main.py" />
       </list>
     </option>
   </component>
@@ -111,19 +113,13 @@
         <subPane>
           <expand>
             <path>
-              <item name="ExpertPortrait" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ExpertPortrait" type="462c0819:PsiDirectoryNode" />
+              <item name="ExpertPortrait_zyk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ExpertPortrait_zyk" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="ExpertPortrait" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ExpertPortrait_zyk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ExpertPortrait_zyk" type="462c0819:PsiDirectoryNode" />
               <item name="ExpertPortrait" type="462c0819:PsiDirectoryNode" />
-              <item name="ExpertPortrait" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ExpertPortrait" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ExpertPortrait" type="462c0819:PsiDirectoryNode" />
-              <item name="ExpertPortrait" type="462c0819:PsiDirectoryNode" />
-              <item name="spiders" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -148,7 +144,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.expert_intro_crawl">
+  <component name="RunManager" selected="Python.main">
     <configuration name="crawl" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="ExpertPortrait" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -248,8 +244,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.expert_intro_crawl" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.expert_intro_crawl" />
         <item itemvalue="Python.crawl" />
         <item itemvalue="Python.test (1)" />
         <item itemvalue="Python.test" />
@@ -270,14 +266,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50125" side_tool="true" weight="0.43363994" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501875" side_tool="true" weight="0.43363994" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" x="0" y="265" width="1600" height="330" id="Run" order="2" sideWeight="0.49875" weight="0.43363994" />
+      <window_info active="true" anchor="bottom" x="0" y="265" width="1600" height="330" id="Run" order="2" sideWeight="0.498125" visible="true" weight="0.43363994" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.3298292" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -299,7 +296,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$USER_HOME$/Documents/WeChat Files/ZYK_fightING/Files/test.py</url>
+          <url />
           <line>95</line>
         </line-breakpoint>
       </breakpoints>
@@ -307,13 +304,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ExpertPortrait/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ExpertPortrait/spiders/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -323,13 +313,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quotes_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4465">
-          <caret line="237" column="35" lean-forward="true" selection-start-line="237" selection-start-column="35" selection-end-line="237" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/quotes_spider.py" />
     <entry file="file://$PROJECT_DIR$/ExpertPortrait/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="931">
@@ -354,13 +338,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quotes_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4731">
-          <caret line="251" column="32" selection-start-line="251" selection-start-column="32" selection-end-line="251" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/quotes_spider.py" />
     <entry file="file://$PROJECT_DIR$/ExpertPortrait/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -385,13 +363,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quotes_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4731">
-          <caret line="251" column="32" selection-start-line="251" selection-start-column="32" selection-end-line="251" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/quotes_spider.py" />
     <entry file="file://$PROJECT_DIR$/ExpertPortrait/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -415,13 +387,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quotes_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4731">
-          <caret line="251" column="32" selection-start-line="251" selection-start-column="32" selection-end-line="251" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/quotes_spider.py" />
     <entry file="file://$PROJECT_DIR$/ExpertPortrait/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -446,13 +412,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quotes_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4731">
-          <caret line="251" column="32" lean-forward="true" selection-start-line="251" selection-start-column="32" selection-end-line="251" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/quotes_spider.py" />
     <entry file="file://$PROJECT_DIR$/ExpertPortrait/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -477,13 +437,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quotes_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4864">
-          <caret line="258" column="37" lean-forward="true" selection-start-line="258" selection-start-column="37" selection-end-line="258" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/quotes_spider.py" />
     <entry file="file://$PROJECT_DIR$/ExpertPortrait/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
@@ -508,13 +462,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quotes_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4902">
-          <caret line="260" column="59" lean-forward="true" selection-start-line="260" selection-start-column="59" selection-end-line="260" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/quotes_spider.py" />
     <entry file="file://$PROJECT_DIR$/ExpertPortrait/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -570,13 +518,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/quotes_spider.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6399">
-          <caret line="237" column="35" selection-start-line="237" selection-start-column="35" selection-end-line="237" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/quotes_spider.py" />
     <entry file="file://$PROJECT_DIR$/ExpertPortrait/middlewares.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2619">
@@ -584,9 +526,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../spidertest/test.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/../spidertest/test.py" />
     <entry file="file://$USER_HOME$/Documents/WeChat Files/ZYK_fightING/Files/test(1).py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -608,6 +548,17 @@
         <state relative-caret-position="-1863" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../jiaoshiku/spider.py" />
+    <entry file="file://$PROJECT_DIR$/../EDMS/expert_intro_crawl.py" />
+    <entry file="file://$PROJECT_DIR$/../EDMS/school_id/crawl.py" />
+    <entry file="file://$PROJECT_DIR$/../EDMS1/expert_intro_crawl.py" />
+    <entry file="file://$PROJECT_DIR$/ExpertPortrait/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2403">
+          <caret line="89" selection-start-line="89" selection-end-line="89" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ExpertPortrait/test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -615,55 +566,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../jiaoshiku/spider.py" />
-    <entry file="file://$PROJECT_DIR$/../EDMS/expert_intro_crawl.py">
+    <entry file="file://$USER_HOME$/leader/leader/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="147" column="10" lean-forward="true" selection-start-line="147" selection-start-column="10" selection-end-line="147" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EDMS/school_id/crawl.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-558">
-          <caret line="9" column="17" lean-forward="true" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExpertPortrait/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="32" column="5" selection-start-line="31" selection-start-column="10" selection-end-line="32" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExpertPortrait/spiders/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="57" column="89" lean-forward="true" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="89" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../EDMS1/expert_intro_crawl.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ExpertPortrait/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1755">
-          <caret line="89" lean-forward="true" selection-start-line="89" selection-end-line="89" />
+        <state relative-caret-position="297">
+          <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ExpertPortrait/pipelines.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
-          <caret line="33" column="25" lean-forward="true" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
+          <caret line="33" column="25" selection-start-line="33" selection-start-column="25" selection-end-line="33" selection-end-column="25" />
           <folding>
             <element signature="e#193#207#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExpertPortrait/items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="30" column="1" selection-start-line="30" selection-start-column="1" selection-end-line="40" />
         </state>
       </provider>
     </entry>
@@ -671,6 +594,16 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
           <caret line="4" column="34" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ExpertPortrait/spiders/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="101" column="47" selection-start-line="101" selection-start-column="47" selection-end-line="101" selection-end-column="47" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

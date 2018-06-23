@@ -16,6 +16,8 @@ class ExpertportraitItem(scrapy.Item):
     university = scrapy.Field()   #专家所在大学
     college = scrapy.Field()       #专家所在院系
     expert_url = scrapy.Field()    #专家维普主页
+    theme_list = scrapy.Field()
+    sub_list = scrapy.Field()
 
     amount1 = scrapy.Field()       #专家发文量
     amount2 = scrapy.Field()       #专家引文量
