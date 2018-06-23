@@ -4,63 +4,85 @@ from scrapy.selector import Selector
 from scrapy import Request
 import requests
 import MySQLdb
-
+import sys
+from ExpertPortrait.items import ExpertportraitItem
 
 class TestSpider(scrapy.Spider):
     name = 'test'
     allowed_domains = ['www.irtree.cn']
-    start_urls = [
-        'http://www.irtree.cn/426/writer/100000000760910/rw_zp.aspx'
-        # 'http://www.irtree.cn/426/writer/100000006551077/rw_zp.aspx'
-    ]
+    start_urls = []
 
-    # start_urls = []
-    #
-    # def __init__(self, *args, **kwargs):
-    #     super(TestSpider, self).__init__(*args, **kwargs)
-    #     self.start_urls = [kwargs.get('start_urls')]
+    def __init__(self):
+        file = open('starturls.txt')
+        url_list = file.readlines()
+        file.close()
+        for url in url_list:
+            self.start_urls.append(url.rstrip('\n'))
 
     def parse(self, response):
+        item = ExpertportraitItem()
+
         print("##############")
         sel = Selector(response)
         ## 维普主页
         url = response.url
         # print(url)
+        item['expert_url'] = url
+
         ## 学者ID 学校ID
         id = url.lstrip("http://www.irtree.cn/").rstrip("/rw_zp.aspx").split("/writer/")[1].strip()
         school_id = url.lstrip("http://www.irtree.cn/").rstrip("/rw_zp.aspx").split("/writer/")[0].strip()
         # print(school_id)
         # print(id)
+        item['university'] = school_id
+        item['expert_id'] = id
+
         ### 姓名
         name = sel.xpath('//*[@class="summary"]/h1/text()').extract_first().strip()
         # print(name)
+        item['expert_name'] = name
+
         ## 研究主题
         themes = sel.xpath('//*[@class="summary"]/p[4]/text()').extract_first().strip()
         theme_list = themes.lstrip(" 研究主题：").rstrip("    ").split("    ")
         # print(theme_list)
-        ## 研究内容
+        # item['theme_list'] = theme_list
+
+        ## 研究学科
         subs = sel.xpath('//*[@class="summary"]/p[5]/text()').extract_first()
         sub_list = subs.lstrip(" 研究学科：").rstrip("    ").split("    ")
         # print(sub_list)
+        # item['sub_list'] = sub_list
+
         ## 发文量
         amount1 = sel.xpath('//*[@class="search_count"]/p/i/text()').extract_first().replace(' ', '').replace('\n', '')
         amount1 = amount1.lstrip('\r')
         # print(amount1)
+        item['amount1'] = amount1
+
         ## 被引量
         amount2 = sel.xpath('//*[@class="summary"]/p[6]/span[2]/i/a/text()').extract_first().replace(',', '')
         # print(amount2)
+        item['amount2'] = amount2
+
         ## H指数
         h_index = sel.xpath('//*[@class="summary"]/p[6]/span[3]/i/text()').extract_first()
         # print(h_index)
+        item['h_index'] = h_index
+
         ## 北大核心
         core = sel.xpath('//*[@class="summary"]/p[6]/span[4]/@title').extract_first().lstrip("北大核心:")
         # print(core)
+        item['core'] = core
+
         ## 中文社会科学引文索引
         cssci = sel.xpath('//*[@class="summary"]/p[6]/span[5]/@title').extract_first().lstrip("中文社会科学引文索引:")
         # print(cssci)
+        item['cssci'] = cssci
+
         ## 人大复印报刊资料
         rdfybkzl = sel.xpath('//*[@class="summary"]/p[6]/span[6]/@title').extract_first().lstrip("人大复印报刊资料:")
-        # self.load_data1(url, id, name, theme_list, sub_list, amount1, amount2, h_index, core, cssci, rdfybkzl)
+        item['rdfybkzl'] = rdfybkzl
 
         ## 总页数
         pagenum = int(sel.xpath('//*[@class="pages"]/span[1]/text()').extract_first().lstrip('共').rstrip('页'))
@@ -126,10 +148,10 @@ class TestSpider(scrapy.Spider):
         #     print(a)
 
 
-    def parse4(self, response, url):
+    def parse4(self, response, id):
         sel = Selector(response)
         url = response.url
-        # print(url, id)
+        print(url, id)
         ## 合作学者
         co_experts_urls = sel.xpath('//*[@class="list_writer"]//dt//@href').extract()
         co_experts_list = []
