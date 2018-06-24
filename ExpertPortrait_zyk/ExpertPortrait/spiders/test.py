@@ -31,7 +31,7 @@ school_ids = ['1710', '2507', '426', '1194', '1965', '996', '2054', '2006', '111
               '150', '2489', '2074', '514', '998', '494', '1578', '614', '490', '1888', '1474', '607', '4146', '2337',
               '666', '2098', '1291', '2991', '3937', '286', '850', '42', '2874', '3107', '1327', '3119', '3634', '3265',
               '4139', '2903', '2541', '3213', '4113', '1674', '63537', '1565', '3432', '3875', '2942', '621', '2587', '92945']
-keywords = ['经济', '文', '医', '法', '政治', '美术']
+keywords = ['经济', '文', '医', '法', '政治', '美术', '管理', '新闻与传播', '马克思']
 
 class TestSpider(scrapy.Spider):
     name = 'test'
@@ -55,11 +55,12 @@ class TestSpider(scrapy.Spider):
         #for x in range(int(col_pages)):
             col_page = str(x+1)
             col_page_url=(TestSpider.start_urls[0]+'&pageIndex='+col_page)
-            yield Request(col_page_url, callback=self.parse_getcol, meta = {'item':item})
+            yield Request(col_page_url, callback=self.parse_getcol, meta = {'item_l':item})
 
     #进入每个学院
     def parse_getcol(self, response):
-        item = response.meta['item']
+        item_l = response.meta['item_l']
+        items = []
         sel = Selector(response)
         cols = sel.xpath('/html/body/div/ul/li/a')
         for col in cols[1:]:
@@ -68,25 +69,33 @@ class TestSpider(scrapy.Spider):
             col_name = unquote(col_name_code)
             for keyword in keywords:
                 if keyword in col_name:
+                    item = ExpertportraitItem()
+                    item['university'] = item_l['university']
                     item['college'] = col_name
-                    col_url = 'http://www.irtree.cn'+url
-                    yield Request(col_url, callback=self.parse_college, meta = {'item':item})
+                    item['col_url'] = 'http://www.irtree.cn' + url
+                    #print(item['university']+' '+item['college'])
+                    items.append(item)
+                    break
+        for item in items:
+            yield Request(item['col_url'], callback=self.parse_college, meta = {'item_l':item})
 
     #获取每个专家的url
     def parse_college(self, response):
         page_url = response.url
-        item = response.meta['item']
-        item_1 = []
+        item_l = response.meta['item_l']
+        items = []
         sel = Selector(response)
         urls = sel.xpath('//*[@id="author"]/div[1]/dl/dt/a[1]/@href').extract()
         for url in urls:
             item = ExpertportraitItem()
-
+            item['university'] = item_l['university']
+            item['college'] = item_l['college']
             item['expert_url'] = 'http://www.irtree.cn'+url
             item['expert_id'] = re.search('writer/(.*?)/rw_zp.aspx',url).group(1)
-            item_1.append(item)
-        for item in item_1:
-            yield Request(url=item['expert_url'], callback=self.parse_content, meta={'item_1': item})
+            items.append(item)
+        for item in items:
+            #print(item['university']+' '+item['college']+' '+item['expert_url'])
+            yield Request(url=item['expert_url'], callback=self.parse_content, meta={'item_l': item})
         #翻页
         # next_page = sel.xpath('//*[@id="author"]/div[2]/div[2]/span[2]/a[3]/@href').extract_first()
         # if next_page:
@@ -96,17 +105,16 @@ class TestSpider(scrapy.Spider):
 
     #分析每个专家主页（发文量需要大于等于3）
     def parse_content(self, response):
-        aaa_url = response.url
-        item_1 = response.meta['item_1']
+        item_l = response.meta['item_l']
         item = ExpertportraitItem()
-        item['expert_url'] = item_1['expert_url']
+        item = item_l
         sel = Selector(response)
         paper_count = sel.xpath('/html/body/div[2]/div/div[2]/div[2]/div[2]/div[1]/div[3]/p/i/text()').extract_first()
         paper_count = int(paper_count.strip())
         if paper_count >= 3:
             name = sel.xpath('/html/body/div[2]/div/div[1]/h1/text()').extract_first()
-            item['expert_name'] = name
-            item['amount1'] = paper_count
+            item['expert_name'] = name.strip()
+            item['amount1'] = str(paper_count)
 
             ## 研究主题
             themes = sel.xpath('//*[@class="summary"]/p[4]/text()').extract_first()
@@ -160,79 +168,118 @@ class TestSpider(scrapy.Spider):
             if rdfybkzl:
                 rdfybkzl = rdfybkzl.lstrip("人大复印报刊资料:")
                 item['rdfybkzl'] = rdfybkzl
-
-            ## 总页数
-            # tpagenum = sel.xpath('//*[@class="pages"]/span[1]/text()').extract_first()
-            # if tpagenum:
-            #     pagenum = int(tpagenum.lstrip('共').rstrip('页'))
-            # print(pagenum)
+            #print(item['university'] + ' ' + item['college'] + ' ' + item['expert_url']+' '+item['amount1']+' '+item['h_index'])
+            # 总页数
+            tpagenum = sel.xpath('//*[@class="pages"]/span[1]/text()').extract_first()
+            if tpagenum:
+                pagenum = int(tpagenum.lstrip('共').rstrip('页'))
+            #print(pagenum)
             # for i in range(1, pagenum+1):
-            ### TEST ###
-            # for i in range(1, 2):
-            #     paper_url = url + "?q=%7B\"page\"%3A\"" + str(i) + "\"%7D"
-            #     # print(paper_url)
-            #     yield Request(paper_url, callback=lambda response, id=id: self.parse2(response, id))
-            #
-            #print(item['expert_name']+ item['expert_url'])
-            tp_url = aaa_url.rstrip("zp.aspx") + "tp.aspx"
-            #print(tp_url)
-            #yield Request(tp_url, callback=lambda response, id=id: self.parse4(response, id))
-            yield  Request(url=tp_url,  callback=self.parse_tp, meta={'item': item})
+            ## TEST ###
+            for i in range(1, 2):
+                paper_url = item['expert_url'] + '?q=%7B%22page%22%3A%22' + str(i) + '%22%7D'
+                #print(paper_url)
+                yield Request(paper_url, callback=self.get_papers, meta={'expert_name': item['expert_name'],
+                                                             'expert_id': item['expert_id']})
 
-        # def parse2(self, response, id):
-        #     url = response.url
-        #     # print(url, id)
-        #     sel = Selector(response)
-        #     urls = sel.xpath('//*[@class="search_list"]//dt//@href').extract()
-        #
-        #     ## 所有论文链接
-        #     url_list = []
-        #     # for url in urls:
-        #     #     tmp = "http://www.irtree.cn" + url
-        #     #     url_list.append(tmp)
-        #     #     yield Request(tmp, callback=lambda response, id=id: self.parse3(response, id))
-        #
-        #     ### TEST ###
-        #     tmp = "http://www.irtree.cn" + urls[0]
-        #     yield Request(tmp, callback=lambda response, id=id: self.parse3(response, id))
-        #     ### TEST ###
-        #
-        #     # print(url_list)
-        #
-        # def parse3(self, response, id):
-        #     sel = Selector(response)
-        #     url = response.url
-        #     # print(url, id)
-        #     ## 论文ID
-        #     paper_id = url.lstrip("http://www.irtree.cn/").rstrip("/article_detail.aspx").split("/articles/")[1].strip()
-        #     # print(paper_id)
-        #     title = sel.xpath('//*[@class="summary"]/h1/text()').extract_first().strip()
-        #     # print(title)
-        #     ## 文献类型
-        #     type = sel.xpath('//*[@class="article_detail "]/p[1]/text()').extract_first().strip()
-        #     # print(type)
-        #     ## 出处
-        #     source = sel.xpath('//*[@class="article_detail "]/p[5]/text()').extract_first().strip()
-        #     # print(source)
-        #     ## 收录情况
-        #     cover_info = sel.xpath('//*[@class="article_detail "]/p[12]/text()').extract_first().strip()
-        #     # print(cover_info)
-        #     ## 摘要
-        #     abstract = sel.xpath('//*[@class="article_detail "]/p[13]/text()').extract_first().strip()
-        #     # print(abstract)
-        #     ## 关键词
-        #     keywords = sel.xpath('//*[@class="article_detail "]/p[14]/text()').extract()
-        #     # for kw in keywords:
-        #     #     print(kw)
-        #     ## 作者
-        #     authors = sel.xpath('//*[@class="article_detail "]/p[2]/text()').extract()
-        #     # for a in authors:
-        #     #     print(a)
+
+            tp_url = item['expert_url'].rstrip("zp.aspx") + "tp.aspx"
+            #print(tp_url)
+            yield Request(url=tp_url,  callback=self.parse_tp, meta = {'item_l': item})
+
+    def get_papers(self, response):
+        sel = Selector(response)
+        expert_name = response.meta['expert_name']
+        expert_id = response.meta['expert_id']
+        urls = sel.xpath('//*[@class="search_list"]//dt//@href').extract()
+
+        ## 所有论文链接
+        url_list = []
+        # for url in urls:
+        #     tmp = "http://www.irtree.cn" + url
+        #     url_list.append(tmp)
+            #yield Request(tmp, callback=lambda response, id=id: self.parse3(response, id))
+
+        ### TEST ###
+        tmp = "http://www.irtree.cn" + urls[0]
+        yield Request(tmp, callback=self.parse_paper ,meta= {'expert_name': expert_name,
+                                                             'expert_id': expert_id})
+        ## TEST ###
+
+        #print(url_list)
+
+    def parse_paper(self, response):
+        sel = Selector(response)
+        expert_name = response.meta['expert_name']
+        expert_id = response.meta['expert_id']
+        print(expert_name)
+        print(expert_id)
+        url = response.url
+        print(url)
+        ## 论文ID
+        paper_id = url.lstrip("http://www.irtree.cn/").rstrip("/article_detail.aspx").split("/articles/")[1].strip()
+        #print(paper_id)
+        title = sel.xpath('//*[@class="summary"]/h1/text()').extract_first().strip()
+        #print(title)
+        ## 文献类型
+        paper_type = sel.xpath('//p[@class="class"]/text()').extract_first().strip()
+        ## 出处
+        source = 'Null'
+        tmp = sel.xpath('//*[@class="article_detail "]/p[5]/text()').extract_first()
+        if tmp:
+            tmp = tmp.strip()
+            source = tmp
+        #print(paper_id+' '+title+' '+type+' '+source)
+        ## 收录情况
+        cover_info = ''
+        # tmp = sel.xpath('//*[@class="article_detail "]/p[12]/text()').extract_first()
+        # if tmp:
+        #     tmp = tmp.strip()
+        #     cover_info = tmp
+        print(paper_id+' '+title+' '+paper_type+' '+source)
+        ## 摘要
+        abstract = sel.xpath('//p[@class="abstrack"]/text()').extract_first()
+        if abstract:
+            abstract = abstract.strip()
+        print(abstract)
+        ## 关键词
+        tmp = sel.xpath('//p[@class="subject"]/text()').extract()
+        if tmp:
+            keywords = ' '.join(tmp)
+            keywords = re.sub(r"\s{2,}", " ", keywords).strip()
+        print(keywords)
+        ## 作者
+        tmp = sel.xpath('//p[@class="author"]/text()').extract()
+        authors = ' '.join(tmp)
+        authors = re.sub(r'\[.*?\]','',authors)
+        authors = re.sub(r"\s{2,}", " ", authors).strip()
+        #authors = authors.split()
+        print(authors)
+        authors_list = authors.split()
+        for a in authors_list:
+            if a == expert_name:
+                num = authors_list.index(a)
+        if num == 0:
+            author1 = expert_id
+            print('author1='+author1)
+        elif num == 1:
+            author2 = expert_id
+            print('author2='+author2)
+        elif num == 2:
+            author3 = expert_id
+            print('author3='+author3)
+        elif num == 3:
+            author4 = expert_id
+            print('author4='+author4)
+        elif num == 4:
+            author5 = expert_id
+            print('author5='+author5)
+        print('-------------------------------------------------------')
 
     def parse_tp(self, response):
-        print(response.url)
-        item = response.meta['item']
-        print(item['expert_url'])
+        item_l = response.meta['item_l']
+        item = ExpertportraitItem()
+        item = item_l
         sel = Selector(response)
         url = response.url
         ## 合作学者
@@ -241,10 +288,9 @@ class TestSpider(scrapy.Spider):
         for url in co_experts_urls:
             tmp = url.rstrip("/rw.aspx").split("/writer/")[1]
             co_experts_list.append(tmp)
-        #print(item['expert_name'])
-        #print(co_experts_list)
+
+        item['co_experts']= str(co_experts_list)
+
         ## 合作机构
-        #co_angency = sel.xpath('//*[@class="list organ"]//li//@title').extract()
-        # print(co_angency)
-
-
+        co_agency_list = sel.xpath('//*[@class="list organ"]//li//@title').extract()
+        item['co_agencys']= str(co_agency_list)

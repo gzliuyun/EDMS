@@ -18,6 +18,7 @@ class ExpertportraitItem(scrapy.Item):
     expert_url = scrapy.Field()    #专家维普主页
     theme_list = scrapy.Field()
     sub_list = scrapy.Field()
+    col_url = scrapy.Field()   #学院url
 
     amount1 = scrapy.Field()       #专家发文量
     amount2 = scrapy.Field()       #专家引文量
@@ -25,8 +26,8 @@ class ExpertportraitItem(scrapy.Item):
     core = scrapy.Field()       #北大核心
     cssci = scrapy.Field()
     rdfybkzl = scrapy.Field()
-    co_expert = scrapy.Field()
-    co_agency = scrapy.Field()
+    co_experts = scrapy.Field()
+    co_agencys = scrapy.Field()
 
     paper_id = scrapy.Field()       #论文id
     paper_title = scrapy.Field()    #论文标题
