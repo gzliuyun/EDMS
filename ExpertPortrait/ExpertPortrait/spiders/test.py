@@ -18,7 +18,7 @@ class TestSpider(scrapy.Spider):
         url_list = file.readlines()
         file.close()
         for url in url_list:
-            self.start_urls.append(url.rstrip('\n'))
+            self.start_urls.append(url.rstrip('\n').split(' ')[0])
 
     def parse(self, response):
         expert = ExpertItem()
@@ -29,7 +29,7 @@ class TestSpider(scrapy.Spider):
         ## 维普主页
         url = response.url
         # print(url)
-        expert['url'] = url
+        expert['expert_url'] = url
 
         ## 学者ID 学校ID
         id = url.lstrip("http://www.irtree.cn/").rstrip("/rw_zp.aspx").split("/writer/")[1].strip()
@@ -37,24 +37,24 @@ class TestSpider(scrapy.Spider):
         # print(school_id)
         # print(id)
         expert['university'] = school_id
-        expert['id'] = id
+        expert['expert_id'] = id
 
         ### 姓名
         name = sel.xpath('//*[@class="summary"]/h1/text()').extract_first().strip()
         # print(name)
-        expert['name'] = name
+        expert['expert_name'] = name
 
         ## 研究主题
         themes = sel.xpath('//*[@class="summary"]/p[4]/text()').extract_first().strip()
         theme_list = themes.lstrip(" 研究主题：").rstrip("    ").split("    ")
         # print(theme_list)
-        expert['theme_list'] = theme_list
+        # expert['theme_list'] = theme_list
 
         ## 研究学科
         subs = sel.xpath('//*[@class="summary"]/p[5]/text()').extract_first()
         sub_list = subs.lstrip(" 研究学科：").rstrip("    ").split("    ")
         # print(sub_list)
-        expert['sub_list'] = sub_list
+        # expert['sub_list'] = sub_list
 
         ## 发文量
         amount1 = sel.xpath('//*[@class="search_count"]/p/i/text()').extract_first().replace(' ', '').replace('\n', '')
@@ -147,6 +147,14 @@ class TestSpider(scrapy.Spider):
         authors = sel.xpath('//*[@class="article_detail "]/p[2]/text()').extract()
         # for a in authors:
         #     print(a)
+
+        print("---------DETAIL---------")
+        detail_list = sel.xpath('//*[@class="article_detail "]/p/text()').extract()
+        tag_list = sel.xpath('//*[@class="article_detail "]/p/strong/text()').extract()
+        print(len(detail_list))
+        print(detail_list)
+        print(len(tag_list))
+        print(tag_list)
 
 
     def parse4(self, response, id):
