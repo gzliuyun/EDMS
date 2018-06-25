@@ -27,13 +27,12 @@ class ExpertportraitItem(scrapy.Item):
     cssci = scrapy.Field()
     rdfybkzl = scrapy.Field()
     co_experts = scrapy.Field()
-    co_agencys = scrapy.Field()
+    co_agencies = scrapy.Field()
 
     paper_id = scrapy.Field()       #论文id
     paper_title = scrapy.Field()    #论文标题
     paper_type = scrapy.Field()
     source = scrapy.Field()
-    cover_info = scrapy.Field()     #收录情况
     abstract = scrapy.Field()
     keyword = scrapy.Field()
     p_author1 = scrapy.Field()

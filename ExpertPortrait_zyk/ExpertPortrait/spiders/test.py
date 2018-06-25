@@ -35,12 +35,11 @@ keywords = ['经济', '文', '医', '法', '政治', '美术', '管理', '新闻
 
 class TestSpider(scrapy.Spider):
     name = 'test'
-    #allowed_domains = ['www.irtree.cn']
-    #需要手动输入学院链接
-    #start_urls = ['http://www.irtree.cn/1710/author.aspx?idlevel=55957&organname=%E4%BA%BA%E6%96%87%E5%AD%A6%E9%99%A2%E5%8E%86%E5%8F%B2%E7%B3%BB&cpage=6']
+    # allowed_domains = ['www.irtree.cn']
+    # 需要手动输入学院链接
     start_urls = ['http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=1710']
 
-    #得到每个学校里院系所导航页面的页数
+    # 得到每个学校里院系所导航页面的页数
     def parse(self, response):
         item = ExpertportraitItem()
         id = TestSpider.start_urls[0].split('=')[-1]
@@ -57,7 +56,7 @@ class TestSpider(scrapy.Spider):
             col_page_url=(TestSpider.start_urls[0]+'&pageIndex='+col_page)
             yield Request(col_page_url, callback=self.parse_getcol, meta = {'item_l':item})
 
-    #进入每个学院
+    # 进入每个学院
     def parse_getcol(self, response):
         item_l = response.meta['item_l']
         items = []
@@ -73,13 +72,12 @@ class TestSpider(scrapy.Spider):
                     item['university'] = item_l['university']
                     item['college'] = col_name
                     item['col_url'] = 'http://www.irtree.cn' + url
-                    #print(item['university']+' '+item['college'])
                     items.append(item)
                     break
         for item in items:
             yield Request(item['col_url'], callback=self.parse_college, meta = {'item_l':item})
 
-    #获取每个专家的url
+    # 获取每个专家的url
     def parse_college(self, response):
         page_url = response.url
         item_l = response.meta['item_l']
@@ -103,7 +101,7 @@ class TestSpider(scrapy.Spider):
         #     next_url = page_url.split('&q=%7B%22page')[0]+'&q=%7B"page"%3A"'+next_page+'"%7D'
         #     yield Request(next_url, callback=self.parse_college,meta = {'item':item})
 
-    #分析每个专家主页（发文量需要大于等于3）
+    # 分析每个专家主页（发文量需要大于等于3）
     def parse_content(self, response):
         item_l = response.meta['item_l']
         item = ExpertportraitItem()
@@ -119,15 +117,17 @@ class TestSpider(scrapy.Spider):
             ## 研究主题
             themes = sel.xpath('//*[@class="summary"]/p[4]/text()').extract_first()
             if themes:
-                theme_list = themes.strip().lstrip(" 研究主题：").split()
+                tmp = themes.strip().lstrip(" 研究主题：").split()
+                theme_list ='、'.join(tmp)
                 #print(theme_list)
                 item['theme_list'] = theme_list
 
             ## 研究学科
             subs = sel.xpath('//*[@class="summary"]/p[5]/text()').extract_first()
             if subs:
-                sub_list = subs.lstrip(" 研究学科：").rstrip("    ").split()
-            #print(sub_list)
+                tmp = subs.lstrip(" 研究学科：").rstrip("    ").split()
+                sub_list ='、'.join(tmp)
+                #print(sub_list)
                 item['sub_list'] = sub_list
 
             # ## 发文量
@@ -145,29 +145,27 @@ class TestSpider(scrapy.Spider):
                 item['amount2'] = amount2
 
             ## H指数
-            h_index = sel.xpath('//*[@class="summary"]/p[6]/span[3]/i/text()').extract_first()
-            # print(h_index)
+            h_index = sel.xpath('//span[@class="hzs"]/i/text()').extract_first()
+            #print(h_index)
             item['h_index'] = h_index
 
-            ## 北大核心
-            core = sel.xpath('//*[@class="summary"]/p[6]/span[4]/@title').extract_first()
-            if core:
-                core = core.lstrip("北大核心:")
-            # print(core)
-                item['core'] = core
+            tags = sel.xpath('//p[@class="data"]/span/text()').extract()[2:]
+            nums = sel.xpath('//p[@class="data"]/span/i/a/text()').extract()[1:]
 
-            ## 中文社会科学引文索引
-            cssci = sel.xpath('//*[@class="summary"]/p[6]/span[5]/@title').extract_first()
-            if cssci:
-                cssci = cssci.lstrip("中文社会科学引文索引:")
-            # print(cssci)
-                item['cssci'] = cssci
+            item['core'] = ''
+            item['cssci'] = ''
+            item['rdfybkzl'] = ''
+            for tag in tags:
+                if tag == '北大核心: ':
+                    n = tags.index(tag)
+                    item['core'] = nums[n].strip()
+                if tag ==  'CSSCI: ':
+                    m = tags.index(tag)
+                    item['cssci'] = nums[m].strip()
+                if  tag == 'RDFYBKZL: ':
+                    l = tags.index(tag)
+                    item['rdfybkzl'] = nums[l].strip()
 
-            ## 人大复印报刊资料
-            rdfybkzl = sel.xpath('//*[@class="summary"]/p[6]/span[6]/@title').extract_first()
-            if rdfybkzl:
-                rdfybkzl = rdfybkzl.lstrip("人大复印报刊资料:")
-                item['rdfybkzl'] = rdfybkzl
             #print(item['university'] + ' ' + item['college'] + ' ' + item['expert_url']+' '+item['amount1']+' '+item['h_index'])
             # 总页数
             tpagenum = sel.xpath('//*[@class="pages"]/span[1]/text()').extract_first()
@@ -176,11 +174,11 @@ class TestSpider(scrapy.Spider):
             #print(pagenum)
             # for i in range(1, pagenum+1):
             ## TEST ###
-            for i in range(1, 2):
-                paper_url = item['expert_url'] + '?q=%7B%22page%22%3A%22' + str(i) + '%22%7D'
-                #print(paper_url)
-                yield Request(paper_url, callback=self.get_papers, meta={'expert_name': item['expert_name'],
-                                                             'expert_id': item['expert_id']})
+            # for i in range(1, 2):
+            #     paper_url = item['expert_url'] + '?q=%7B%22page%22%3A%22' + str(i) + '%22%7D'
+            #     #print(paper_url)
+            #     yield Request(paper_url, callback=self.get_papers, meta={'expert_name': item['expert_name'],
+            #                                                  'expert_id': item['expert_id']})
 
 
             tp_url = item['expert_url'].rstrip("zp.aspx") + "tp.aspx"
@@ -289,8 +287,8 @@ class TestSpider(scrapy.Spider):
             tmp = url.rstrip("/rw.aspx").split("/writer/")[1]
             co_experts_list.append(tmp)
 
-        item['co_experts']= str(co_experts_list)
-
+        item['co_experts'] = str(co_experts_list)
         ## 合作机构
         co_agency_list = sel.xpath('//*[@class="list organ"]//li//@title').extract()
-        item['co_agencys']= str(co_agency_list)
+        item['co_agencies'] = str(co_agency_list)
+        yield item
