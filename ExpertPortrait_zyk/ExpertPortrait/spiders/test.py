@@ -4,7 +4,7 @@ from scrapy.selector import Selector
 from scrapy import Request
 import requests
 import re
-from ExpertPortrait.items import ExpertportraitItem
+from ExpertPortrait.items import person,paper
 from urllib.parse import unquote
 
 school_names = ['清华大学', '浙江大学', '北京大学', '吉林大学', '上海交通大学', '华中科技大学', '武汉大学', '四川大学',
@@ -41,7 +41,7 @@ class TestSpider(scrapy.Spider):
 
     # 得到每个学校里院系所导航页面的页数
     def parse(self, response):
-        item = ExpertportraitItem()
+        item = person()
         id = TestSpider.start_urls[0].split('=')[-1]
         id_index = school_ids.index(id)
         school_name = school_names[id_index]
@@ -68,7 +68,7 @@ class TestSpider(scrapy.Spider):
             col_name = unquote(col_name_code)
             for keyword in keywords:
                 if keyword in col_name:
-                    item = ExpertportraitItem()
+                    item = person()
                     item['university'] = item_l['university']
                     item['college'] = col_name
                     item['col_url'] = 'http://www.irtree.cn' + url
@@ -85,7 +85,7 @@ class TestSpider(scrapy.Spider):
         sel = Selector(response)
         urls = sel.xpath('//*[@id="author"]/div[1]/dl/dt/a[1]/@href').extract()
         for url in urls:
-            item = ExpertportraitItem()
+            item = person()
             item['university'] = item_l['university']
             item['college'] = item_l['college']
             item['expert_url'] = 'http://www.irtree.cn'+url
@@ -104,7 +104,7 @@ class TestSpider(scrapy.Spider):
     # 分析每个专家主页（发文量需要大于等于3）
     def parse_content(self, response):
         item_l = response.meta['item_l']
-        item = ExpertportraitItem()
+        item = person()
         item = item_l
         sel = Selector(response)
         paper_count = sel.xpath('/html/body/div[2]/div/div[2]/div[2]/div[2]/div[1]/div[3]/p/i/text()').extract_first()
@@ -172,13 +172,10 @@ class TestSpider(scrapy.Spider):
             if tpagenum:
                 pagenum = int(tpagenum.lstrip('共').rstrip('页'))
             #print(pagenum)
-            # for i in range(1, pagenum+1):
-            ## TEST ###
-            # for i in range(1, 2):
-            #     paper_url = item['expert_url'] + '?q=%7B%22page%22%3A%22' + str(i) + '%22%7D'
-            #     #print(paper_url)
-            #     yield Request(paper_url, callback=self.get_papers, meta={'expert_name': item['expert_name'],
-            #                                                  'expert_id': item['expert_id']})
+            for i in range(1, pagenum+1):
+                paper_url = item['expert_url'] + '?q=%7B%22page%22%3A%22' + str(i) + '%22%7D'
+                yield Request(paper_url, callback=self.get_papers, meta={'expert_name': item['expert_name'],
+                                                             'expert_id': item['expert_id']})
 
 
             tp_url = item['expert_url'].rstrip("zp.aspx") + "tp.aspx"
@@ -210,23 +207,26 @@ class TestSpider(scrapy.Spider):
         sel = Selector(response)
         expert_name = response.meta['expert_name']
         expert_id = response.meta['expert_id']
-        print(expert_name)
-        print(expert_id)
+        #print(expert_name)
+        #print(expert_id)
         url = response.url
-        print(url)
+        #print(url)
+        it = paper()
         ## 论文ID
         paper_id = url.lstrip("http://www.irtree.cn/").rstrip("/article_detail.aspx").split("/articles/")[1].strip()
-        #print(paper_id)
+        it['paper_id'] = paper_id
         title = sel.xpath('//*[@class="summary"]/h1/text()').extract_first().strip()
-        #print(title)
+        it['paper_title'] = title
         ## 文献类型
         paper_type = sel.xpath('//p[@class="class"]/text()').extract_first().strip()
+        it['paper_type']=paper_type
         ## 出处
         source = 'Null'
         tmp = sel.xpath('//*[@class="article_detail "]/p[5]/text()').extract_first()
         if tmp:
             tmp = tmp.strip()
             source = tmp
+        it['source'] = source
         #print(paper_id+' '+title+' '+type+' '+source)
         ## 收录情况
         cover_info = ''
@@ -234,49 +234,55 @@ class TestSpider(scrapy.Spider):
         # if tmp:
         #     tmp = tmp.strip()
         #     cover_info = tmp
-        print(paper_id+' '+title+' '+paper_type+' '+source)
+        #print(paper_id+' '+title+' '+paper_type+' '+source)
         ## 摘要
         abstract = sel.xpath('//p[@class="abstrack"]/text()').extract_first()
         if abstract:
             abstract = abstract.strip()
-        print(abstract)
+        it['abstract'] = abstract
         ## 关键词
         tmp = sel.xpath('//p[@class="subject"]/text()').extract()
         if tmp:
             keywords = ' '.join(tmp)
             keywords = re.sub(r"\s{2,}", " ", keywords).strip()
-        print(keywords)
+        it['keyword'] = keywords
         ## 作者
+        it['p_author1'] = ''
+        it['p_author2'] = ''
+        it['p_author3'] = ''
+        it['p_author4'] = ''
+        it['p_author5'] = ''
         tmp = sel.xpath('//p[@class="author"]/text()').extract()
         authors = ' '.join(tmp)
         authors = re.sub(r'\[.*?\]','',authors)
         authors = re.sub(r"\s{2,}", " ", authors).strip()
         #authors = authors.split()
-        print(authors)
         authors_list = authors.split()
         for a in authors_list:
             if a == expert_name:
                 num = authors_list.index(a)
         if num == 0:
-            author1 = expert_id
-            print('author1='+author1)
+            it['p_author1'] = expert_id
+            #print('author1='+author1)
         elif num == 1:
-            author2 = expert_id
-            print('author2='+author2)
+            it['p_author2'] = expert_id
+            #print('author2='+author2)
         elif num == 2:
-            author3 = expert_id
-            print('author3='+author3)
+            it['p_author3'] = expert_id
+            #print('author3='+author3)
         elif num == 3:
-            author4 = expert_id
-            print('author4='+author4)
+            it['p_author4'] = expert_id
+            #print('author4='+author4)
         elif num == 4:
-            author5 = expert_id
-            print('author5='+author5)
-        print('-------------------------------------------------------')
+            it['p_author5'] = expert_id
+            #print('author5='+author5)
+        yield it
+        #print('-------------------------------------------------------')
+
 
     def parse_tp(self, response):
         item_l = response.meta['item_l']
-        item = ExpertportraitItem()
+        item = person()
         item = item_l
         sel = Selector(response)
         url = response.url

@@ -13,7 +13,7 @@ BOT_NAME = 'ExpertPortrait'
 
 SPIDER_MODULES = ['ExpertPortrait.spiders']
 NEWSPIDER_MODULE = 'ExpertPortrait.spiders'
-ITEM_PIPELINES = {'ExpertPortrait.pipelines.ExpertportraitPipeline':300}
+ITEM_PIPELINES = {'ExpertPortrait.pipelines.Expertportrait1Pipeline':300}
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 

@@ -8,7 +8,7 @@
 import scrapy
 
 
-class ExpertportraitItem(scrapy.Item):
+class person(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     expert_id = scrapy.Field()      #专家id
@@ -29,6 +29,7 @@ class ExpertportraitItem(scrapy.Item):
     co_experts = scrapy.Field()
     co_agencies = scrapy.Field()
 
+class paper(scrapy.Item):
     paper_id = scrapy.Field()       #论文id
     paper_title = scrapy.Field()    #论文标题
     paper_type = scrapy.Field()
@@ -38,6 +39,8 @@ class ExpertportraitItem(scrapy.Item):
     p_author1 = scrapy.Field()
     p_author2 = scrapy.Field()
     p_author3 = scrapy.Field()
+    p_author4 = scrapy.Field()
+    p_author5 = scrapy.Field()
 
 
     pass
