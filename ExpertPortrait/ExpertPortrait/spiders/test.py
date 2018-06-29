@@ -31,13 +31,25 @@ school_ids = ['1710', '2507', '426', '1194', '1965', '996', '2054', '2006', '111
               '150', '2489', '2074', '514', '998', '494', '1578', '614', '490', '1888', '1474', '607', '4146', '2337',
               '666', '2098', '1291', '2991', '3937', '286', '850', '42', '2874', '3107', '1327', '3119', '3634', '3265',
               '4139', '2903', '2541', '3213', '4113', '1674', '63537', '1565', '3432', '3875', '2942', '621', '2587', '92945']
-keywords = ['经济', '文', '医', '法', '政治', '美术', '管理', '新闻与传播', '马克思']
+keywords = ['经济', '文', '医', '法', '政治', '美术', '管理', '新闻',
+            '传播', '马克思', '宗教', '教育', '历史', '考古', '民族',
+            '主义', '党', '社会', '外交', '行政', '语言', '工商',
+            '外语', '哲学', '金融', '经济', '公安', '图书', '商务',
+            '音乐', '舞蹈', '戏剧', '影视', '美术', '设计']
 
 class TestSpider(scrapy.Spider):
     name = 'test'
     # allowed_domains = ['www.irtree.cn']
     # 需要手动输入学院链接
-    start_urls = ['http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=1710']
+    # start_urls = ['http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=1710']
+    start_urls = []
+
+    def __init__(self):
+        head = 'http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id='
+        for id in school_ids:
+            tmp = head + str(id)
+            self.start_urls.append(tmp)
+
 
     # 得到每个学校里院系所导航页面的页数
     def parse(self, response):
@@ -50,11 +62,10 @@ class TestSpider(scrapy.Spider):
         col_pages = sel.xpath('/html/body/div/div/span/text()').extract_first()
         col_pages = col_pages.split('/')[-1].strip()
         if int(col_pages):
-            x = 0
-        #for x in range(int(col_pages)):
-            col_page = str(x+1)
-            col_page_url=(TestSpider.start_urls[0]+'&pageIndex='+col_page)
-            yield Request(col_page_url, callback=self.parse_getcol, meta = {'item_l':item})
+            for x in range(int(col_pages)):
+                col_page = str(x+1)
+                col_page_url=(TestSpider.start_urls[0]+'&pageIndex='+col_page)
+                yield Request(col_page_url, callback=self.parse_getcol, meta = {'item_l':item})
 
     # 进入每个学院
     def parse_getcol(self, response):
@@ -80,6 +91,7 @@ class TestSpider(scrapy.Spider):
     # 获取每个专家的url
     def parse_college(self, response):
         page_url = response.url
+        print(page_url)
         item_l = response.meta['item_l']
         items = []
         sel = Selector(response)
@@ -95,11 +107,11 @@ class TestSpider(scrapy.Spider):
             #print(item['university']+' '+item['college']+' '+item['expert_url'])
             yield Request(url=item['expert_url'], callback=self.parse_content, meta={'item_l': item})
         #翻页
-        # next_page = sel.xpath('//*[@id="author"]/div[2]/div[2]/span[2]/a[3]/@href').extract_first()
-        # if next_page:
-        #     next_page = re.search(r"g_GetGotoPage\('(.*?)'\)", next_page).group(1)
-        #     next_url = page_url.split('&q=%7B%22page')[0]+'&q=%7B"page"%3A"'+next_page+'"%7D'
-        #     yield Request(next_url, callback=self.parse_college,meta = {'item':item})
+        next_page = sel.xpath('//*[@id="author"]/div[2]/div[2]/span[2]/a[3]/@href').extract_first()
+        if next_page:
+            next_page = re.search(r"g_GetGotoPage\('(.*?)'\)", next_page).group(1)
+            next_url = page_url.split('&q=%7B%22page')[0]+'&q=%7B"page"%3A"'+next_page+'"%7D'
+            yield Request(next_url, callback=self.parse_college,meta = {'item':item})
 
     # 分析每个专家主页（发文量需要大于等于3）
     def parse_content(self, response):
@@ -190,16 +202,11 @@ class TestSpider(scrapy.Spider):
 
         ## 所有论文链接
         url_list = []
-        # for url in urls:
-        #     tmp = "http://www.irtree.cn" + url
-        #     url_list.append(tmp)
-            #yield Request(tmp, callback=lambda response, id=id: self.parse3(response, id))
-
-        ### TEST ###
-        tmp = "http://www.irtree.cn" + urls[0]
-        yield Request(tmp, callback=self.parse_paper ,meta= {'expert_name': expert_name,
-                                                             'expert_id': expert_id})
-        ## TEST ###
+        for url in urls:
+            tmp = "http://www.irtree.cn" + url
+            url_list.append(tmp)
+            yield Request(tmp, callback=self.parse_paper, meta={'expert_name': expert_name,
+                                                                'expert_id': expert_id})
 
         #print(url_list)
 
