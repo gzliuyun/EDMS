@@ -42,7 +42,7 @@ class TestSpider(scrapy.Spider):
     #
     def __init__(self):
         head = 'http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id='
-        for id in school_ids:
+        for id in school_ids[60:]:
             tmp = head + str(id)
             self.start_urls.append(tmp)
 
