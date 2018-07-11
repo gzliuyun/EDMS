@@ -34,8 +34,10 @@ class paper(scrapy.Item):
     paper_title = scrapy.Field()    #论文标题
     paper_type = scrapy.Field()
     source = scrapy.Field()
+    date = scrapy.Field()
     abstract = scrapy.Field()
     keyword = scrapy.Field()
+    p_authors = scrapy.Field()
     p_author1 = scrapy.Field()
     p_author2 = scrapy.Field()
     p_author3 = scrapy.Field()
