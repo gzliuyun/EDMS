@@ -1,4 +1,0 @@
-没有权限:大连理工大学
-http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=287
-没有权限:郑州大学
-http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=2525
