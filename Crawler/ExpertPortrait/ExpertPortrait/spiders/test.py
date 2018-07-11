@@ -42,9 +42,9 @@ class TestSpider(scrapy.Spider):
     #
     def __init__(self):
         head = 'http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id='
-        for id in school_ids:
-            tmp = head + str(id)
-            self.start_urls.append(tmp)
+        id = '325'
+        tmp = head + str(id)
+        self.start_urls.append(tmp)
 
 
     # 得到每个学校里院系所导航页面的页数
@@ -100,7 +100,7 @@ class TestSpider(scrapy.Spider):
                 file.write(for_url)
                 file.write('\n')
         else:
-            print(page_url)
+            #print(page_url)
             items = []
             sel = Selector(response)
             urls = sel.xpath('//*[@id="author"]/div[1]/dl/dt/a[1]/@href').extract()
@@ -202,16 +202,15 @@ class TestSpider(scrapy.Spider):
                                                              'expert_id': item['expert_id']})
 
 
-            tp_url = item['expert_url'].rstrip("zp.aspx") + "tp.aspx"
-            #print(tp_url)
-            yield Request(url=tp_url,  callback=self.parse_tp, meta = {'item_l': item})
+            # tp_url = item['expert_url'].rstrip("zp.aspx") + "tp.aspx"
+            # #print(tp_url)
+            # yield Request(url=tp_url,  callback=self.parse_tp, meta = {'item_l': item})
 
     def get_papers(self, response):
         sel = Selector(response)
         expert_name = response.meta['expert_name']
         expert_id = response.meta['expert_id']
-        urls = sel.xpath('//*[@class="search_list"]//dt//@href').extract()
-        # print(urls)
+        urls = sel.xpath('//a[@class="title"]/@href').extract()
 
         # ## 所有论文链接
         #url_list = []
