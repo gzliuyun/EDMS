@@ -39,6 +39,7 @@ class TestSpider(scrapy.Spider):
     # 需要手动输入学院链接
     #start_urls = ['http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=2507']
     start_urls = []
+    traveled = []
     #
     def __init__(self):
         head = 'http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id='
@@ -46,6 +47,11 @@ class TestSpider(scrapy.Spider):
             tmp = head + str(id)
             self.start_urls.append(tmp)
 
+        # 载入已经爬过的学院ID
+        with open("traveled.txt", "r") as f:
+            tmp = f.readlines()
+            for t in tmp:
+                self.traveled.append(t.rstrip('\n').split(' '))
 
     # 得到每个学校里院系所导航页面的页数
     def parse(self, response):
@@ -101,6 +107,20 @@ class TestSpider(scrapy.Spider):
                 file.write('\n')
         else:
             print(page_url)
+
+            # 检测是否爬过该学院
+            h1 = page_url.split("&organname=")[0]
+            h2 = h1.lstrip("http://www.irtree.cn/")
+            sid = h2.split("/author.aspx?idlevel=")[0]
+            cid = h2.split("/author.aspx?idlevel=")[1]
+            traveled_flag = False
+            for t in self.traveled:
+                if sid == t[0] and cid == t[1]:
+                    traveled_flag = True
+                    break
+            if traveled_flag:
+                return
+
             items = []
             sel = Selector(response)
             urls = sel.xpath('//*[@id="author"]/div[1]/dl/dt/a[1]/@href').extract()
@@ -120,6 +140,11 @@ class TestSpider(scrapy.Spider):
                 next_page = re.search(r"g_GetGotoPage\('(.*?)'\)", next_page).group(1)
                 next_url = page_url.split('&q=%7B%22page')[0]+'&q=%7B"page"%3A"'+next_page+'"%7D'
                 yield Request(next_url, callback=self.parse_college,  meta={'item_l':item_l})
+
+            # 该学院已爬完，添加至traveled.txt中
+            with open("traveled.txt", "a") as f:
+                tmp = sid + " " + cid + "\n"
+                f.write(tmp)
 
     # 分析每个专家主页（发文量需要大于等于3）
     def parse_content(self, response):
