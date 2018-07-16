@@ -40,14 +40,6 @@ class TestSpider(scrapy.Spider):
     #start_urls = ['http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=2507']
     start_urls = []
     traveled = []
-<<<<<<< HEAD
-    #
-    def __init__(self):
-        head = 'http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id='
-        for id in school_ids[60:]:
-            tmp = head + str(id)
-            self.start_urls.append(tmp)
-=======
 
     def __init__(self):
         head = 'http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id='
@@ -60,7 +52,6 @@ class TestSpider(scrapy.Spider):
             tmp = f.readlines()
             for t in tmp:
                 self.traveled.append(t.rstrip('\n').split(' '))
->>>>>>> master
 
         # 载入已经爬过的学院ID
         with open("traveled.txt", "r") as f:
@@ -168,14 +159,7 @@ class TestSpider(scrapy.Spider):
                 next_page = re.search(r"g_GetGotoPage\('(.*?)'\)", next_page).group(1)
                 next_url = page_url.split('&q=%7B%22page')[0]+'&q=%7B"page"%3A"'+next_page+'"%7D'
                 yield Request(next_url, callback=self.parse_college,  meta={'item_l':item_l})
-<<<<<<< HEAD
 
-            # 该学院已爬完，添加至traveled.txt中
-            with open("traveled.txt", "a") as f:
-                tmp = sid + " " + cid + "\n"
-                f.write(tmp)
-
-=======
             else:
                 # 该学院已爬完，添加至traveled.txt中
                 with open("traveled.txt", "a", encoding='utf-8') as f:
@@ -183,7 +167,7 @@ class TestSpider(scrapy.Spider):
                     cid = item_l['college']
                     tmp = sid + " " + cid + "\n"
                     f.write(tmp)
->>>>>>> master
+
     # 分析每个专家主页（发文量需要大于等于3）
     def parse_content(self, response):
         item_l = response.meta['item_l']

@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-没有权限:江南大学
-http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=1423
-没有权限:北京邮电大学
-http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=257
-没有权限:北京邮电大学
-http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=257
-没有权限:北京邮电大学
-http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=257
-没有权限:南京航空航天大学
-http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=1304
-没有权限:北京邮电大学
-http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=257
-没有权限:南京航空航天大学
-http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=1304
-没有权限:南京航空航天大学
-http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=1304
-没有权限:北京邮电大学
-http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=257
-没有权限:北京邮电大学
-http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=257
-=======
 没有权限:郑州大学
 http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=2525
 没有权限:大连理工大学
@@ -52,4 +30,3 @@ http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=199
 http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=2925
 没有权限:东南大学
 http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=497
->>>>>>> master
