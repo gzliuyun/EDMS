@@ -40,12 +40,27 @@ class TestSpider(scrapy.Spider):
     #start_urls = ['http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=2507']
     start_urls = []
     traveled = []
+<<<<<<< HEAD
     #
     def __init__(self):
         head = 'http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id='
         for id in school_ids[60:]:
             tmp = head + str(id)
             self.start_urls.append(tmp)
+=======
+
+    def __init__(self):
+        head = 'http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id='
+        for id in school_ids:
+                tmp = head + str(id)
+                self.start_urls.append(tmp)
+
+        # 载入已经爬过的学院ID
+        with open("traveled.txt", "r", encoding='utf-8') as f:
+            tmp = f.readlines()
+            for t in tmp:
+                self.traveled.append(t.rstrip('\n').split(' '))
+>>>>>>> master
 
         # 载入已经爬过的学院ID
         with open("traveled.txt", "r") as f:
@@ -60,6 +75,7 @@ class TestSpider(scrapy.Spider):
         id = url.split('=')[-1]
         id_index = school_ids.index(id)
         school_name = school_names[id_index]
+        # print(school_name+str(id_index)+' :'+id)
         item['university'] = school_name
         #print(url + item['university'])
         sel =Selector(response)
@@ -67,15 +83,15 @@ class TestSpider(scrapy.Spider):
         col_pages = col_pages.split('/')[-1].strip()
         if int(col_pages):
             for x in range(int(col_pages)):
-            #x = 1
+            # x = 1
                 col_page = str(x+1)
-                col_page_url=(url+'&pageIndex='+col_page)
+                col_page_url = (url+'&pageIndex='+col_page)
                 yield Request(col_page_url, callback=self.parse_getcol, meta={'item_l': item})
 
     # 进入每个学院
     def parse_getcol(self, response):
         item_l = response.meta['item_l']
-        #print(response.url+item_l['university'])
+        # print(response.url+item_l['university'])
         items = []
         sel = Selector(response)
         cols = sel.xpath('/html/body/div/ul/li/a')
@@ -83,6 +99,15 @@ class TestSpider(scrapy.Spider):
             url = col.xpath('./@href').extract_first()
             col_name_code = re.search('organname=(.*?)&cpage',url).group(1)
             col_name = unquote(col_name_code)
+            # 检测是否爬过该学院
+            sid = url.split("/author.aspx?idlevel=")[0].lstrip('/')
+            traveled_flag = False
+            for t in self.traveled:
+                if sid == t[0] and col_name == t[1]:
+                    traveled_flag = True
+                    break
+            if traveled_flag:
+                return
             item = person()
             item['university'] = item_l['university']
             item['college'] = col_name
@@ -101,10 +126,8 @@ class TestSpider(scrapy.Spider):
             id = school_ids[index]
             for_url = 'http://www.irtree.cn/Template/t5/UserControls/CollegeNavigator.ascx?id=' + id
             with open('forbidden.txt', 'a', encoding='utf-8') as file:
-                file.write('没有权限:' +university)
-                file.write('\n')
-                file.write(for_url)
-                file.write('\n')
+                tmp = '没有权限:' + university + '\n'+for_url + '\n'
+                file.write(tmp)
         else:
             print(page_url)
 
@@ -124,15 +147,20 @@ class TestSpider(scrapy.Spider):
             items = []
             sel = Selector(response)
             urls = sel.xpath('//*[@id="author"]/div[1]/dl/dt/a[1]/@href').extract()
+            if not urls:
+                urls = urls = sel.xpath('//*[@id="author"]/div/div[1]/dl/dt/a[1]/@href').extract()
             for url in urls:
+                #print(url)
                 item = person()
                 item['university'] = item_l['university']
                 item['college'] = item_l['college']
                 item['expert_url'] = 'http://www.irtree.cn'+url
                 item['expert_id'] = re.search('writer/(.*?)/rw_zp.aspx',url).group(1)
+
+                # print(item)
                 items.append(item)
             for item in items:
-                #print(item['university']+' '+item['college']+' '+item['expert_url'])
+                # print(item['university']+' '+item['college']+' '+item['expert_url'])
                 yield Request(url=item['expert_url'], callback=self.parse_content, meta={'item_l': item})
             #翻页
             next_page = sel.xpath('//*[@id="author"]/div[2]/div[2]/span[2]/a[3]/@href').extract_first()
@@ -140,12 +168,22 @@ class TestSpider(scrapy.Spider):
                 next_page = re.search(r"g_GetGotoPage\('(.*?)'\)", next_page).group(1)
                 next_url = page_url.split('&q=%7B%22page')[0]+'&q=%7B"page"%3A"'+next_page+'"%7D'
                 yield Request(next_url, callback=self.parse_college,  meta={'item_l':item_l})
+<<<<<<< HEAD
 
             # 该学院已爬完，添加至traveled.txt中
             with open("traveled.txt", "a") as f:
                 tmp = sid + " " + cid + "\n"
                 f.write(tmp)
 
+=======
+            else:
+                # 该学院已爬完，添加至traveled.txt中
+                with open("traveled.txt", "a", encoding='utf-8') as f:
+                    sid = page_url.split("/author.aspx?idlevel=")[0].lstrip('http://www.irtree.cn/')
+                    cid = item_l['college']
+                    tmp = sid + " " + cid + "\n"
+                    f.write(tmp)
+>>>>>>> master
     # 分析每个专家主页（发文量需要大于等于3）
     def parse_content(self, response):
         item_l = response.meta['item_l']
@@ -240,7 +278,7 @@ class TestSpider(scrapy.Spider):
         # ## 所有论文链接
         #url_list = []
         for url in urls:
-            if 'article_detail.aspx'in url:
+            if 'article_detail.aspx' in url:
                 tmp = "http://www.irtree.cn" + url
                 #url_list.append(tmp)
                 yield Request(tmp, callback=self.parse_paper, meta={'expert_name': expert_name,

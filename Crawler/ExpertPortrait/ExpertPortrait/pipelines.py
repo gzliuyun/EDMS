@@ -55,11 +55,12 @@ class MysqlTwistedPipline(object):
         rdfybkzl = item.get('rdfybkzl')
         co_experts = item.get('co_experts')
         co_agencies = item.get('co_agencies')
-        sql_bas = 'INSERT INTO basic_info(id, name, university, college,theme_list,sub_list, url1) values(%s,%s,%s,%s,%s,%s,%s)'
+        sql_bas = 'INSERT INTO basic_info(id, name, university, college,theme_list,sub_list, url1) values(%s,%s,%s,%s,' \
+                  '%s,%s,%s) ON DUPLICATE KEY UPDATE name =%s'
         sql_aca = 'INSERT INTO academic_info(id, name, amount1, amount2, h_index, core, cssci, rdfybkzl,co_expert,' \
-                  'co_agency) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)'
-        cursor.execute(sql_bas, (expert_id, expert_name, university, college, theme_list, sub_list, expert_url))
-        cursor.execute(sql_aca, (expert_id, expert_name, amount1, amount2, h_index, core, cssci, rdfybkzl, co_experts, co_agencies))
+                  'co_agency) values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE name =%s'
+        cursor.execute(sql_bas, (expert_id, expert_name, university, college, theme_list, sub_list, expert_url, expert_name))
+        cursor.execute(sql_aca, (expert_id, expert_name, amount1, amount2, h_index, core, cssci, rdfybkzl, co_experts, co_agencies, expert_name))
 
     def do_insert_paper(self, cursor, item):
         #执行具体的插入
@@ -99,7 +100,5 @@ class MysqlTwistedPipline(object):
             cursor.execute(sql_pap4, (paper_id, paper_title, paper_type, source, date, abstract, keyword, p_authors, p_author4, p_author4))
         if p_author5 != '':
             cursor.execute(sql_pap5, ( paper_id, paper_title, paper_type, source, date, abstract, keyword, p_authors, p_author5, p_author5))
-
-
 
 
