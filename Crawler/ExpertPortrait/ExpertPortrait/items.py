@@ -44,5 +44,13 @@ class paper(scrapy.Item):
     p_author4 = scrapy.Field()
     p_author5 = scrapy.Field()
 
+class target(scrapy.Item):
+    flag = scrapy.Field()
+    university = scrapy.Field()
+
+class all(scrapy.Item):
+    total = scrapy.Field()
+    page_count = scrapy.Field()
+    col_count = scrapy.Field()
 
     pass

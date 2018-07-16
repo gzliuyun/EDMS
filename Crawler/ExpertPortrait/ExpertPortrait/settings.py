@@ -14,6 +14,7 @@ BOT_NAME = 'ExpertPortrait'
 SPIDER_MODULES = ['ExpertPortrait.spiders']
 NEWSPIDER_MODULE = 'ExpertPortrait.spiders'
 ITEM_PIPELINES = {'ExpertPortrait.pipelines.MysqlTwistedPipline':300}
+
 USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 
@@ -42,7 +43,7 @@ ROBOTSTXT_OBEY = False
 #   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
 #   'Accept-Language': 'en',
 #}
-
+# DOWNLOAD_DELAY = 0.25
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
@@ -79,7 +80,7 @@ ROBOTSTXT_OBEY = False
 #AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0
 # Enable showing throttling stats for every response received:
 #AUTOTHROTTLE_DEBUG = False
-
+# DUPEFILTER_CLASS = 'scrapy.dupefilters.BaseDupeFilter'
 # Enable and configure HTTP caching (disabled by default)
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings
 #HTTPCACHE_ENABLED = True
