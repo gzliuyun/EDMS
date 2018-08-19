@@ -26,10 +26,6 @@ def basicinfo_2_json(obj):
 def toDict(obj):
     return dict([(attr, getattr(obj, attr)) for attr in [f.name for f in obj._meta.fields]]) # type(self._meta.fields).__name__
 
-
-
-
-
 # 专家列表展示
 class ExpertListView(View):
     def get(self, request):
@@ -84,7 +80,7 @@ class ExpertListView(View):
         # json.dumps(result)
         # print(json.dumps(result))
         if request.is_ajax():
-            print("ajax访问", len(result))
+            print("ajax访问 list page", len(result))
             # print(result)
             # return HttpResponse(serializers.serialize("json", all_experts), content_type='application/json')
             # return render_to_response("index.html", {"all_experts": serializers.serialize("json", list(all_experts)),})
@@ -131,7 +127,7 @@ class ExpertListView(View):
 
         # return render_to_response("index.html", {"all_experts": json.dumps(list(all_experts)), })
         if request.is_ajax():
-            # print("ajax访问")
+            print("ajax访问 list page")
             return HttpResponse(serializers.serialize("json", all_experts), content_type='application/json')
         else:
             return render_to_response("index.html", {"all_experts": serializers.serialize("json", all_experts), })
@@ -141,9 +137,8 @@ class ExpertListView(View):
 class ExpertDetailView(View):
     def get(self, request):
         expert_id = request.GET.get("id", "")
-        expert_id = "100000018436498"
+        # expert_id = "100000018436498"
         expert_basic = BasicInfo.objects.get(id=expert_id)
-        print(expert_basic)
 
         # TODO academic_info中co_expert需要进一步处理
         expert_academic = AcademicInfo.objects.get(id=expert_id)
@@ -175,8 +170,15 @@ class ExpertDetailView(View):
             "papers": json.dumps(paper_list)
         }
 
-        print(result)
-        return render(request, "detail.html", result)
+        # print(result)
+        # print("HTTP Get: expert detail page")
+        # return HttpResponse(json.dumps(result))
+        if request.is_ajax():
+            print("ajax访问 detail page", len(result))
+            return HttpResponse(json.dumps(result))
+        else:
+            return render_to_response("detail.html")
+        # return render(request, "detail.html", result)
 
-    def post(self):
+    def post(self, request):
         pass

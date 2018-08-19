@@ -1,17 +1,310 @@
-<!DOCTYPE html>
-<html lang="en">
+{% load static %}
+<!doctype html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <ul>
-        {% for paper in papers %}
-        <li>
-            {{ paper.title }}
-        </li>
-        {% endfor %}
-    </ul>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="description" content="专家库系统"/>
+	<meta name="keywords" content="专家信息分析与展示"/>
+
+	<!-- <meta http-equiv="Access-Control-Allow-Origin" content="*" /> -->
+
+	<link rel="shortcut icon" href="{% static 'image/edms_logo_image.png' %}"/>
+
+	<title>EDMS Expert Detail</title>
+
+	<!-- Polyfills -->
+    <!--[if lt IE 10]>
+    <script src="https://as.alipayobjects.com/g/component/??console-polyfill/0.2.2/index.js,es5-shim/4.5.7/es5-shim.min.js,es5-shim/4.5.7/es5-sham.min.js,es6-shim/0.35.1/es6-sham.min.js,es6-shim/0.35.1/es6-shim.min.js,html5shiv/3.7.2/html5shiv.min.js,media-match/2.0.2/media.match.min.js"></script>
+    <![endif]-->
+
+	<!-- css -->
+	<link rel="stylesheet" href="{% static 'css/detail_page.css' %}" />
 </head>
-<body>
+
+<body class="is-preload">
+    <!-- Wrapper -->
+        <div id="wrapper">
+
+            <!-- 顶部导航栏 -->
+                <header id="header">
+                    <!-- 跳转回主页 -->
+                    <h1><a href="..">Expert Database Management System</a></h1>
+                    <nav class="links">
+                        <ul>
+                            <li><a onclick="scrollAnchor('researcher_resume')">学者简历</a></li>
+                            <li><a onclick="scrollAnchor('researcher_academic')">学术信息</a></li>
+                            <li><a onclick="scrollAnchor('researcher_relationship')">关系网络</a></li>
+                            <li><a onclick="scrollAnchor('researcher_papers')">学者论文</a></li>
+                            <li><a id="star_researcher" onclick="star_expert()">
+                                收藏学者</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="main">
+                        <ul>
+                            <li class="search">
+                                <!-- TODO 专家详情页的查询框 -->
+                                <a class="fa-search" href="#search">Search</a>
+                                <form id="search" method="get" action="#">
+                                    <input type="text" name="id" placeholder="按ID搜索学者（按回车键）" />
+                                </form>
+                            </li>
+                            <li class="menu">
+                                <a class="fa-bars" href="#menu">Menu</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </header>
+
+            <!-- 菜单栏 -->
+                <section id="menu">
+                    <!-- TODO 菜单项 -->
+                    <!-- 菜单子项 -->
+                        <section>
+                            <ul class="links">
+                                <li>
+                                    <a href="#">
+                                        <h3>个人</h3>
+                                        <p>进入个人空间进行管理</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h3>TODO</h3>
+                                        <p>TODO</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h3>TODO</h3>
+                                        <p>TODO</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h3>注销</h3>
+                                        <p>注销并登出EDMS系统</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </section>
+
+                    <!-- 登录操作 -->
+                        <section>
+                            <ul class="actions stacked">
+                                <!-- TODO 登录按钮 -->
+                                <li><a class="button large fit" onclick="logIn()">登录</a></li>
+                            </ul>
+                        </section>
+
+                </section>
+
+            <!-- 右侧主模块 -->
+                <div id="main">
+
+                    <!-- 1.学者简历模块 -->
+                        <article class="main-module" id="researcher_resume">
+                            <header>
+                                <div class="title">
+                                    <h2><a onclick="scrollAnchor('researcher_resume')">学者简历</a></h2>
+                                </div>
+                                <div class="meta">
+                                    <time class="published" datetime="2018-08-17">August 17, 2018</time>
+                                    <a href="#" class="author"><span class="this_researcher_name"></span>
+                                        <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
+                                    </a>
+                                </div>
+                            </header>
+                            <div class="content">
+                                <p>学者简历信息</p>
+                            </div>
+                            <footer>
+                                <ul class="actions">
+                                    <li><a href="#" class="button large">更多信息</a></li>
+                                </ul>
+                            </footer>
+                        </article>
+
+                    <!-- 2.学术信息模块 -->
+                        <article class="main-module" id="researcher_academic">
+                            <header>
+                                <div class="title">
+                                    <h2><a onclick="scrollAnchor('researcher_academic')">学术信息</a></h2>
+                                </div>
+                                <div class="meta">
+                                    <time class="published" datetime="2018-08-17">August 17, 2018</time>
+                                    <a href="#" class="author"><span class="this_researcher_name"></span>
+                                        <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
+                                    </a>
+                                </div>
+                            </header>
+                            <div class="content" id="researcher_academic_content">
+                                <h3>学术指标</h3>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <td>发文量</td>
+                                            <td>被引量</td>
+                                            <td>H指数</td>
+                                            <td>北大核心</td>
+                                            <td>中文社会科学引文索引</td>
+                                            <td>人大复印报刊资料</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        </tr>
+                                    </tbody>
+                                </table>
+
+                                <hr />
+
+                                <h3>钻研领域</h3>
+                                <p class="this_researcher_subject"></p>
+
+                                <hr />
+
+                                <h3>研究内容</h3>
+                                <p class="this_researcher_theme"></p>
+                            </div>
+                        </article>
+
+                    <!-- 3.关系网络模块 -->
+                        <article class="main-module" id="researcher_relationship">
+                            <header>
+                                <div class="title">
+                                    <h2><a onclick="scrollAnchor('researcher_relationship')">关系网络</a></h2>
+                                </div>
+                                <div class="meta">
+                                    <time class="published" datetime="2018-08-17">August 17, 2018</time>
+                                    <a href="#" class="author"><span class="this_researcher_name"></span>
+                                        <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
+                                    </a>
+                                </div>
+                            </header>
+                            <div id="relationship_picture_div">
+{#                                <canvas id="relationship_canvas">您的浏览器不支持canvas，请升级浏览器。</canvas>#}
+                                <svg id="relationship_svg" width="0" height="0">您的浏览器不支持svg，请升级浏览器。</svg>
+                            </div>
+                            <!-- TODO 关系网络分析、点击相关学者进行跳转 -->
+                            <div id="relationship_expert_div">
+                                <h3>相关学者</h3>
+                                <p></p>
+                            </div>
+                            <div id="relationship_agency_div">
+                                <h3>相关机构</h3>
+                                <p></p>
+                            </div>
+                        </article>
+
+                    <!-- 4.学者论文模块 -->
+                        <article class="main-module" id="researcher_papers">
+                            <header>
+                                <div class="title">
+                                    <h2><a onclick="scrollAnchor('researcher_papers')">学者论文</a></h2>
+                                </div>
+                                <div class="meta">
+                                    <time class="published" datetime="2018-08-17">August 17, 2018</time>
+                                    <a href="#" class="author"><span class="this_researcher_name"></span>
+                                        <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
+                                    </a>
+                                </div>
+                            </header>
+                            <ul class="papers"></ul>
+{#                            <ul class="actions">#}
+{#                                <li><a href="#" class="button">更多文章</a></li>#}
+{#                            </ul>#}
+                        </article>
+
+                </div>
+
+            <!-- 左侧边栏 -->
+                <section id="sidebar">
+
+                    <!-- 专家简要介绍 -->
+                        <section id="intro">
+                            <!-- 加载动画 -->
+                            <div class="load-container">
+                                <div class="loader"></div>
+                                <p>正在查询...</p>
+                            </div>
+                            <!-- TODO AJAX数据:专家头像 -->
+                            <a href="#" class="researcher-head">
+                                <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
+                            </a>
+                            <header>
+                                <!-- AJAX数据:专家姓名 -->
+                                <h2 class="this_researcher_name"></h2>
+                                <!-- AJAX数据:专家所属机构 -->
+                                <p class="this_researcher_university"></p>
+                                <p class="this_researcher_college"></p>
+                            </header>
+                        </section>
+
+                    <!-- 1.专家观点模块 -->
+                        <section>
+                            <div class="opinions">
+                                <p>专家观点</p>
+                                <!-- TODO 云图、相关文章 -->
+                                <article class="opinion">
+                                    <header>
+                                        <h3><a href="#">专家观点</a></h3>
+                                        <time class="published" datetime="2018-08-17">August 17, 2018</time>
+                                        <a href="#" class="author"><img src="{% static 'image/avatar.jpg' %}" alt="" /></a>
+                                    </header>
+                                    <a href="#" class="image"><img src="{% static 'image/pic04.jpg' %}" alt="" /></a>
+                                </article>
+                            </div>
+                        </section>
+
+                    <!-- 2.开发者信息模块 -->
+                        <section class="about">
+                            <h2>About</h2>
+                            <p>北京航空航天大学研发.</p>
+                        </section>
+
+                    <!-- 3.侧边栏页脚模块 -->
+                        <section id="footer">
+                            <p class="copyright">&copy; YuweiYin. Design: <a href="http://www.buaa.edu.cn/" target="_blank">北京航空航天大学</a>.</p>
+                        </section>
+
+                </section>
+
+        </div>
+
+
+	<!-- AJAX 库和通用工具
+	<script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+	-->
+	<!--
+	Velocity 和 jQuery.animate 的工作方式类似，也是用来实现 JavaScript 动画的选择
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.3/velocity.min.js"></script>
+	-->
+	<!--
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.14.1/lodash.min.js"></script>
+	-->
+
+	<!-- https://greensock.com/
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.5/TweenLite.min.js"></script>
+	-->
+	<!-- Tween.js 和 Color.js
+	<script src="https://cdn.jsdelivr.net/npm/tween.js@16.3.4"></script>
+	<script src="https://cdn.jsdelivr.net/npm/color-js@1.0.3"></script>
+	-->
+	<!--
+	<script src="js/countUp.min.js" type="text/javascript" ></script>
+	-->
+    <!-- Scripts -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/d3.v4.min.js' %}"></script>
+    <script src="{% static 'js/browser.min.js' %}"></script>
+    <script src="{% static 'js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'js/detail_util.js' %}"></script>
+    <script src="{% static 'js/detail_main.js' %}"></script>
+    <script src="{% static 'js/detail_page.js' %}"></script>
 
 </body>
 </html>

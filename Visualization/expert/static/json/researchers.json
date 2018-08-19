@@ -1,0 +1,47 @@
+{
+  "nodes": {
+    "center_node": [
+      {"id": "center", "group": 0}
+    ],
+    "relative_researcher_node": [
+      {"id": "group1_1", "group": 1},
+      {"id": "group1_2", "group": 1},
+      {"id": "group1_3", "group": 1},
+      {"id": "group1_4", "group": 1},
+      {"id": "group1_5", "group": 1},
+      {"id": "group1_6", "group": 1},
+      {"id": "group1_7", "group": 1},
+      {"id": "group1_8", "group": 1},
+      {"id": "group1_9", "group": 1}
+    ],
+    "relative_agency_node": [
+      {"id": "group2_1", "group": 2},
+      {"id": "group2_2", "group": 2},
+      {"id": "group2_3", "group": 2},
+      {"id": "group2_4", "group": 2},
+      {"id": "group2_5", "group": 2},
+      {"id": "group2_6", "group": 2}
+    ]
+  },
+  "links": {
+    "relative_researcher_link": [
+      {"source": "group1_1", "target": "center", "value": 8},
+      {"source": "group1_2", "target": "center", "value": 8},
+      {"source": "group1_3", "target": "center", "value": 8},
+      {"source": "group1_4", "target": "center", "value": 8},
+      {"source": "group1_5", "target": "center", "value": 8},
+      {"source": "group1_6", "target": "center", "value": 8},
+      {"source": "group1_7", "target": "center", "value": 8},
+      {"source": "group1_8", "target": "center", "value": 8},
+      {"source": "group1_9", "target": "center", "value": 8}
+    ],
+    "relative_agency_link": [
+      {"source": "group2_1", "target": "center", "value": 7},
+      {"source": "group2_2", "target": "center", "value": 7},
+      {"source": "group2_3", "target": "center", "value": 7},
+      {"source": "group2_4", "target": "center", "value": 7},
+      {"source": "group2_5", "target": "center", "value": 7},
+      {"source": "group2_6", "target": "center", "value": 7}
+    ]
+  }
+}

@@ -2,16 +2,54 @@
 
 /* jshint esversion: 6 */
 
-var result_ajax;
-var result_page_total = 0;
-var result_page_now = 0;
+let result_ajax_list;
+// let result_ajax_detail = {};
+let result_page_total = 0;
+let result_page_now = 0;
 
-
-function query_http(qi, qt, qs, r, f, rc, org) {
+// 输入控制
+function query_function() {
 	'use strict';
-	var server_url = "expert/list";
+	let query_type = $("#query_type").val().trim();
+
+	if(query_type === "normal") {
+		let query_input = $("input[name='query_input']").val().trim();
+		let query_selection = $("#query_selection").val().trim();
+		console.log('query_function() query_input=' + query_input +
+			  "&query_type=" + query_type +
+			  "&query_selection=" + query_selection);
+		if(!query_input || query_input === "" || !query_selection || query_selection==="") {
+			return false;
+		} else {
+			query_list_ajax(query_input, query_type, query_selection);
+		}
+	} else if(query_type === "advanced") {
+		let researcher = $("#researcher_input").val().trim();
+		let field = $("#field_input").val().trim();
+		let research_content= $("#research_content_input").val().trim();
+		let organization = $("#organization_input").val().trim();
+		console.log(
+			'query_function() query_type=' + query_type +
+			  "&researcher_input=" + researcher +
+			  "&field_input=" + field +
+			  "&research_content_input=" + research_content +
+			  "&organization_input=" + organization);
+		if ( (!researcher && !field && !research_content && !organization) ||
+			(researcher==="" && field==="" && research_content==="" && organization==="") ) {
+				return false;
+		} else {
+			query_list_ajax("", query_type, "", researcher, field, research_content, organization);
+		}
+	} else {
+		return false;
+	}
+}
+
+function query_list_ajax(qi, qt, qs, r, f, rc, org) {
+	'use strict';
+	let server_url = "expert/list";
 	
-	var post_data = {};
+	let post_data = {};
 	if(qt === "normal") {
 		post_data.query_input = qi;
 		post_data.query_type = qt;
@@ -57,7 +95,7 @@ function query_http(qi, qt, qs, r, f, rc, org) {
 				// 清空researcher_result_list里面的所有内容
 				$('.researcher_result_list').empty();
 				// 提示无搜索结果
-				var html_template = '<p id="search_result_tag">抱歉，无搜索结果，请输入其它关键词以查询。</p>';
+				let html_template = '<p id="search_result_tag">抱歉，无搜索结果，请输入其它关键词以查询。</p>';
 				// 增添子元素到researcher_result_list结点
 				$('.researcher_result_list').append(html_template);
 				return false;
@@ -65,28 +103,28 @@ function query_http(qi, qt, qs, r, f, rc, org) {
 				result_page_total = Math.floor(result.length / 20) + 1;
 			}
 			
-			result_ajax = JSON.parse("[" + result + "]");
-			result = result_ajax;
+			result_ajax_list = JSON.parse("[" + result + "]");
+			result = result_ajax_list;
 			result_page_now = 1;
 
 			// 清空researcher_result_list里面的所有内容
 			$('.researcher_result_list').empty();
 
 			// 对返回结果的每个元素，增添到html_template里
-			var html_template = '<p id="search_result_tag">搜索结果（点击以查看专家详细信息）：</p>' +
+			let html_template = '<p id="search_result_tag">搜索结果（点击以查看专家详细信息）：</p>' +
 				'<p id="search_result_info">共 ' + result.length +
 				' 条结果，分 ' + result_page_total + ' 页显示，' +
 				'当前为第 ' + result_page_now + ' 页。</p><ul>';
-			
 
 			// 先渲染第一页，至多20位专家学者
-			for(var i = 0 ; i < 20 && i < result.length ; i++) {
+			let i;
+			for(i = 0 ; i < 20 && i < result.length ; i++) {
 				// 判断专家有没有头像URL
 				if(!result[i].img_url || result[i].img_url === "") {
 					html_template += '<li>' +
 						// 使用默认头像
-						'<img src="static/image/edms_logo_image.png" alt="researcher image" />' +
-						'<a href="show_page?id=' + result[i].id + '" id="researcher_' +
+						'<img src="static/image/default_expert_image.png" alt="researcher image" />' +
+						'<a href="expert/detail?id=' + result[i].id + '" id="researcher_' +
 						result[i].id + '">' + result[i].name + '</a>' +
 						'<p><strong>学校</strong>：' + result[i].university +
 						'；<br /><strong>学院</strong>：' + result[i].college +
@@ -102,7 +140,7 @@ function query_http(qi, qt, qs, r, f, rc, org) {
 				} else {
 					html_template += '<li>' +
 						'<img src="' + result[i].img_url + '" alt="researcher image" />' +
-						'<a href="show_page?id=' + result[i].id + '" id="researcher_' +
+						'<a href="expert/detail?id=' + result[i].id + '" id="researcher_' +
 						result[i].id + '">' + result[i].name + '</a>' +
 						'<p><strong>学校</strong>：' + result[i].university +
 						'；<br /><strong>学院</strong>：' + result[i].college +
@@ -129,6 +167,7 @@ function query_http(qi, qt, qs, r, f, rc, org) {
 			//$('#query_result_page_1').css({"background-color": "rgba(100, 149, 237, 0.8)"});
 			$('#query_result_page_1').css("border", "3px solid #000");
 			// 给新增的列表项加上动态效果
+			//$('.researcher_result_list > ul > li > button').mouseover(function () {
 			$('.researcher_result_list > ul > li > a').mouseover(function () {
 				//$(this).css({"background-color": "#6495ed"});
 				$(this).css({"background-color": "rgba(0, 180, 70, 0.8)"});
@@ -161,115 +200,99 @@ function query_http(qi, qt, qs, r, f, rc, org) {
 			}
 		},
 	});
-
-	/*
-	$.get("expert/list", {
-			"query_input": qi,
-			"query_type": qt,
-			"query_selection": qs
-		}, function(result) {
-		//alert('HTTP GET Success! normal_query: ' + 'result=' + result);
-
-		//隐藏loading动画
-		$('.load-container').css({"display": "none"});
-
-		var result_list = {};
-		result_list = result.split("{");
-		result_list.shift();
-
-		for(var i = 0 ; i < result_list.length ; i++) {
-			result_list[i] = "{" + result_list[i];
-		}
-
-		result_ajax = result_list;
-
-		// 清空query_result_list里面的所有内容
-		$('#query_result_list').empty();
-
-		// 对返回结果的每个元素，增添到html_template里
-		var html_template = '<div class="researcher_result_list">' +
-			'<p id="search_result_tag">搜索结果（点击以查看专家详细信息）：</p>' +
-			'<p id="search_result_info">共 ' + result_list.length +
-			' 条结果，分 ' + result_list.length / 20 + ' 页显示</p><ul>';
-
-		var json_parse;
-		// 先渲染第一页，至多20位专家学者
-		for(i = 0 ; i < 20 && i < result_list.length ; i++) {
-			json_parse = JSON.parse(result_list[i]);
-			// 判断专家有没有头像URL
-			if(!json_parse.img_url || json_parse.img_url === "") {
-				html_template += '<li>' +
-					// 使用默认头像
-					'<img src="static/image/edms_logo_image.png" alt="researcher image" />' +
-					'<a href="expert/show_page?id="' + json_parse.id + ' id="researcher_' +
-					json_parse.id + '">A教授</a>' +
-					'<p><strong>学校</strong>：' + json_parse.university +
-					'；<br /><strong>学院</strong>：' + json_parse.college +
-					// 只展示数据库中的第一个研究方向
-					'；<br /><strong>研究方向</strong>：' + json_parse.theme_list.split("、", 1)[0] + '。</p>' +
-					'</li>';
-			} else {
-				html_template += '<li>' +
-					'<img src="' + json_parse.img_url + '" alt="researcher image" />' +
-					'<a href="expert/show_page?id="' + json_parse.id + ' id="researcher_' +
-					json_parse.id + '">A教授</a>' +
-					'<p><strong>学校</strong>：' + json_parse.university +
-					'；<br /><strong>学院</strong>：' + json_parse.college +
-					// 只展示数据库中的第一个研究方向
-					'；<br /><strong>研究方向</strong>：' + json_parse.theme_list.split("、", 1)[0] + '。</p>' +
-					'</li>';
-			}
-		}
-		html_template += '</ul></div>';
-		//alert("html_template = " + html_template);
-		// 增添子元素到query_result_list结点
-		$('#query_result_list').append(html_template);
-	});
-	*/
 }
 
-// 输入控制
-function query_function() {
+// 查询专家详情
+function query_detail_ajax(expert_id) {
 	'use strict';
-	var query_type = $("#query_type").val().trim();
-	
-	if(query_type === "normal") {
-		console.log('query_function() query_input=' + query_input +
-			  "&query_type=" + query_type +
-			  "&query_selection=" + query_selection);
-		var query_input = $("input[name='query_input']").val().trim();
-		var query_selection = $("#query_selection").val().trim();
-		if(!query_input || query_input === "" || !query_selection || query_selection==="") {
-			return false;
-		} else {
-			query_http(query_input, query_type, query_selection);
-		}
-	} else if(query_type === "advanced") {
-		var researcher = $("#researcher_input").val().trim();
-		var field = $("#field_input").val().trim();
-		var research_content= $("#research_content_input").val().trim();
-		var organization = $("#organization_input").val().trim();
-		console.log(
-			'query_function() query_type=' + query_type +
-			  "&researcher_input=" + researcher +
-			  "&field_input=" + field +
-			  "&research_content_input=" + research_content +
-			  "&organization_input=" + organization);
-		if ( (!researcher && !field && !research_content && !organization) ||
-			(researcher==="" && field==="" && research_content==="" && organization==="") ) {
-				return false;
-		} else {
-			query_http("", query_type, "", researcher, field, research_content, organization);
-		}
-	} else {
+	window.location.href = "expert/detail?id=" + expert_id;
+	/*
+	// 在本页用AJAX查询
+	let server_url = "expert/detail";
+
+	let post_data = {};
+	if(!expert_id || expert_id === "") {
 		return false;
+	} else {
+		//隐藏loading动画
+		$('.load-container').css({"display": "none"});
+		post_data.id = expert_id;
 	}
+
+	// HTTP POST (JQuery Ajax)
+	$.ajax({
+		type: "GET",
+		url: server_url,
+		data: post_data,
+		//crossDomin: true,
+		//dataType: "jsonp",
+		//jsonp: "jsonp_callback",
+		//jsonpCallback: "jsonpCallbackFunction",
+		dataType: "json",
+		//async: true,    // 使用同步操作
+		//timeout: 50000, // 超时时间：50秒
+		beforeSend: function(xhr) {
+			// 出现loading动画
+			$('.load-container').css({"display": "block"});
+			// 隐藏页面按钮
+			$('#query_result_page').css({"display": "none"});
+		},
+		success: function(result, status, xhr) {
+			//alert('HTTP GET Success!);
+
+			// 隐藏loading动画
+			$('.load-container').css({"display": "none"});
+
+			if(!result || result === "" || result.length === 0) {
+				// 清空researcher_result_list里面的所有内容
+				$('.researcher_result_list').empty();
+				// 提示无搜索结果
+				let html_template = '<p id="search_result_tag">抱歉，无搜索结果，请输入其它关键词以查询。</p>';
+				// 增添子元素到researcher_result_list结点
+				$('.researcher_result_list').append(html_template);
+				return false;
+			}
+
+			// 解析JSON数据
+			result_ajax_detail.expert_basic = JSON.parse(result.expert_basic);
+			result_ajax_detail.expert_academic = JSON.parse(result.expert_academic);
+			result_ajax_detail.papers = JSON.parse(result.papers);
+			// console.log(result_ajax_detail);
+
+			result = result_ajax_detail;
+
+			return true;
+		},
+		error: function(xhr, status, error) {
+			// 隐藏loading动画
+			$('.load-container').css({"display": "none"});
+			alert('HTTP GET Error! status=' + status + '&error=' + error +
+				'&statusCode=' + xhr.status + '&responseText=' + xhr.responseText +
+				 '&readyState=' + xhr.readyState);
+		},
+		statusCode: {
+			// 当响应对应的状态码时，执行对应的回调函数
+			200: function() {
+				console.log("200: 请求成功");
+			},
+			404: function() {
+				console.log("404: 找不到页面");
+				alert("404: 找不到页面");
+			},
+			500: function() {
+				console.log("500: 服务器错误");
+				alert( "500: 服务器错误" );
+			}
+		},
+	});
+	*/
 }
 
 // 切换查询类型：普通查询or高级查询 (normal or advanced)
 function toggle_query_type_function() {
 	'use strict';
-	var query_type = $('#query_type').val().trim();
+
+	let query_type = $('#query_type').val().trim();
 	if(query_type === 'normal') {
 		$('.load-container').css({"padding": "100px 0 20px 0"});
 		$('#query_type').val('advanced');
@@ -280,7 +303,7 @@ function toggle_query_type_function() {
 		$('#query_input').css({"background-color": "#b0b0b0"});
 		// 增添输入框
 		$('#advanced_input_list').css({"opacity": "0"});
-		var html = $(
+		let html = $(
 			'<span class="input_left"><p>学者姓名:</p><input type="text" id="researcher_input" name="researcher_input" value=""  placeholder="请输入专家学者姓名" /></span>' +
 			'<span class="input_right"><p>所属机构:</p><input type="text" id="organization_input" name="organization_input"  placeholder="请输入学者所属机构" /></span><br />' +
 			'<span class="input_left"><p>钻研领域:</p><input type="text" id="field_input" name="field_input" value="" placeholder="请输入学者钻研领域" /></span>' +
@@ -299,7 +322,7 @@ function toggle_query_type_function() {
 		$('#query_input').css({"background-color": "transparent"});
 		// 移除输入框
 		$('#advanced_input_list').animate({opacity: 0}, 300, "linear", function(){
-			$("#advanced_input_list").empty();
+			$('#advanced_input_list').empty();
 		});
 	}
 }
@@ -309,45 +332,46 @@ function toggle_query_type_function() {
 function change_query_result_page() {
 	'use strict';
 
-	if(!result_ajax || result_ajax.length === 0 || result_ajax === "" ||
+	if(!result_ajax_list || result_ajax_list.length === 0 || result_ajax_list === "" ||
 		parseInt(result_page_now, 10) <= 0 || parseInt(result_page_total, 10) <= 0 ||
 		parseInt(result_page_now, 10) > parseInt(result_page_total, 10) ) {
 		console.log('function change_query_result_page() error: global variables error.');
 		return false;
 	}
 	
-	var result = result_ajax;
-	var result_total_page = result_page_total;
-	var result_now_page = result_page_now;
+	let result = result_ajax_list;
+	let result_total_page = result_page_total;
+	let result_now_page = result_page_now;
 	// 该页第一条json内容在result中的索引位置
-	var content_start_index = (parseInt(result_now_page, 10) - 1) * 20;
+	let content_start_index = (parseInt(result_now_page, 10) - 1) * 20;
 	// 该页最后一条json内容在result中的索引位置
-	var content_end_index;
+	let content_end_index;
 	if( (content_start_index + 20) <= result.length ) {
 		content_end_index = parseInt(content_start_index, 10) + 19;
 	} else {
 		content_end_index = parseInt(result.length, 10) - 1;
 	}
 	// 该页的元素总数
-	var content_total = parseInt(content_end_index, 10) - parseInt(content_start_index, 10) + 1;
+	let content_total = parseInt(content_end_index, 10) - parseInt(content_start_index, 10) + 1;
 
 	// 清空researcher_result_list里面的所有内容
 	$('.researcher_result_list').empty();
 
 	// 对返回结果的每个元素，增添到html_template里
-	var html_template = '<p id="search_result_tag">搜索结果（点击以查看专家详细信息）：</p>' +
+	let html_template = '<p id="search_result_tag">搜索结果（点击以查看专家详细信息）：</p>' +
 		'<p id="search_result_info">共 ' + result.length +
 		' 条结果，分 ' + result_total_page + ' 页显示，' +
 		'当前为第 ' + result_now_page + ' 页。</p><ul>';
 
 	// 渲染新页面
-	for(var i = parseInt(content_start_index, 10) ; i <= parseInt(content_end_index, 10) ; i++) {
+	for(let i = parseInt(content_start_index, 10) ; i <= parseInt(content_end_index, 10) ; i++) {
 		// 判断专家有没有头像URL
 		if(!result[i].img_url || result[i].img_url === "") {
 			html_template += '<li>' +
 				// 使用默认头像
-				'<img src="static/image/edms_logo_image.png" alt="researcher image" />' +
-				'<a href="show_page?id=' + result[i].id + '" id="researcher_' +
+				'<img src="static/image/default_expert_image.png" alt="researcher image" />' +
+				// '<button onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
+				'<a href="expert/detail?id=' + result[i].id + '" id="researcher_' +
 				result[i].id + '">' + result[i].name + '</a>' +
 				'<p><strong>学校</strong>：' + result[i].university +
 				'；<br /><strong>学院</strong>：' + result[i].college +
@@ -363,7 +387,8 @@ function change_query_result_page() {
 		} else {
 			html_template += '<li>' +
 				'<img src="' + result[i].img_url + '" alt="researcher image" />' +
-				'<a href="show_page?id=' + result[i].id + '" id="researcher_' +
+				// '<button onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
+				'<a href="expert/detail?id=' + result[i].id + '" id="researcher_' +
 				result[i].id + '">' + result[i].name + '</a>' +
 				'<p><strong>学校</strong>：' + result[i].university +
 				'；<br /><strong>学院</strong>：' + result[i].college +
@@ -384,6 +409,7 @@ function change_query_result_page() {
 	// 根据展示的数据量确定页数div的显示位置
 	$('#query_result_page').css({"margin": 90 * ( Math.floor((content_total-1)/4)+1 ) - 20 + "px 0 0 0"});
 	// 给新增的列表项加上动态效果
+	//$('.researcher_result_list > ul > li > button').mouseover(function () {
 	$('.researcher_result_list > ul > li > a').mouseover(function () {
 		//$(this).css({"background-color": "#6495ed"});
 		$(this).css({"background-color": "rgba(0, 180, 70, 0.8)"});
@@ -398,12 +424,8 @@ function change_query_result_page() {
 
 function isChrome() {
 	'use strict';
-	var ua = navigator.userAgent;
-	if(ua.indexOf("Chrome") > -1) {
-		return true;
-	} else {
-		return false;
-	}
+	let ua = navigator.userAgent;
+	return (ua.indexOf("Chrome") > -1);
 }
 
 $(function() {
@@ -411,7 +433,8 @@ $(function() {
 
 	// input框的enter事件绑定
 	document.getElementById("query_input").onkeydown = function (event) {
-		if(event.keyCode === "13") {	// 按下Enter键
+		// 按下Enter键
+		if(event.key === "enter" || event.code === "enter") {
 			query_function();
 		}
 	};
@@ -478,9 +501,9 @@ $(function() {
 	// 页面跳转按钮-点击事件-上一页
 	$('#query_result_page_pre').click(function() {
 		// 获取当前两边的按钮所指页数
-		var left_button = $('#query_result_page_1').val();
+		let left_button = $('#query_result_page_1').val();
 		//var right_button = $('#query_result_page_10').val();
-		var i = 0;
+		let i = 0;
 		
 		if(!result_page_now || result_page_now <= 0 || result_page_now > result_page_total) {
 			console.log('pre_page_error! result_page_now is out of range.');
@@ -515,9 +538,9 @@ $(function() {
 	// 页面跳转按钮-点击事件-下一页
 	$('#query_result_page_next').click(function() {
 		// 获取当前两边的按钮所指页数
-		var left_button = $('#query_result_page_1').val();
-		var right_button = $('#query_result_page_10').val();
-		var i = 0;
+		let left_button = $('#query_result_page_1').val();
+		let right_button = $('#query_result_page_10').val();
+		let i = 0;
 		
 		if(!result_page_now || result_page_now <= 0 || result_page_now > result_page_total) {
 			console.log('next_page_error! result_page_now is out of range.');
@@ -553,9 +576,9 @@ $(function() {
 	// 页面跳转按钮-点击事件-按按钮跳转
 	$('.page_number_button').click(function() {
 		// 获取当前两边的按钮所指页数
-		var left_button = $('#query_result_page_1').val();
+		let left_button = $('#query_result_page_1').val();
 		//var right_button = $('#query_result_page_10').val();
-		var button_value = $(this).val();
+		let button_value = $(this).val();
 		
 		if(!result_page_now || result_page_now <= 0 || result_page_now > result_page_total) {
 			console.log('button_jump_page_error! result_page_now is out of range.');
@@ -579,10 +602,10 @@ $(function() {
 	// 页面跳转按钮-点击事件-按页码跳转
 	$('#query_result_page_button').click(function() {
 		// 获取当前两边的按钮所指页数
-		var left_button = $('#query_result_page_1').val();
-		var right_button = $('#query_result_page_10').val();
-		var i = 0;
-		var page_input = Math.floor( parseInt($('#query_result_page_input').val().toString().trim(), 10) );
+		let left_button = $('#query_result_page_1').val();
+		let right_button = $('#query_result_page_10').val();
+		let i = 0;
+		let page_input = Math.floor( parseInt($('#query_result_page_input').val().toString().trim(), 10) );
 		
 		if(!result_page_now || result_page_now <= 0 || result_page_now > result_page_total) {
 			console.log('input_jump_page_error! result_page_now is out of range.');
@@ -624,74 +647,4 @@ $(function() {
 			}
 		}
 	});
-	
-
-	/*
-	//切换标签 end
-	var user = new document.USER(document.getElementById("userinfo"));
-	$.ajax({
-		url:"/search/topn/30",
-		"type":"GET",
-		dataType:"JSON",
-		success:function (data) {
-			var wordCloudMap = echarts.init(document.getElementById("word-cloud-info"));
-			var wordCloudOption ={
-				title: {
-					text: '搜索热词展示',
-					x: 'center',
-					textStyle: {
-						fontSize: 23
-					}
-				},
-				backgroundColor: '#F7F7F7',
-				tooltip: {
-					show: true
-				},
-				toolbox: {
-					feature: {
-						saveAsImage: {
-							iconStyle: {
-								normal: {
-									color: '#FFFFFF'
-								}
-							}
-						}
-					}
-				},
-				series: [{
-					name: '搜索热词展示',
-					type: 'wordCloud',
-					gridSize: 15,
-					sizeRange: [10,40],
-					rotationRange: [0, 0],
-					shape: 'circle',
-					textStyle: {
-						normal: {
-							color: function() {
-								return 'rgb(' + [
-										Math.round(Math.random() * 160),
-										Math.round(Math.random() * 160),
-										Math.round(Math.random() * 160)
-									].join(',') + ')';
-							}
-						},
-						emphasis: {
-							shadowBlur: 10,
-							shadowColor: '#333'
-						}
-					},
-					data: data
-				}]
-			};
-			wordCloudMap.setOption(wordCloudOption);
-			$(window).resize(wordCloudMap.resize);
-			wordCloudMap.on('click', function (params) {
-				//alert((params.name));
-				window.open('http://www.kejso.com/search/info?query=' + encodeURIComponent(params.name));
-			});
-		},
-		error:function (e) {
-			console.log("加载词云出错！")
-		}
-	})*/
 });

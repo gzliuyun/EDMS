@@ -27,8 +27,7 @@
     <script type="text/javascript" src="{% static 'js/webpack_jsonp.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/jquery-2.1.1.js' %}"></script>
 	
-	<!-- css 
-	<link rel="stylesheet" href="css/common.css" />-->
+	<!-- css -->
 	<link rel="stylesheet" href="{% static 'css/main_page.css' %}" />
 </head>
 
@@ -79,18 +78,18 @@
 				<ul>
 					<li class="active" id="researcher_word">
 						专家学者：
-						<a class="main_page_a" onclick="query_http('施一公', 'normal', 'researcher')">施一公</a>
-						<a class="main_page_a" onclick="query_http('潘建伟', 'normal', 'researcher')">潘建伟</a>
-						<a class="main_page_a" onclick="query_http('许晨阳', 'normal', 'researcher')">许晨阳</a>
-						<a class="main_page_a" onclick="query_http('马伟明', 'normal', 'researcher')">马伟明</a>
+						<a class="main_page_a" onclick="query_list_ajax('施一公', 'normal', 'researcher')">施一公</a>
+						<a class="main_page_a" onclick="query_list_ajax('王元清', 'normal', 'researcher')">王元清</a>
+						<a class="main_page_a" onclick="query_list_ajax('李舟军', 'normal', 'researcher')">李舟军</a>
+						<a class="main_page_a" onclick="query_list_ajax('张小明', 'normal', 'researcher')">张小明</a>
 					</li>
 
 					<li id="field_word">
 						钻研领域：
-						<a class="main_page_a" onclick="query_http('人工智能', 'normal', 'field')">人工智能</a>
-						<a class="main_page_a" onclick="query_http('量子通信', 'normal', 'field')">量子通信</a>
-						<a class="main_page_a" onclick="query_http('虚拟现实', 'normal', 'field')">虚拟现实</a>
-						<a class="main_page_a" onclick="query_http('石墨烯', 'normal', 'field')">石墨烯</a>
+						<a class="main_page_a" onclick="query_list_ajax('人工智能', 'normal', 'field')">人工智能</a>
+						<a class="main_page_a" onclick="query_list_ajax('量子通信', 'normal', 'field')">量子通信</a>
+						<a class="main_page_a" onclick="query_list_ajax('虚拟现实', 'normal', 'field')">虚拟现实</a>
+						<a class="main_page_a" onclick="query_list_ajax('石墨烯', 'normal', 'field')">石墨烯</a>
 					</li>
 				</ul>
 			</div>
