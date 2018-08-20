@@ -3,9 +3,8 @@
 /* jshint esversion: 6 */
 
 let result_ajax_list;
-// let result_ajax_detail = {};
 let result_page_total = 0;
-let result_page_now = 0;
+let result_page_current = 0;
 
 // 输入控制
 function query_function() {
@@ -79,7 +78,6 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 		//async: true,    // 使用同步操作
 		//timeout: 50000, // 超时时间：50秒
 		beforeSend: function(xhr) {
-//		    alert("server_url=" + server_url + "&post_data=" +post_data.query_input);
 			// 出现loading动画
 			$('.load-container').css({"display": "block"});
 			// 隐藏页面按钮
@@ -102,10 +100,10 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 			} else {
 				result_page_total = Math.floor(result.length / 20) + 1;
 			}
-			
+			result_page_current = 1;
+
 			result_ajax_list = JSON.parse("[" + result + "]");
 			result = result_ajax_list;
-			result_page_now = 1;
 
 			// 清空researcher_result_list里面的所有内容
 			$('.researcher_result_list').empty();
@@ -114,7 +112,7 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 			let html_template = '<p id="search_result_tag">搜索结果（点击以查看专家详细信息）：</p>' +
 				'<p id="search_result_info">共 ' + result.length +
 				' 条结果，分 ' + result_page_total + ' 页显示，' +
-				'当前为第 ' + result_page_now + ' 页。</p><ul>';
+				'当前为第 ' + result_page_current + ' 页。</p><ul>';
 
 			// 先渲染第一页，至多20位专家学者
 			let i;
@@ -124,7 +122,7 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 					html_template += '<li>' +
 						// 使用默认头像
 						'<img src="static/image/default_expert_image.png" alt="researcher image" />' +
-						'<a href="expert/detail?id=' + result[i].id + '" id="researcher_' +
+						'<a onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
 						result[i].id + '">' + result[i].name + '</a>' +
 						'<p><strong>学校</strong>：' + result[i].university +
 						'；<br /><strong>学院</strong>：' + result[i].college +
@@ -140,7 +138,7 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 				} else {
 					html_template += '<li>' +
 						'<img src="' + result[i].img_url + '" alt="researcher image" />' +
-						'<a href="expert/detail?id=' + result[i].id + '" id="researcher_' +
+						'<a onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
 						result[i].id + '">' + result[i].name + '</a>' +
 						'<p><strong>学校</strong>：' + result[i].university +
 						'；<br /><strong>学院</strong>：' + result[i].college +
@@ -162,9 +160,20 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 			$('#query_result_page').css({"margin": 90 * ( Math.floor((i-1)/4)+1 ) - 20 + "px 0 0 0"});
 			// 出现页数div
 			$('#query_result_page').css({"display": "block"});
-			// 标注当前页(第1页)
-			//$('#query_result_page_1').attr("now", "yes");
-			//$('#query_result_page_1').css({"background-color": "rgba(100, 149, 237, 0.8)"});
+			// 重置页码(第1页～第10页)
+			$('#query_result_page_1').attr("value", "1");
+			$('#query_result_page_2').attr("value", "2");
+			$('#query_result_page_3').attr("value", "3");
+			$('#query_result_page_4').attr("value", "4");
+			$('#query_result_page_5').attr("value", "5");
+			$('#query_result_page_6').attr("value", "6");
+			$('#query_result_page_7').attr("value", "7");
+			$('#query_result_page_8').attr("value", "8");
+			$('#query_result_page_9').attr("value", "9");
+			$('#query_result_page_10').attr("value", "10");
+
+			$('#query_result_page input.page_number_button').css("border", "1px solid #6495ed");
+
 			$('#query_result_page_1').css("border", "3px solid #000");
 			// 给新增的列表项加上动态效果
 			//$('.researcher_result_list > ul > li > button').mouseover(function () {
@@ -205,87 +214,9 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 // 查询专家详情
 function query_detail_ajax(expert_id) {
 	'use strict';
+	// 出现loading动画
+	$('.load-container').css({"display": "block"});
 	window.location.href = "expert/detail?id=" + expert_id;
-	/*
-	// 在本页用AJAX查询
-	let server_url = "expert/detail";
-
-	let post_data = {};
-	if(!expert_id || expert_id === "") {
-		return false;
-	} else {
-		//隐藏loading动画
-		$('.load-container').css({"display": "none"});
-		post_data.id = expert_id;
-	}
-
-	// HTTP POST (JQuery Ajax)
-	$.ajax({
-		type: "GET",
-		url: server_url,
-		data: post_data,
-		//crossDomin: true,
-		//dataType: "jsonp",
-		//jsonp: "jsonp_callback",
-		//jsonpCallback: "jsonpCallbackFunction",
-		dataType: "json",
-		//async: true,    // 使用同步操作
-		//timeout: 50000, // 超时时间：50秒
-		beforeSend: function(xhr) {
-			// 出现loading动画
-			$('.load-container').css({"display": "block"});
-			// 隐藏页面按钮
-			$('#query_result_page').css({"display": "none"});
-		},
-		success: function(result, status, xhr) {
-			//alert('HTTP GET Success!);
-
-			// 隐藏loading动画
-			$('.load-container').css({"display": "none"});
-
-			if(!result || result === "" || result.length === 0) {
-				// 清空researcher_result_list里面的所有内容
-				$('.researcher_result_list').empty();
-				// 提示无搜索结果
-				let html_template = '<p id="search_result_tag">抱歉，无搜索结果，请输入其它关键词以查询。</p>';
-				// 增添子元素到researcher_result_list结点
-				$('.researcher_result_list').append(html_template);
-				return false;
-			}
-
-			// 解析JSON数据
-			result_ajax_detail.expert_basic = JSON.parse(result.expert_basic);
-			result_ajax_detail.expert_academic = JSON.parse(result.expert_academic);
-			result_ajax_detail.papers = JSON.parse(result.papers);
-			// console.log(result_ajax_detail);
-
-			result = result_ajax_detail;
-
-			return true;
-		},
-		error: function(xhr, status, error) {
-			// 隐藏loading动画
-			$('.load-container').css({"display": "none"});
-			alert('HTTP GET Error! status=' + status + '&error=' + error +
-				'&statusCode=' + xhr.status + '&responseText=' + xhr.responseText +
-				 '&readyState=' + xhr.readyState);
-		},
-		statusCode: {
-			// 当响应对应的状态码时，执行对应的回调函数
-			200: function() {
-				console.log("200: 请求成功");
-			},
-			404: function() {
-				console.log("404: 找不到页面");
-				alert("404: 找不到页面");
-			},
-			500: function() {
-				console.log("500: 服务器错误");
-				alert( "500: 服务器错误" );
-			}
-		},
-	});
-	*/
 }
 
 // 切换查询类型：普通查询or高级查询 (normal or advanced)
@@ -333,15 +264,15 @@ function change_query_result_page() {
 	'use strict';
 
 	if(!result_ajax_list || result_ajax_list.length === 0 || result_ajax_list === "" ||
-		parseInt(result_page_now, 10) <= 0 || parseInt(result_page_total, 10) <= 0 ||
-		parseInt(result_page_now, 10) > parseInt(result_page_total, 10) ) {
+		parseInt(result_page_current, 10) <= 0 || parseInt(result_page_total, 10) <= 0 ||
+		parseInt(result_page_current, 10) > parseInt(result_page_total, 10) ) {
 		console.log('function change_query_result_page() error: global variables error.');
 		return false;
 	}
 	
 	let result = result_ajax_list;
 	let result_total_page = result_page_total;
-	let result_now_page = result_page_now;
+	let result_now_page = result_page_current;
 	// 该页第一条json内容在result中的索引位置
 	let content_start_index = (parseInt(result_now_page, 10) - 1) * 20;
 	// 该页最后一条json内容在result中的索引位置
@@ -428,16 +359,17 @@ function isChrome() {
 	return (ua.indexOf("Chrome") > -1);
 }
 
+
 $(function() {
 	'use strict';
 
 	// input框的enter事件绑定
-	document.getElementById("query_input").onkeydown = function (event) {
+	$('#query_input').keydown(function (event) {
 		// 按下Enter键
-		if(event.key === "enter" || event.code === "enter") {
+		if(event.keyCode === 13 || event.key === 'Enter') {
 			query_function();
 		}
-	};
+	});
 	
 	if (isChrome() && window.history && window.history.pushState) {
 		 $(window).on('popstate', function () {
@@ -502,30 +434,29 @@ $(function() {
 	$('#query_result_page_pre').click(function() {
 		// 获取当前两边的按钮所指页数
 		let left_button = $('#query_result_page_1').val();
-		//var right_button = $('#query_result_page_10').val();
 		let i = 0;
 		
-		if(!result_page_now || result_page_now <= 0 || result_page_now > result_page_total) {
-			console.log('pre_page_error! result_page_now is out of range.');
-			//alert('pre_page_error! result_page_now is out of range.');
+		if(!result_page_current || result_page_current <= 0 || result_page_current > result_page_total) {
+			console.log('pre_page_error! result_page_current is out of range.');
+			//alert('pre_page_error! result_page_current is out of range.');
 			return false;
-		} else if(parseInt(result_page_now, 10) === 1) {
+		} else if(parseInt(result_page_current, 10) === 1) {
 			alert('当前页已经是第一页了');
 			return false;
 		} else {
-			if(left_button.toString() === result_page_now.toString()) {
+			if(left_button.toString() === result_page_current.toString()) {
 				// 如果当前页是最左按钮所指的页面，则要调整全部按钮的值
 				for(i = 1 ; i <= 10 ; i++) {
 					$('#query_result_page_' + i).val( parseInt($('#query_result_page_' + i).val().toString(), 10) - 1 );
 				}
-				result_page_now = parseInt(result_page_now, 10) - 1;
+				result_page_current = parseInt(result_page_current, 10) - 1;
 				// change content
 				change_query_result_page();
-			} else if(parseInt(left_button, 10) < parseInt(result_page_now, 10)) {
+			} else if(parseInt(left_button, 10) < parseInt(result_page_current, 10)) {
 				// 如果当前页在最左按钮所指页面的后面，则修改选中按钮的样式
-				$('#query_result_page_' + (parseInt(result_page_now, 10) - parseInt(left_button, 10) + 1)).css({"border": "1px solid rgba(100, 149, 237, 0.8)"});
-				$('#query_result_page_' + (parseInt(result_page_now, 10) - parseInt(left_button, 10))).css({"border": "3px solid #000"});
-				result_page_now = parseInt(result_page_now, 10) - 1;
+				$('#query_result_page_' + (parseInt(result_page_current, 10) - parseInt(left_button, 10) + 1)).css({"border": "1px solid rgba(100, 149, 237, 0.8)"});
+				$('#query_result_page_' + (parseInt(result_page_current, 10) - parseInt(left_button, 10))).css({"border": "3px solid #000"});
+				result_page_current = parseInt(result_page_current, 10) - 1;
 				// change content
 				change_query_result_page();
 			} else {
@@ -542,32 +473,30 @@ $(function() {
 		let right_button = $('#query_result_page_10').val();
 		let i = 0;
 		
-		if(!result_page_now || result_page_now <= 0 || result_page_now > result_page_total) {
-			console.log('next_page_error! result_page_now is out of range.');
-			//alert('next_page_error! result_page_now is out of range.');
+		if(!result_page_current || result_page_current <= 0 || result_page_current > result_page_total) {
+			console.log('next_page_error! result_page_current is out of range.');
 			return false;
-		} else if(parseInt(result_page_now, 10) === parseInt(result_page_total, 10)) {
+		} else if(parseInt(result_page_current, 10) === parseInt(result_page_total, 10)) {
 			alert('当前页已经是最后一页了');
 			return false;
 		} else {
-			if(right_button.toString() === result_page_now.toString()) {
+			if(right_button.toString() === result_page_current.toString()) {
 				// 如果当前页是最右按钮所指的页面，则要调整全部按钮的值
 				for(i = 1 ; i <= 10 ; i++) {
 					$('#query_result_page_' + i).val( parseInt($('#query_result_page_' + i).val().toString(), 10) + 1 );
 				}
-				result_page_now = parseInt(result_page_now, 10) + 1;
+				result_page_current = parseInt(result_page_current, 10) + 1;
 				// change content
 				change_query_result_page();
-			} else if(parseInt(right_button, 10) > parseInt(result_page_now, 10)) {
+			} else if(parseInt(right_button, 10) > parseInt(result_page_current, 10)) {
 				// 如果当前页在最右按钮所指页面的前面，则修改选中按钮的样式
-				$('#query_result_page_' + (parseInt(result_page_now, 10) - parseInt(left_button, 10) + 1)).css({"border": "1px solid rgba(100, 149, 237, 0.8)"});
-				$('#query_result_page_' + (parseInt(result_page_now, 10) - parseInt(left_button, 10) + 2)).css({"border": "3px solid #000"});
-				result_page_now = parseInt(result_page_now, 10) + 1;
+				$('#query_result_page_' + (parseInt(result_page_current, 10) - parseInt(left_button, 10) + 1)).css({"border": "1px solid rgba(100, 149, 237, 0.8)"});
+				$('#query_result_page_' + (parseInt(result_page_current, 10) - parseInt(left_button, 10) + 2)).css({"border": "3px solid #000"});
+				result_page_current = parseInt(result_page_current, 10) + 1;
 				// change content
 				change_query_result_page();
 			} else {
 				console.log('next_page_error!');
-				//alert('next_page_error!right_button=' + right_button + '&result_page_now=' + result_page_now);
 				return false;
 			}
 		}
@@ -577,23 +506,21 @@ $(function() {
 	$('.page_number_button').click(function() {
 		// 获取当前两边的按钮所指页数
 		let left_button = $('#query_result_page_1').val();
-		//var right_button = $('#query_result_page_10').val();
 		let button_value = $(this).val();
 		
-		if(!result_page_now || result_page_now <= 0 || result_page_now > result_page_total) {
-			console.log('button_jump_page_error! result_page_now is out of range.');
+		if(!result_page_current || result_page_current <= 0 || result_page_current > result_page_total) {
+			console.log('button_jump_page_error! result_page_current is out of range.');
 			return false;
 		} else if(!button_value || button_value === "") {
 			console.log('button_value is null or ""');
-			//alert('button_value is null or ""');
 			return false;
 		} else if(parseInt(button_value, 10) <= 0 || parseInt(button_value, 10) > parseInt(result_page_total, 10)) {
 			alert('搜索结果总共' + result_page_total + '页，请在该范围内查找结果');
 			return false;
 		} else {
-			$('#query_result_page_' + (parseInt(result_page_now, 10) - parseInt(left_button, 10) + 1)).css({"border": "1px solid rgba(100, 149, 237, 0.8)"});
+			$('#query_result_page_' + (parseInt(result_page_current, 10) - parseInt(left_button, 10) + 1)).css({"border": "1px solid rgba(100, 149, 237, 0.8)"});
 			$('#query_result_page_' + (parseInt(button_value, 10) - parseInt(left_button, 10) + 1)).css({"border": "3px solid #000"});
-			result_page_now = parseInt(button_value, 10);
+			result_page_current = parseInt(button_value, 10);
 			// change content
 			change_query_result_page();
 		}
@@ -607,8 +534,8 @@ $(function() {
 		let i = 0;
 		let page_input = Math.floor( parseInt($('#query_result_page_input').val().toString().trim(), 10) );
 		
-		if(!result_page_now || result_page_now <= 0 || result_page_now > result_page_total) {
-			console.log('input_jump_page_error! result_page_now is out of range.');
+		if(!result_page_current || result_page_current <= 0 || result_page_current > result_page_total) {
+			console.log('input_jump_page_error! result_page_current is out of range.');
 			return false;
 		} else if(!page_input || page_input === "") {
 			alert('请输入合法页码');
@@ -622,9 +549,9 @@ $(function() {
 				for(i = 1 ; i <= 10 ; i++) {
 					$('#query_result_page_' + i).val(parseInt(page_input, 10) + parseInt(i, 10) - 1);
 				}
-				$('#query_result_page_' + (parseInt(result_page_now, 10) - parseInt(left_button, 10) + 1)).css({"border": "1px solid rgba(100, 149, 237, 0.8)"});
+				$('#query_result_page_' + (parseInt(result_page_current, 10) - parseInt(left_button, 10) + 1)).css({"border": "1px solid rgba(100, 149, 237, 0.8)"});
 				$('#query_result_page_1').css({"border": "3px solid #000"});
-				result_page_now = parseInt(page_input, 10);
+				result_page_current = parseInt(page_input, 10);
 				// change content
 				change_query_result_page();
 			} else if(parseInt(page_input, 10) > parseInt(right_button, 10)) {
@@ -632,16 +559,16 @@ $(function() {
 				for(i = 10 ; i >= 1 ; i--) {
 					$('#query_result_page_' + i).val(parseInt(page_input, 10) + parseInt(i, 10) - 10);
 				}
-				$('#query_result_page_' + (parseInt(result_page_now, 10) - parseInt(left_button, 10) + 1)).css({"border": "1px solid rgba(100, 149, 237, 0.8)"});
+				$('#query_result_page_' + (parseInt(result_page_current, 10) - parseInt(left_button, 10) + 1)).css({"border": "1px solid rgba(100, 149, 237, 0.8)"});
 				$('#query_result_page_10').css({"border": "3px solid #000"});
-				result_page_now = parseInt(page_input, 10);
+				result_page_current = parseInt(page_input, 10);
 				// change content
 				change_query_result_page();
 			} else {
 				// 如果输入的页码介于最左和最右按钮所指页面的值之间，则只需修改选中按钮的样式
-				$('#query_result_page_' + (parseInt(result_page_now, 10) - parseInt(left_button, 10) + 1)).css({"border": "1px solid rgba(100, 149, 237, 0.8)"});
+				$('#query_result_page_' + (parseInt(result_page_current, 10) - parseInt(left_button, 10) + 1)).css({"border": "1px solid rgba(100, 149, 237, 0.8)"});
 				$('#query_result_page_' + (parseInt(page_input, 10) - parseInt(left_button, 10) + 1)).css({"border": "3px solid #000"});
-				result_page_now = parseInt(page_input, 10);
+				result_page_current = parseInt(page_input, 10);
 				// change content
 				change_query_result_page();
 			}

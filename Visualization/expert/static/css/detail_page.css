@@ -2688,6 +2688,26 @@ input, select, textarea {
 		position: relative;
 	}
 
+    #paper_pages > ul li.show_page {
+        display: table-cell;
+        padding: 0.875em 0 0 1em;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+        #paper_pages > ul li.show_page p{
+            display: inline-block;
+            text-align: center;
+        }
+
+        #paper_pages ul li:nth-child(4) {
+            padding: 0.43em 0 0 1em;
+        }
+
+        #paper_jump_input {
+            text-align: center;
+        }
+
 		.main-module > header {
 			display: -moz-flex;
 			display: -webkit-flex;
@@ -2751,12 +2771,17 @@ input, select, textarea {
 				}
 
         #relationship_expert_div h3 {
-            color: #ffc0cb;
+            color: #add8e6;
             margin-top: 1em;
         }
 
+            #relationship_expert_div a {
+                cursor: pointer;
+                /*text-decoration-line: none;*/
+            }
+
         #relationship_agency_div h3 {
-            color: #add8e6;
+            color: #ffc0cb;
         }
 
 		.main-module > a.image.featured {

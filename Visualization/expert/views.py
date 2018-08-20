@@ -164,10 +164,30 @@ class ExpertDetailView(View):
         for paper in papers:
             paper_list.append(json.dumps(toDict(paper)))
 
+        co_experts_id = []
+        for co_expert_id in expert_academic.co_expert[1:-1].replace(' ', '').split(','):
+            co_experts_id.append(co_expert_id[1:-1])
+
+        co_experts_info = []
+        for co_expert_id in co_experts_id:
+            try:
+                basic_info = BasicInfo.objects.get(id=co_expert_id)
+                dicts = {
+                    "id": co_expert_id,
+                    "name": basic_info.name,
+                    "resume": basic_info.resume,
+                    "img_url": basic_info.img_url,
+                }
+                co_experts_info.append(json.dumps(dicts))
+            except:
+                print("数据库中无此学者id:" + co_expert_id + "对应的信息")
+                pass
+
         result = {
             "expert_basic": json.dumps(toDict(expert_basic)),
             "expert_academic": json.dumps(toDict(expert_academic)),
-            "papers": json.dumps(paper_list)
+            "papers": json.dumps(paper_list),
+            "co_experts_info": json.dumps(co_experts_info)
         }
 
         # print(result)

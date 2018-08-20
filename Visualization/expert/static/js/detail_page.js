@@ -3,6 +3,8 @@
 /* jshint esversion: 6 */
 
 let result_ajax_detail = {};
+let paper_page_total = 0;
+let paper_page_current = 0;
 
 // 查询专家详情
 function query_detail_ajax(expert_id) {
@@ -44,13 +46,19 @@ function query_detail_ajax(expert_id) {
 			result_ajax_detail.expert_basic = JSON.parse(result.expert_basic);
 			result_ajax_detail.expert_academic = JSON.parse(result.expert_academic);
 			result_ajax_detail.papers = JSON.parse(result.papers);
+			result_ajax_detail.co_experts_info = JSON.parse(result.co_experts_info);
+
+			paper_page_total = Math.floor(result_ajax_detail.papers.length / 10) + 1;
+			paper_page_current = 1;
+			// 使paper_page_current和paper_page_total为十进制整数
+			paper_page_total = parseInt(paper_page_total, 10);
+			paper_page_current = parseInt(paper_page_current, 10);
 
 			console.log(result_ajax_detail);
 			console.log(JSON.parse(result_ajax_detail.papers[0]));
 
-			result = result_ajax_detail;
-
 			// 使用数据渲染页面
+			result = result_ajax_detail;
             render_detail_page(result);
 
 			return true;
@@ -96,6 +104,10 @@ function render_detail_page(result_ajax) {
     let jq_this_researcher_papers = $('#researcher_papers ul.papers');
     let jq_this_researcher_image = $('img.researcher_image');
     let jq_this_researcher_resume = $('#researcher_resume div.content');
+    let jq_current_page = $('#current_page');
+    let jq_total_pages = $('#total_pages');
+    let jq_paper_previous_page = $('#paper_previous_page');
+    let jq_paper_next_page = $('#paper_next_page');
 
     let html_template;
     html_template = '<td>' + result_ajax.expert_academic.amount1 + '</td>' +
@@ -122,6 +134,22 @@ function render_detail_page(result_ajax) {
     jq_this_researcher_theme.empty();
     jq_this_researcher_theme.append(result_ajax.expert_basic.theme_list || '无所属学院信息');
 
+    jq_current_page.empty();
+    jq_current_page.append(paper_page_current);
+
+    jq_total_pages.empty();
+    jq_total_pages.append(paper_page_total);
+
+    // 使上一页按钮不可选
+	if(!jq_paper_previous_page.hasClass("disabled")) {
+    	jq_paper_previous_page.addClass("disabled");
+	}
+
+    // 若总共仅一页,则使下一页按钮也不可选
+    if(paper_page_total === 1 && !jq_paper_next_page.hasClass("disabled")) {
+    	jq_paper_next_page.addClass("disabled");
+	}
+
     // 若数据库中有学者的头像,则将页面中的默认头像更换掉
 	let expert_image = result_ajax.expert_basic.img_url;
 	if(expert_image && expert_image !== '') {
@@ -137,47 +165,65 @@ function render_detail_page(result_ajax) {
 		jq_this_researcher_resume.append('<p>无该学者简历数据.</p>');
 	}
 
-    // 展示全部(or被引量最高的五篇)论文
-    let paper_item;
+    // 展示前10篇论文(每页10篇,页码从1开始)
+	let paper_item;
     html_template = '';
-    result_ajax.papers.forEach(function (item, index) {
-    	let paper_authors = [];
-
+    let first_page_papers = result_ajax.papers.slice(0, 10);
+    first_page_papers.forEach(function (item, index) {
     	// 解析数据为JSON格式
     	paper_item = JSON.parse(item);
 
-    	// 获取作者信息
+    	// 取authors字段的前五名作者
+    	let paper_authors_name = paper_item.authors.split(' ').slice(0, 5);
+
+    	// 获取作者id信息(在数据库中存在的作者才有id,否则只有名字)
+		let paper_authors_id = [];
 		if(paper_item.author1 && (paper_item.author1 !== '')) {
-			paper_authors.push(paper_item.author1);
+			paper_authors_id.push(paper_item.author1);
+		} else {
+			paper_authors_id.push('');
 		}
 		if(paper_item.author2 && (paper_item.author2 !== '')) {
-			paper_authors.push(paper_item.author2);
+			paper_authors_id.push(paper_item.author2);
+		} else {
+			paper_authors_id.push('');
 		}
 		if(paper_item.author3 && (paper_item.author3 !== '')) {
-			paper_authors.push(paper_item.author3);
+			paper_authors_id.push(paper_item.author3);
+		} else {
+			paper_authors_id.push('');
 		}
 		if(paper_item.author4 && (paper_item.author4 !== '')) {
-			paper_authors.push(paper_item.author4);
+			paper_authors_id.push(paper_item.author4);
+		} else {
+			paper_authors_id.push('');
 		}
 		if(paper_item.author5 && (paper_item.author5 !== '')) {
-			paper_authors.push(paper_item.author5);
+			paper_authors_id.push(paper_item.author5);
+		} else {
+			paper_authors_id.push('');
 		}
 
 		// 设置html结点
-    	html_template += '<li><article><header><h3><a href="#">' + paper_item.title + '</a></h3></header>';
+    	html_template += '<li><article><header><h3><a>' + paper_item.title + '</a></h3></header>';
 
 		// 设置作者
 		html_template += '<p>';
 		let i;
-		for(i = 0 ; i < paper_authors.length - 1 ; i++) {
-			html_template += '<a onclick="jumpToAnotherResearcher(' + paper_authors[i] + ')">' +
-				paper_authors[i] + '</a>' + ',';
+		for(i = 0 ; i < paper_authors_name.length ; i++) {
+			if(paper_authors_id[i] === '') {
+				// 若作者无id,表示该作者不在数据库中,故不做链接跳转
+				html_template += (paper_authors_name[i] || paper_authors_id[i]) + ' , ';
+			} else {
+				html_template += '<a onclick="jumpToAnotherResearcher(' + paper_authors_id[i] + ')">' +
+					(paper_authors_name[i] || paper_authors_id[i]) + '</a>' + ' , ';
+			}
 		}
-		html_template += '<a onclick="jumpToAnotherResearcher(' + paper_authors[i] + ')">' +
-			paper_authors[i] +'</a>' + ' | ';
+		// 截去字符串最后的' , '
+		html_template = html_template.substring(0, (html_template.length - 3));
 
 		// 设置其它论文信息
-		html_template += (paper_item.type || '') + ' | ' + paper_item.source + '</p>';
+		html_template += ' | ' + (paper_item.type || '') + ' | ' + paper_item.source + '</p>';
 
 		html_template += '<p><strong>' + '摘要</strong>: ' + paper_item.abstract + '</p>';
 
@@ -189,6 +235,219 @@ function render_detail_page(result_ajax) {
     jq_this_researcher_papers.append(html_template);
 }
 
+
+// 分页展示论文-上一页
+function previousPaperPage() {
+	'use strict';
+	let jq_current_page = $('#current_page');
+    let jq_paper_previous_page = $('#paper_previous_page');
+    let jq_paper_next_page = $('#paper_next_page');
+
+	if(!paper_page_current || paper_page_current <= 0 || paper_page_current > paper_page_total) {
+		console.log('pre_page_error! paper_page_current is out of range.');
+		//alert('pre_page_error! paper_page_current is out of range.');
+		return false;
+	} else if(paper_page_current === 1) {
+		alert('当前页已经是第一页了');
+		return false;
+	} else {
+		paper_page_current --;
+
+		jq_current_page.empty();
+		jq_current_page.append(paper_page_current);
+
+		// 若按上一页之后到了第一页,则使上一页按钮不可选
+		if(paper_page_current === 1 && !jq_paper_previous_page.hasClass("disabled")) {
+			jq_paper_previous_page.addClass("disabled");
+		}
+
+		// 若下一页按钮之前有disabled属性,则撤销之
+		if(jq_paper_next_page.hasClass("disabled")) {
+			jq_paper_next_page.removeClass("disabled");
+		}
+
+		// 改变页面中的论文内容
+		change_paper_page();
+	}
+	return true;
+}
+
+
+// 分页展示论文-下一页
+function nextPaperPage() {
+	'use strict';
+	let jq_current_page = $('#current_page');
+	let jq_paper_previous_page = $('#paper_previous_page');
+	let jq_paper_next_page = $('#paper_next_page');
+
+	if(!paper_page_current || paper_page_current <= 0 || paper_page_current > paper_page_total) {
+		console.log('next_page_error! paper_page_current is out of range.');
+		//alert('next_page_error! paper_page_current is out of range.');
+		return false;
+	} else if(paper_page_current === paper_page_total) {
+		alert('当前页已经是最后一页了');
+		return false;
+	} else {
+		paper_page_current ++;
+
+		jq_current_page.empty();
+		jq_current_page.append(paper_page_current);
+
+		// 若按下一页之后到了最后一页,则使下一页按钮不可选
+		if(paper_page_current === paper_page_total && !jq_paper_next_page.hasClass("disabled")) {
+			jq_paper_next_page.addClass("disabled");
+		}
+
+		// 若上一页按钮之前有disabled属性,则撤销之
+		if(jq_paper_previous_page.hasClass("disabled")) {
+			jq_paper_previous_page.removeClass("disabled");
+		}
+
+		// 改变页面中的论文内容
+		change_paper_page();
+	}
+	return true;
+}
+
+// 分页展示论文-按页码跳转
+function jumpPaperPage() {
+	'use strict';
+	let jq_current_page = $('#current_page');
+	let jq_paper_previous_page = $('#paper_previous_page');
+	let jq_paper_next_page = $('#paper_next_page');
+	let page_input = Math.floor( parseInt($('#paper_jump_input').val().toString().trim(), 10) );
+
+	if(!paper_page_current || paper_page_current <= 0 || paper_page_current > paper_page_total) {
+		console.log('input_jump_page_error! paper_page_current is out of range.');
+		return false;
+	} else if(!page_input || page_input === "") {
+		alert('请输入合法页码');
+		return false;
+	} else if(parseInt(page_input, 10) <= 0 || parseInt(page_input, 10) > paper_page_total) {
+		alert('论文信息总共' + paper_page_total + '页，请输入该范围内的页码');
+		return false;
+	} else {
+		paper_page_current = parseInt(page_input, 10);
+
+		jq_current_page.empty();
+		jq_current_page.append(paper_page_current);
+
+		// 若跳转到了第一页,则使上一页按钮不可选
+		if(paper_page_current === 1 && !jq_paper_previous_page.hasClass("disabled")) {
+			jq_paper_previous_page.addClass("disabled");
+		}
+
+		// 若跳转到了最后一页,则使下一页按钮不可选
+		if(paper_page_current === paper_page_total && !jq_paper_next_page.hasClass("disabled")) {
+			jq_paper_next_page.addClass("disabled");
+		}
+
+		// 若跳转到了中间页码,使上一页和下一页按钮都可选
+		if(paper_page_current > 1 && paper_page_current < paper_page_total) {
+			if(jq_paper_previous_page.hasClass("disabled")) {
+				jq_paper_previous_page.removeClass("disabled");
+			}
+			if(jq_paper_next_page.hasClass("disabled")) {
+				jq_paper_next_page.removeClass("disabled");
+			}
+		}
+
+		// 改变页面中的论文内容
+		change_paper_page();
+	}
+
+	return true;
+}
+
+// 换页时，改变查询结果内容
+function change_paper_page() {
+	'use strict';
+
+	if(!result_ajax_detail || result_ajax_detail.length === 0 || result_ajax_detail === "" ||
+		paper_page_current <= 0 || paper_page_total <= 0 ||
+		paper_page_current > paper_page_total ) {
+		console.log('function change_paper_page() error: global variables error.');
+		return false;
+	}
+	
+	let result = result_ajax_detail;
+	let result_total_page = paper_page_total;
+	let result_now_page = paper_page_current;
+
+	let jq_this_researcher_papers = $('#researcher_papers ul.papers');
+	let jq_paper_jump_input = $('#paper_jump_input');
+
+	let paper_item;
+    let html_template = '';
+    let this_page_papers = result.papers.slice((paper_page_current - 1) * 10, paper_page_current * 10);
+    this_page_papers.forEach(function (item, index) {
+    	// 解析数据为JSON格式
+    	paper_item = JSON.parse(item);
+
+    	// 取authors字段的前五名作者
+    	let paper_authors_name = paper_item.authors.split(' ').slice(0, 5);
+
+    	// 获取作者id信息(在数据库中存在的作者才有id,否则只有名字)
+		let paper_authors_id = [];
+		if(paper_item.author1 && (paper_item.author1 !== '')) {
+			paper_authors_id.push(paper_item.author1);
+		} else {
+			paper_authors_id.push('');
+		}
+		if(paper_item.author2 && (paper_item.author2 !== '')) {
+			paper_authors_id.push(paper_item.author2);
+		} else {
+			paper_authors_id.push('');
+		}
+		if(paper_item.author3 && (paper_item.author3 !== '')) {
+			paper_authors_id.push(paper_item.author3);
+		} else {
+			paper_authors_id.push('');
+		}
+		if(paper_item.author4 && (paper_item.author4 !== '')) {
+			paper_authors_id.push(paper_item.author4);
+		} else {
+			paper_authors_id.push('');
+		}
+		if(paper_item.author5 && (paper_item.author5 !== '')) {
+			paper_authors_id.push(paper_item.author5);
+		} else {
+			paper_authors_id.push('');
+		}
+
+		// 设置html结点
+    	html_template += '<li><article><header><h3><a>' + paper_item.title + '</a></h3></header>';
+
+		// 设置作者
+		html_template += '<p>';
+		let i;
+		for(i = 0 ; i < paper_authors_name.length ; i++) {
+			if(paper_authors_id[i] === '') {
+				// 若作者无id,表示该作者不在数据库中,故不做链接跳转
+				html_template += (paper_authors_name[i] || paper_authors_id[i]) + ' , ';
+			} else {
+				html_template += '<a onclick="jumpToAnotherResearcher(' + paper_authors_id[i] + ')">' +
+					(paper_authors_name[i] || paper_authors_id[i]) + '</a>' + ' , ';
+			}
+		}
+		// 截去字符串最后的' , '
+		html_template = html_template.substring(0, (html_template.length - 3));
+
+		// 设置其它论文信息
+		html_template += ' | ' + (paper_item.type || '') + ' | ' + paper_item.source + '</p>';
+
+		html_template += '<p><strong>' + '摘要</strong>: ' + paper_item.abstract + '</p>';
+
+		html_template += '<p><strong>' + '关键字</strong>: ' + paper_item.keyword + '</p>';
+
+		html_template += '</article></li>';
+    });
+    jq_this_researcher_papers.empty();
+    jq_this_researcher_papers.append(html_template);
+
+    // 清空页码输入框
+    jq_paper_jump_input.val("");
+}
 
 // 跳转到另一个学者详情页
 function jumpToAnotherResearcher(expert_id) {
@@ -224,7 +483,15 @@ function scrollAnchor(anchor_id) {
 // 绘制专家关系图
 // TODO 调整初始图像美观度;增添文字描述;增添链接跳转;分类显示合作学者/合作机构.
 function relationshipNet(result_ajax) {
-	// 获取相关专家&相关机构
+	// 获取数据库中存在的相关专家数据(有的相关专家并未在数据库中存在)
+	let co_experts_info = [];
+	result_ajax.co_experts_info.forEach(function (item, index) {
+		co_experts_info.push(JSON.parse(item));
+    });
+
+	console.log(co_experts_info);
+
+	// 获取expert_academic表内的相关专家&相关机构
 	let co_expert_string = result_ajax.expert_academic.co_expert;
 	co_expert_string = co_expert_string.replace(/\[/g, '');
 	co_expert_string = co_expert_string.replace(/]/g, '');
@@ -299,16 +566,7 @@ function relationshipNet(result_ajax) {
 
 	console.log(researchers_json);
 
-	// let canvas = document.querySelector("#relationship_canvas"),
-	// 	context = canvas.getContext("2d");
-    //
 	let jq_relationship_canvas_div = $('#relationship_picture_div');
-	// canvas.width = jq_relationship_canvas_div.width();
-	// canvas.height = window.innerHeight / 2;
-	// canvas.style.border = "1px solid #000";
-    //
-	// let width = canvas.width;
-	// let height = canvas.height;
 
 	let jq_relationship_svg = $('#relationship_svg');
 	let width = jq_relationship_canvas_div.width();
@@ -347,15 +605,6 @@ function relationshipNet(result_ajax) {
 
 	simulation.force("link")
 		.links(all_links);
-
-	// d3.select(canvas)
-	// 	.call(d3.drag()
-	// 		.container(canvas)
-	// 		.subject(DragSubject)
-	// 		.on("start", DragStart)
-	// 		.on("drag", Drag)
-	// 		.on("end", DragEnd)
-	// 	);
 
 	let link = svg.append("g")
 		.attr("class","svg_links")
@@ -410,10 +659,30 @@ function relationshipNet(result_ajax) {
 	jq_relationship_canvas_div.css({"border": "1px solid #aaa"});
 
     // TODO 关系网络文字描述
+	let html_template = '';
 	let jq_relationship_expert_div = $('#relationship_expert_div > p');
 	jq_relationship_expert_div.empty();
-	jq_relationship_expert_div.append(co_expert_string);
+	// 对于academic_info表中该学者的合作学者
+	co_expert_array.forEach(function (item, index) {
+		// TODO 目前数据库中可能不存在该合作学者,故做此处理(该步骤在充实数据库后可以优化)
+		let existTag = false;
+		for(let i = 0 ; i < co_experts_info.length ; i++) {
+			if(item === co_experts_info[i].id) {
+				html_template += '<a onclick="jumpToAnotherResearcher(' + item + ')">' +
+					co_experts_info[i].name + '</a>' + ' , ';
+				existTag = true;
+				break;
+			}
+		}
+		if(!existTag) {
+			html_template += item + ' , ';
+		}
+    });
+	// 截去字符串最后的' , '
+	html_template = html_template.substring(0, (html_template.length - 3));
+	jq_relationship_expert_div.append(html_template);
 
+	// TODO 由于数据库中并无机构信息,故暂不设置点击跳转机构详情(可设计:点击相当于主页搜索该机构,至搜索结果页)
 	let jq_relationship_agency_div = $('#relationship_agency_div > p');
 	jq_relationship_agency_div.empty();
 	jq_relationship_agency_div.append(co_agency_string);
@@ -546,11 +815,18 @@ function isChrome() {
 		query_detail_ajax(expert_id);
     };
 
+	// Chrome浏览器处理
 	if (isChrome() && window.history && window.history.pushState) {
-		 $(window).on('popstate', function () {
-			 window.location.href = window.document.referrer;
-			 window.history.go(-2);
-		 });
-		 window.history.pushState(location.href, document.title);
-	 }
+		$(window).on('popstate', function () {
+			window.location.href = window.document.referrer;
+			window.history.go(-2);
+		});
+		window.history.pushState(location.href, document.title);
+	}
+
+	// 防止页面后退
+	history.pushState(null, null, document.URL);
+	window.addEventListener('popstate', function () {
+		history.pushState(null, null, document.URL);
+	});
 })(jQuery);
