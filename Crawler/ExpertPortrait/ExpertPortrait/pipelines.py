@@ -69,36 +69,62 @@ class MysqlTwistedPipline(object):
         paper_title = item.get('paper_title')
         paper_type = item.get('paper_type')
         source = item.get('source')
+        data1 = item.get('data1')
+        data2 = item.get('data2')
+        data3 = item.get('data3')
+        data4 = item.get('data4')
+        data5 = item.get('data5')
         abstract = item.get('abstract')
         date = item.get('date')
         keyword = item.get('keyword')
+        category = item.get('category')
         p_authors = item.get('p_authors')
         p_author1 = item.get('p_author1')
         p_author2 = item.get('p_author2')
         p_author3 = item.get('p_author3')
         p_author4 = item.get('p_author4')
         p_author5 = item.get('p_author5')
-        sql_pap1 = 'INSERT INTO `paper_info`(`paper_id`, `title`, `type`, `source`, `date`, `abstract`, `keyword`,`authors`,`author1`)' \
-                   'VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE `author1`= %s'
-        sql_pap2 = 'INSERT INTO `paper_info`(`paper_id`, `title`, `type`, `source`, `date`, `abstract`, `keyword`,`authors`, `author2`)' \
-                   'VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE `author2`= %s'
-        sql_pap3 = 'INSERT INTO `paper_info`(`paper_id`, `title`, `type`, `source`, `date`, `abstract`, `keyword`,`authors`, `author3`)' \
-                   'VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE `author3`= %s'
-        sql_pap4 = 'INSERT INTO `paper_info`(`paper_id`, `title`, `type`, `source`, `date`, `abstract`, `keyword`,`authors`, `author4`)' \
-                   'VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE `author4`= %s'
-        sql_pap5 = 'INSERT INTO `paper_info`(`paper_id`, `title`, `type`, `source`, `date`, `abstract`, `keyword`,`authors`, `author5`)' \
-                   'VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE `author5`= %s'
+        sql_pap1 = 'INSERT INTO `paper_info`(`paper_id`, `title`, `type`, `source`, `data1`, `data2`, `data3`, `data4`, `data5`,' \
+                   ' `date`, `abstract`, `keyword`, `category`,`authors`,`author1`) VALUES ' \
+                   '(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE `author1`= %s,`data1`=%s, ' \
+                   '`data2`=%s, `data3`=%s, `data4`=%s, `data5`=%s,`date`=%s,`category`=%s'
+        sql_pap2 = 'INSERT INTO `paper_info`(`paper_id`, `title`, `type`, `source`, `data1`, `data2`, `data3`, `data4`, `data5`,' \
+                   ' `date`, `abstract`, `keyword`, `category`,`authors`,`author2`) VALUES ' \
+                   '(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE `author2`= %s,`data1`=%s, ' \
+                   '`data2`=%s, `data3`=%s, `data4`=%s, `data5`=%s,`date`=%s,`category`=%s'
+        sql_pap3 = 'INSERT INTO `paper_info`(`paper_id`, `title`, `type`, `source`, `data1`, `data2`, `data3`, `data4`, `data5`,' \
+                   ' `date`, `abstract`, `keyword`, `category`,`authors`,`author3`) VALUES ' \
+                   '(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE `author3`= %s,`data1`=%s, ' \
+                   '`data2`=%s, `data3`=%s, `data4`=%s, `data5`=%s,`date`=%s,`category`=%s'
+        sql_pap4 = 'INSERT INTO `paper_info`(`paper_id`, `title`, `type`, `source`, `data1`, `data2`, `data3`, `data4`, `data5`,' \
+                   ' `date`, `abstract`, `keyword`, `category`,`authors`,`author4`) VALUES ' \
+                   '(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE `author4`= %s,`data1`=%s, ' \
+                   '`data2`=%s, `data3`=%s, `data4`=%s, `data5`=%s,`date`=%s,`category`=%s'
+        sql_pap5 = 'INSERT INTO `paper_info`(`paper_id`, `title`, `type`, `source`, `data1`, `data2`, `data3`, `data4`, `data5`,' \
+                   ' `date`, `abstract`, `keyword`, `category`,`authors`,`author5`) VALUES ' \
+                   '(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) ON DUPLICATE KEY UPDATE `author5`= %s,`data1`=%s, ' \
+                   '`data2`=%s, `data3`=%s, `data4`=%s, `data5`=%s,`date`=%s,`category`=%s'
 
         if p_author1 != '':
-            cursor.execute(sql_pap1,(paper_id, paper_title, paper_type, source, date, abstract, keyword, p_authors, p_author1, p_author1))
+            cursor.execute(sql_pap1, (paper_id, paper_title, paper_type, source, data1, data2, data3, data4, data5, date,
+                                     abstract, keyword, category, p_authors, p_author1, p_author1,
+                                     data1, data2, data3, data4, data5, date, category))
 
         if p_author2 != '':
-            cursor.execute(sql_pap2, (paper_id, paper_title, paper_type, source, date, abstract, keyword, p_authors, p_author2, p_author2))
+            cursor.execute(sql_pap2, (paper_id, paper_title, paper_type, source, data1, data2, data3, data4, data5, date,
+                                      abstract, keyword, category, p_authors, p_author2, p_author2,
+                                      data1, data2, data3, data4, data5, date, category))
         if p_author3 != '':
-            cursor.execute(sql_pap3, (paper_id, paper_title, paper_type, source, date, abstract, keyword, p_authors, p_author3, p_author3))
+            cursor.execute(sql_pap3, (paper_id, paper_title, paper_type, source, data1, data2, data3, data4, data5, date,
+                                      abstract, keyword, category, p_authors, p_author3, p_author3,
+                                      data1, data2, data3, data4, data5, date, category))
         if p_author4 != '':
-            cursor.execute(sql_pap4, (paper_id, paper_title, paper_type, source, date, abstract, keyword, p_authors, p_author4, p_author4))
+            cursor.execute(sql_pap4, (paper_id, paper_title, paper_type, source, data1, data2, data3, data4, data5, date,
+                                      abstract, keyword, category, p_authors, p_author4, p_author4,
+                                      data1, data2, data3, data4, data5, date, category))
         if p_author5 != '':
-            cursor.execute(sql_pap5, ( paper_id, paper_title, paper_type, source, date, abstract, keyword, p_authors, p_author5, p_author5))
+            cursor.execute(sql_pap5, ( paper_id, paper_title, paper_type, source, data1, data2, data3, data4, data5, date,
+                                       abstract, keyword, category, p_authors, p_author5, p_author5,
+                                       data1, data2, data3, data4, data5, date, category))
 
 
