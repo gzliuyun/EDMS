@@ -10,6 +10,9 @@ let paper_page_current = 0;
 function query_detail_ajax(expert_id) {
 	'use strict';
 
+	let startDate = new Date();
+	let endDate;
+
 	let server_url = "detail";
 
 	let post_data = {};
@@ -26,18 +29,34 @@ function query_detail_ajax(expert_id) {
 		data: post_data,
 		dataType: "json",
 		beforeSend: function(xhr) {
+			endDate = new Date();
+			console.log(endDate - startDate);
+
 			console.log("$.ajax beforeSend, state = " + xhr.status);
 			// 出现loading动画
 			$('#intro .load-container').css({"display": "block"});
 		},
 		success: function(result, status, xhr) {
+			endDate = new Date();
+			console.log(endDate - startDate);
+
 			console.log("$.ajax success, state = " + xhr.status);
 			// 隐藏loading动画
 			$('#intro .load-container').css({"display": "none"});
 
 			if(!result || result === "" || result.length === 0) {
 				// TODO
-			    alert("抱歉，该专家无信息。");
+			    $.toast({
+					text: "抱歉，该专家无信息！",
+					showHideTransition: 'plain',
+					bgColor: 'red',
+					textColor: '#e0e0e0',
+					allowToastClose : false,
+					hideAfter: 2000,
+					stack: 5,
+					textAlign: 'center',
+					position: 'mid-center'
+				});
 				console.log("抱歉，该专家无信息。");
 				return false;
 			}
@@ -60,6 +79,9 @@ function query_detail_ajax(expert_id) {
 			// 使用数据渲染页面
 			result = result_ajax_detail;
             render_detail_page(result);
+
+            endDate = new Date();
+			console.log(endDate - startDate);
 
 			return true;
 		},
@@ -103,7 +125,7 @@ function render_detail_page(result_ajax) {
     let jq_this_researcher_theme = $('#researcher_academic_content .this_researcher_theme');
     let jq_this_researcher_papers = $('#researcher_papers ul.papers');
     let jq_this_researcher_image = $('img.researcher_image');
-    let jq_this_researcher_resume = $('#researcher_resume div.content');
+    let jq_this_researcher_resume = $('#researcher_resume article.resume');
     let jq_current_page = $('#current_page');
     let jq_total_pages = $('#total_pages');
     let jq_paper_previous_page = $('#paper_previous_page');
@@ -158,7 +180,6 @@ function render_detail_page(result_ajax) {
 
 	// 学者简历信息
 	let expert_resume = result_ajax.expert_basic.resume;
-	jq_this_researcher_resume.empty();
 	if(expert_resume && expert_resume !== '') {
 		jq_this_researcher_resume.append('<p>' + expert_resume + '</p>');
 	} else {
@@ -245,10 +266,19 @@ function previousPaperPage() {
 
 	if(!paper_page_current || paper_page_current <= 0 || paper_page_current > paper_page_total) {
 		console.log('pre_page_error! paper_page_current is out of range.');
-		//alert('pre_page_error! paper_page_current is out of range.');
 		return false;
 	} else if(paper_page_current === 1) {
-		alert('当前页已经是第一页了');
+		$.toast({
+			text: "当前页已经是第一页了！",
+			showHideTransition: 'plain',
+			bgColor: 'orange',
+			textColor: '#e0e0e0',
+			allowToastClose : false,
+			hideAfter: 800,
+			stack: 5,
+			textAlign: 'center',
+			position: 'mid-center'
+		});
 		return false;
 	} else {
 		paper_page_current --;
@@ -282,10 +312,19 @@ function nextPaperPage() {
 
 	if(!paper_page_current || paper_page_current <= 0 || paper_page_current > paper_page_total) {
 		console.log('next_page_error! paper_page_current is out of range.');
-		//alert('next_page_error! paper_page_current is out of range.');
 		return false;
 	} else if(paper_page_current === paper_page_total) {
-		alert('当前页已经是最后一页了');
+		$.toast({
+			text: "当前页已经是最后一页了！",
+			showHideTransition: 'plain',
+			bgColor: 'orange',
+			textColor: '#e0e0e0',
+			allowToastClose : false,
+			hideAfter: 800,
+			stack: 5,
+			textAlign: 'center',
+			position: 'mid-center'
+		});
 		return false;
 	} else {
 		paper_page_current ++;
@@ -321,10 +360,30 @@ function jumpPaperPage() {
 		console.log('input_jump_page_error! paper_page_current is out of range.');
 		return false;
 	} else if(!page_input || page_input === "") {
-		alert('请输入合法页码');
+		$.toast({
+			text: "请输入合法页码！",
+			showHideTransition: 'plain',
+			bgColor: 'orange',
+			textColor: '#e0e0e0',
+			allowToastClose : false,
+			hideAfter: 800,
+			stack: 5,
+			textAlign: 'center',
+			position: 'mid-center'
+		});
 		return false;
 	} else if(parseInt(page_input, 10) <= 0 || parseInt(page_input, 10) > paper_page_total) {
-		alert('论文信息总共' + paper_page_total + '页，请输入该范围内的页码');
+		$.toast({
+			text: "论文信息总共" + paper_page_total + "页，请输入该范围内的页码！",
+			showHideTransition: 'plain',
+			bgColor: 'orange',
+			textColor: '#e0e0e0',
+			allowToastClose : false,
+			hideAfter: 800,
+			stack: 5,
+			textAlign: 'center',
+			position: 'mid-center'
+		});
 		return false;
 	} else {
 		paper_page_current = parseInt(page_input, 10);
@@ -659,9 +718,8 @@ function relationshipNet(result_ajax) {
 	jq_relationship_canvas_div.css({"border": "1px solid #aaa"});
 
     // TODO 关系网络文字描述
-	let html_template = '';
-	let jq_relationship_expert_div = $('#relationship_expert_div > p');
-	jq_relationship_expert_div.empty();
+	let html_template = '<p>';
+	let jq_relationship_expert_div = $('#relationship_expert_div');
 	// 对于academic_info表中该学者的合作学者
 	co_expert_array.forEach(function (item, index) {
 		// TODO 目前数据库中可能不存在该合作学者,故做此处理(该步骤在充实数据库后可以优化)
@@ -680,12 +738,14 @@ function relationshipNet(result_ajax) {
     });
 	// 截去字符串最后的' , '
 	html_template = html_template.substring(0, (html_template.length - 3));
+	html_template += '</p>';
 	jq_relationship_expert_div.append(html_template);
 
 	// TODO 由于数据库中并无机构信息,故暂不设置点击跳转机构详情(可设计:点击相当于主页搜索该机构,至搜索结果页)
-	let jq_relationship_agency_div = $('#relationship_agency_div > p');
-	jq_relationship_agency_div.empty();
-	jq_relationship_agency_div.append(co_agency_string);
+	let jq_relationship_agency_div = $('#relationship_agency_div');
+	co_agency_array.forEach(function (item, index) {
+		jq_relationship_agency_div.append('<p>' + item + '</p>');
+    });
 
 	// TODO 关系网络分析
 
@@ -773,6 +833,80 @@ function relationshipNet(result_ajax) {
 // TODO 用户登录
 function logIn() {
 	'use strict';
+	let jq_username = $('#username');
+	let jq_password = $('#password');
+	let jq_a = $('#menu ul.actions > li > a');
+
+	let username = jq_username.val().trim();
+	let password = jq_password.val().trim();
+	let choice = jq_a.text();
+
+	if(choice === '注销') {
+		if(confirm('确认注销')) {
+			jq_username.show();
+			jq_password.show();
+			jq_a.text('登录');
+		}
+	} else if(choice === '登录') {
+		if(!username || username === '') {
+			$.toast({
+				text: "请您输入账号！",
+				showHideTransition: 'slide',
+				bgColor: 'orange',
+				textColor: '#e0e0e0',
+				allowToastClose : false,
+				hideAfter: 1000,
+				stack: 5,
+				textAlign: 'center',
+				position: 'mid-center'
+			});
+			jq_username.focus();
+		} else if(!password || password === '') {
+			$.toast({
+				text: "请您输入密码！",
+				showHideTransition: 'slide',
+				bgColor: 'orange',
+				textColor: '#e0e0e0',
+				allowToastClose : false,
+				hideAfter: 1000,
+				stack: 5,
+				textAlign: 'center',
+				position: 'mid-center'
+			});
+			jq_password.focus();
+		} else {
+			// TODO 判断逻辑交由后台处理
+			if(username === 'yin' && password === 'yuwei') {
+				jq_username.hide();
+				jq_password.hide();
+				jq_a.text('注销');
+				$.toast({
+					text: "登录成功",
+					showHideTransition: 'fade',
+					bgColor: 'lightblue',
+					textColor: '#e0e0e0',
+					allowToastClose : false,
+					hideAfter: 1000,
+					stack: 5,
+					textAlign: 'center',
+					position: 'mid-center'
+				});
+			} else {
+				$.toast({
+					text: "登录失败",
+					showHideTransition: 'plain',
+					bgColor: 'red',
+					textColor: '#e0e0e0',
+					allowToastClose : false,
+					hideAfter: 1000,
+					stack: 5,
+					textAlign: 'center',
+					position: 'mid-center'
+				});
+			}
+		}
+	}
+
 	return true;
 }
 
@@ -794,6 +928,21 @@ function isChrome() {
 (function($) {
 	'use strict';
 
+	/*
+		Toast使用说明
+
+		text：消息提示框的内容.
+		showHideTransition：消息提示框的动画效果。可取值：plain, fade, slide.
+		bgColor：背景颜色.
+		textColor：文字颜色.
+		allowToastClose：是否显示关闭按钮.
+		hideAfter：设置为false则消息提示框不自动关闭。设置为一个数值则在指定的毫秒之后自动关闭消息提示框.
+		stack：消息栈.
+		textAlign：文本对齐：left, right, center.
+		position：消息提示框的位置：bottom-left, bottom-right, bottom-center,
+				top-left, top-right, top-center, mid-center.
+	*/
+
 	window.onload = function () {
         // 获取id参数
 		let expert_id;
@@ -811,7 +960,7 @@ function isChrome() {
             console.log("Error: id参数不合法");
             return false;
         }
-        // AJAX获得数据
+        // AJAX获得数据,成功后渲染页面
 		query_detail_ajax(expert_id);
     };
 

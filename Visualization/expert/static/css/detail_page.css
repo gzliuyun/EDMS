@@ -2635,13 +2635,13 @@ input, select, textarea {
 				top: 2em;
 			}
 
-	.opinions {
+	.resumes {
 		margin: 0 0 2em 0;
 	}
 
 		@media screen and (max-width: 1280px) {
 
-			.opinions {
+			.resumes {
 				display: -moz-flex;
 				display: -webkit-flex;
 				display: -ms-flex;
@@ -2653,12 +2653,12 @@ input, select, textarea {
 				width: calc(100% + 2em);
 			}
 
-				.opinions > * {
+				.resumes > * {
 					margin: 2em 2em 0 0;
 					width: calc(50% - 2em);
 				}
 
-				.opinions > :nth-child(-n + 2) {
+				.resumes > :nth-child(-n + 2) {
 					margin-top: 0;
 				}
 
@@ -2666,12 +2666,12 @@ input, select, textarea {
 
 		@media screen and (max-width: 480px) {
 
-			.opinions {
+			.resumes {
 				display: block;
 				width: 100%;
 			}
 
-				.opinions > * {
+				.resumes > * {
 					margin: 0 0 2em 0;
 					width: 100%;
 				}
@@ -2686,6 +2686,11 @@ input, select, textarea {
 		border: solid 1px rgba(160, 160, 160, 0.3);
 		margin: 0 0 3em 0;
 		position: relative;
+	}
+
+	#relationship_agency_div > p {
+		margin: 0.2em 0 0.2em 0;
+		padding: 0;
 	}
 
     #paper_pages > ul li.show_page {
@@ -3697,7 +3702,7 @@ input, select, textarea {
 
 		}
 
-/* researcher name */
+/* Researcher Name */
     #main .this_researcher_name {
         text-align: left;
         text-decoration: none;

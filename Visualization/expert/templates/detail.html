@@ -20,6 +20,7 @@
 
 	<!-- css -->
 	<link rel="stylesheet" href="{% static 'css/detail_page.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/jquery.toast.css' %}" />
 </head>
 
 <body class="is-preload">
@@ -32,9 +33,9 @@
                     <h1><a href="..">Expert Database Management System</a></h1>
                     <nav class="links">
                         <ul>
-                            <li><a onclick="scrollAnchor('researcher_resume')">学者简历</a></li>
                             <li><a onclick="scrollAnchor('researcher_academic')">学术信息</a></li>
                             <li><a onclick="scrollAnchor('researcher_relationship')">关系网络</a></li>
+                            <li><a onclick="scrollAnchor('researcher_opinion')">学者观点</a></li>
                             <li><a onclick="scrollAnchor('researcher_papers')">学者论文</a></li>
                             <li><a id="star_researcher" onclick="star_expert()">
                                 收藏学者</a>
@@ -46,7 +47,7 @@
                             <li class="search">
                                 <!-- TODO 专家详情页的查询框 -->
                                 <a class="fa-search" href="#search">Search</a>
-                                <form id="search" method="get" action="#">
+                                <form id="search" method="get" action="/expert/detail">
                                     <input type="text" name="id" placeholder="按ID搜索学者（按回车键）" />
                                 </form>
                             </li>
@@ -62,7 +63,7 @@
                     <!-- TODO 菜单项 -->
                     <!-- 菜单子项 -->
                         <section>
-                            <form id="search_menu" method="get" action="#">
+                            <form id="search_menu" method="get" action="/expert/detail">
                                 <input type="text" name="id" placeholder="按ID搜索学者（按回车键）" />
                             </form>
                             <ul class="links">
@@ -84,19 +85,17 @@
                                         <p>标签管理&amp;场景查询</p>
                                     </a>
                                 </li>
-                                <li>
-                                    <a>
-                                        <h3>注销</h3>
-                                        <p>注销并登出EDMS系统</p>
-                                    </a>
-                                </li>
                             </ul>
                         </section>
 
                     <!-- 登录操作 -->
                         <section>
                             <ul class="actions stacked">
-                                <!-- TODO 登录按钮 -->
+                                <li>
+                                    <input type="text" id="username" name="username" placeholder="账号" />
+                                    <br />
+                                    <input type="password" id="password" name="password" placeholder="密码" />
+                                </li>
                                 <li><a class="button large fit" onclick="logIn()">登录</a></li>
                             </ul>
                         </section>
@@ -106,37 +105,14 @@
             <!-- 右侧主模块 -->
                 <div id="main">
 
-                    <!-- 1.学者简历模块 -->
-                        <article class="main-module" id="researcher_resume">
-                            <header>
-                                <div class="title">
-                                    <h2><a onclick="scrollAnchor('researcher_resume')">学者简历</a></h2>
-                                </div>
-                                <div class="meta">
-                                    <time class="published" datetime="2018-08-20">August 20, 2018</time>
-                                    <a class="author"><span class="this_researcher_name"></span>
-                                        <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
-                                    </a>
-                                </div>
-                            </header>
-                            <div class="content">
-                                <p>学者简历信息</p>
-                            </div>
-{#                            <footer>#}
-{#                                <ul class="actions">#}
-{#                                    <li><a class="button large">更多信息</a></li>#}
-{#                                </ul>#}
-{#                            </footer>#}
-                        </article>
-
-                    <!-- 2.学术信息模块 -->
+                    <!-- 1.学术信息模块 -->
                         <article class="main-module" id="researcher_academic">
                             <header>
                                 <div class="title">
                                     <h2><a onclick="scrollAnchor('researcher_academic')">学术信息</a></h2>
                                 </div>
                                 <div class="meta">
-                                    <time class="published" datetime="2018-08-20">August 20, 2018</time>
+                                    <time class="published" datetime="2018-08-28">August 28, 2018</time>
                                     <a class="author"><span class="this_researcher_name"></span>
                                         <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
                                     </a>
@@ -173,14 +149,14 @@
                             </div>
                         </article>
 
-                    <!-- 3.关系网络模块 -->
+                    <!-- 2.关系网络模块 -->
                         <article class="main-module" id="researcher_relationship">
                             <header>
                                 <div class="title">
                                     <h2><a onclick="scrollAnchor('researcher_relationship')">关系网络</a></h2>
                                 </div>
                                 <div class="meta">
-                                    <time class="published" datetime="2018-08-20">August 20, 2018</time>
+                                    <time class="published" datetime="2018-08-28">August 28, 2018</time>
                                     <a class="author"><span class="this_researcher_name"></span>
                                         <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
                                     </a>
@@ -192,12 +168,33 @@
                             <!-- TODO 关系网络分析、点击相关学者进行跳转 -->
                             <div id="relationship_expert_div">
                                 <h3>相关学者</h3>
-                                <p></p>
                             </div>
                             <div id="relationship_agency_div">
                                 <h3>相关机构</h3>
-                                <p></p>
                             </div>
+                        </article>
+
+                    <!-- 3.学者观点模块 -->
+                        <article class="main-module" id="researcher_opinion">
+                            <header>
+                                <div class="title">
+                                    <h2><a onclick="scrollAnchor('researcher_opinion')">学者观点</a></h2>
+                                </div>
+                                <div class="meta">
+                                    <time class="published" datetime="2018-08-28">August 28, 2018</time>
+                                    <a class="author"><span class="this_researcher_name"></span>
+                                        <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
+                                    </a>
+                                </div>
+                            </header>
+                            <div class="content">
+                                <p>学者观点信息</p>
+                            </div>
+{#                            <footer>#}
+{#                                <ul class="actions">#}
+{#                                    <li><a class="button large">更多信息</a></li>#}
+{#                                </ul>#}
+{#                            </footer>#}
                         </article>
 
                     <!-- 4.学者论文模块 -->
@@ -207,7 +204,7 @@
                                     <h2><a onclick="scrollAnchor('researcher_papers')">学者论文</a></h2>
                                 </div>
                                 <div class="meta">
-                                    <time class="published" datetime="2018-08-20">August 20, 2018</time>
+                                    <time class="published" datetime="2018-08-28">August 28, 2018</time>
                                     <a class="author"><span class="this_researcher_name"></span>
                                         <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
                                     </a>
@@ -255,7 +252,7 @@
                             <!-- 加载动画 -->
                             <div class="load-container">
                                 <div class="loader"></div>
-                                <p>正在查询...</p>
+                                <p>正在加载学者信息...</p>
                             </div>
                             <!-- TODO AJAX数据:专家头像 -->
                             <a class="researcher-head">
@@ -270,18 +267,15 @@
                             </header>
                         </section>
 
-                    <!-- 1.专家观点模块 -->
+                    <!-- 1.学者简历模块 -->
                         <section>
-                            <div class="opinions">
-                                <p>专家观点</p>
+                            <div class="resumes" id="researcher_resume">
+                                <p>学者简历</p>
                                 <!-- TODO 云图、相关文章 -->
-                                <article class="opinion">
+                                <article class="resume">
                                     <header>
-                                        <h3><a>专家观点</a></h3>
-                                        <time class="published" datetime="2018-08-20">August 20, 2018</time>
-                                        <a class="author"><img src="{% static 'image/avatar.jpg' %}" alt="" /></a>
+                                        <h3><a>学者简历</a></h3>
                                     </header>
-                                    <a class="image"><img src="{% static 'image/pic04.jpg' %}" alt="" /></a>
                                 </article>
                             </div>
                         </section>
@@ -327,6 +321,7 @@
 	-->
     <!-- Scripts -->
     <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.toast.js' %}"></script>
     <script src="{% static 'js/d3.v4.min.js' %}"></script>
     <script src="{% static 'js/browser.min.js' %}"></script>
     <script src="{% static 'js/breakpoints.min.js' %}"></script>
