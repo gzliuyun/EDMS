@@ -143,7 +143,7 @@ class TestSpider(scrapy.Spider):
         sel = Selector(response)
         paper_count = sel.xpath('/html/body/div[2]/div/div[2]/div[2]/div[2]/div[1]/div[3]/p/i/text()').extract_first()
         paper_count = int(paper_count.strip())
-        if paper_count >= 3:
+        if paper_count < 3:
             name = sel.xpath('/html/body/div[2]/div/div[1]/h1/text()').extract_first()
             item['expert_name'] = name.strip()
             item['amount1'] = str(paper_count)
