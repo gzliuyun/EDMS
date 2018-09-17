@@ -14,9 +14,9 @@ config = {
 connection = pymysql.connect(**config)
 
 p = 1000
-st = 112330
+st = 482105
 ed = 907916
-
+cur = st
 
 # ed_id = 2533689
 
@@ -29,7 +29,7 @@ def do_align():
                 sql = 'SELECT id, name, university, department, profile, image_url, info_url FROM expert_intro LIMIT %s, %s'
                 cursor.execute(sql, (cur, p))
                 result = cursor.fetchall()
-                do_add_weipu(result)
+                do_add_weipu(result, cur)
                 cur += p + 1
         connection.commit()
     finally:
@@ -46,10 +46,11 @@ dict = {
 }
 
 
-def do_add_weipu(result):
+def do_add_weipu(result, cur):
     with connection.cursor() as cursor:
-
+        cnt = 0
         for ret in result:
+            cnt += 1
             if ret['profile'] == '暂无简介' and ret['image_url'] == '':
                 continue
             wp_name = ret['name']
@@ -66,8 +67,11 @@ def do_add_weipu(result):
                         normal_dict()
                         fill_dict(tmp['id'], tmp['college'], ret['department'], ret['profile'], ret['image_url'], ret['info_url'])
                         f.write(str(dict))
+                        f.write(' ')
+                        f.write(str(cur+cnt))
                         f.write('\n')
                 f.close()
+
 
 
 def normal_dict():
