@@ -73,7 +73,7 @@ def do_ck_profile(str):
 teststr = u'{"a":"b", "c":"d"}'
 
 def do_align():
-    with open("align_recorde1.txt", 'r', encoding="utf-8") as f:
+    with open("new_recode.txt", 'r', encoding="utf-8") as f:
         txt = f.readlines()
         cnt = 1
         try:
