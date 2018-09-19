@@ -1,4 +1,4 @@
-from django.views.generic import TemplateView
+# from django.views.generic import TemplateView
 from django.urls import path, re_path, include
 # import xadmin
 

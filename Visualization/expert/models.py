@@ -9,7 +9,7 @@ from django.db import models
 
 
 class AcademicInfo(models.Model):
-    id = models.CharField(primary_key=True, max_length=255)
+    id = models.CharField(primary_key=True, max_length=255, db_index=True)
 
     # TODO 如有需要为name字段添加索引
     name = models.CharField(max_length=255, blank=True, null=True)
@@ -26,7 +26,7 @@ class AcademicInfo(models.Model):
     co_agency = models.CharField(max_length=255, blank=True, null=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'academic_info'
 
     def __str__(self):
@@ -49,6 +49,8 @@ class BasicInfo(models.Model):
     class Meta:
         managed = True
         db_table = 'basic_info'
+        verbose_name = '专家基本信息'
+        verbose_name_plural = verbose_name
 
     def __str__(self):
         return self.name + " " + self.university
@@ -57,7 +59,7 @@ class BasicInfo(models.Model):
 class ExpertIntro(models.Model):
 
     # TODO 如有需要为name字段添加索引
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, db_index=True)
     university = models.CharField(max_length=255)
     department = models.CharField(max_length=255)
     profile = models.TextField()
