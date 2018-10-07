@@ -111,3 +111,12 @@ class PaperInfo(models.Model):
 
     def __str__(self):
         return self.title + " " + self.authors
+
+class InfluenceInfo(models.Model):
+    id = models.CharField(primary_key=True, max_length=255)
+    field = models.CharField(max_length=255, blank=True, null=True)
+    influ = models.FloatField(blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'influence_info'

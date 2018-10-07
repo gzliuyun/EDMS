@@ -105,6 +105,8 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 			result_ajax_list = JSON.parse("[" + result + "]");
 			result = result_ajax_list;
 
+			console.log(result);
+
 			// 清空researcher_result_list里面的所有内容
 			$('.researcher_result_list').empty();
 
@@ -117,6 +119,7 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 			// 先渲染第一页，至多20位专家学者
 			let i;
 			for(i = 0 ; i < 20 && i < result.length ; i++) {
+				let this_score = parseFloat(result[i].score).toFixed(0);
 				// 判断专家有没有头像URL
 				if(!result[i].img_url || result[i].img_url === "") {
 					html_template += '<li>' +
@@ -124,9 +127,9 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 						'<img src="static/image/default_expert_image.png" alt="researcher image" />' +
 						'<a onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
 						result[i].id + '">' + result[i].name + '</a>' +
-						'<p><strong>学校</strong>：' + result[i].university +
+						'<p><strong>影响力</strong>' + this_score +
+						'；<br /><strong>学校</strong>：' + result[i].university +
 						'；<br /><strong>学院</strong>：' + result[i].college +
-						// 只展示数据库中的第一个研究方向
 						'；<br /><strong>研究方向</strong>：';
 					if(!result[i].theme_list || result[i].theme_list === "") {
 					    html_template += '无。</p>' + '</li>';
@@ -140,9 +143,9 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 						'<img src="' + result[i].img_url + '" alt="researcher image" />' +
 						'<a onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
 						result[i].id + '">' + result[i].name + '</a>' +
-						'<p><strong>学校</strong>：' + result[i].university +
+						'<p><strong>影响力</strong>' + this_score +
+						'；<br /><strong>学校</strong>：' + result[i].university +
 						'；<br /><strong>学院</strong>：' + result[i].college +
-						// 只展示数据库中的第一个研究方向
 						'；<br /><strong>研究方向</strong>：';
 					if(!result[i].theme_list || result[i].theme_list === "") {
 					    html_template += '无。</p>' + '</li>';
@@ -180,11 +183,11 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 			$('.researcher_result_list > ul > li > a').mouseover(function () {
 				//$(this).css({"background-color": "#6495ed"});
 				$(this).css({"background-color": "rgba(0, 180, 70, 0.8)"});
-				$(this).parent().find("p").animate({opacity: "show", top: "-100"}, "slow");
+				$(this).parent().find("p").animate({opacity: "show", top: "-120"}, "slow");
 			}).mouseout(function () {
 				//$(this).css({"background-color": "#232323"});
 				$(this).css({"background-color": "rgba(0, 180, 70, 0.3)"});
-				$(this).parent().find("p").animate({opacity: "hide", top: "-120"}, "fast");
+				$(this).parent().find("p").animate({opacity: "hide", top: "-140"}, "fast");
 			});
 		},
 		error: function(xhr, status, error) {
