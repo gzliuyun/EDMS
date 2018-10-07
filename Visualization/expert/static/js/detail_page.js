@@ -52,7 +52,7 @@ function query_detail_ajax(expert_id) {
 					bgColor: 'red',
 					textColor: '#e0e0e0',
 					allowToastClose : false,
-					hideAfter: 2000,
+					hideAfter: 2400,
 					stack: 5,
 					textAlign: 'center',
 					position: 'mid-center'
@@ -274,7 +274,7 @@ function previousPaperPage() {
 			bgColor: 'orange',
 			textColor: '#e0e0e0',
 			allowToastClose : false,
-			hideAfter: 800,
+			hideAfter: 1500,
 			stack: 5,
 			textAlign: 'center',
 			position: 'mid-center'
@@ -320,7 +320,7 @@ function nextPaperPage() {
 			bgColor: 'orange',
 			textColor: '#e0e0e0',
 			allowToastClose : false,
-			hideAfter: 800,
+			hideAfter: 1500,
 			stack: 5,
 			textAlign: 'center',
 			position: 'mid-center'
@@ -366,7 +366,7 @@ function jumpPaperPage() {
 			bgColor: 'orange',
 			textColor: '#e0e0e0',
 			allowToastClose : false,
-			hideAfter: 800,
+			hideAfter: 1500,
 			stack: 5,
 			textAlign: 'center',
 			position: 'mid-center'
@@ -379,7 +379,7 @@ function jumpPaperPage() {
 			bgColor: 'orange',
 			textColor: '#e0e0e0',
 			allowToastClose : false,
-			hideAfter: 800,
+			hideAfter: 1500,
 			stack: 5,
 			textAlign: 'center',
 			position: 'mid-center'
@@ -855,7 +855,7 @@ function logIn() {
 				bgColor: 'orange',
 				textColor: '#e0e0e0',
 				allowToastClose : false,
-				hideAfter: 1000,
+				hideAfter: 2000,
 				stack: 5,
 				textAlign: 'center',
 				position: 'mid-center'
@@ -868,7 +868,7 @@ function logIn() {
 				bgColor: 'orange',
 				textColor: '#e0e0e0',
 				allowToastClose : false,
-				hideAfter: 1000,
+				hideAfter: 2000,
 				stack: 5,
 				textAlign: 'center',
 				position: 'mid-center'
@@ -886,7 +886,7 @@ function logIn() {
 					bgColor: 'lightblue',
 					textColor: '#e0e0e0',
 					allowToastClose : false,
-					hideAfter: 1000,
+					hideAfter: 2000,
 					stack: 5,
 					textAlign: 'center',
 					position: 'mid-center'
@@ -898,7 +898,7 @@ function logIn() {
 					bgColor: 'red',
 					textColor: '#e0e0e0',
 					allowToastClose : false,
-					hideAfter: 1000,
+					hideAfter: 2000,
 					stack: 5,
 					textAlign: 'center',
 					position: 'mid-center'

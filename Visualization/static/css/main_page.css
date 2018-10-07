@@ -369,9 +369,8 @@ body {
 	width: 720px;
     margin: auto;
 }
-.researcher_result_list > ul {
+.researcher_result_list > dl {
 	margin-top: 20px;
-	list-style: none;
 }
 #search_result_tag {
 	padding: 0;
@@ -383,69 +382,49 @@ body {
 	font-size: 10px;
 	font-style: italic;
 }
-.researcher_result_list > ul > li {
+.researcher_result_list dl {
+	width: 350px;
+	height: 190px;
 	padding: 0;
-	margin: 20px 14px 20px 14px;
+	margin: 10px 5px 10px 5px;
 	float: left;
 	position: relative;
-	text-align: center;
+	overflow: scroll;
 }
-.researcher_result_list > ul > li > img {
+.researcher_result_list dt {
 	display: inline-block;
-	float: left;
 	padding: 0;
-	margin: 0 10px 0 0;
-	width: 50px;
-	height: 50px;
+	margin: 5px 0 5px 0;
+	/*line-height: 36px;*/
 }
-/*
-.researcher_result_list > ul > li > button {
-	background-color: rgba(0, 180, 70, 0.3);
-	display: inline-block;
+.researcher_result_list dd {
+	padding: 0;
+	margin: 2px 0 2px 0;
+	/*line-height: 24px;*/
+}
+.researcher_result_list dd > a {
 	cursor: pointer;
 	padding: 0;
 	margin: 0;
-	width: 90px;
-	height: 50px;
-	border-radius: 10px;
 	text-decoration: none;
-	text-align: center;
 	font-size: 14px;
-	color: #232323;
+	/*color: #232323;*/
 	font-weight: bold;
 }
-*/
-.researcher_result_list > ul > li > a {
-	background-color: rgba(0, 180, 70, 0.3);
-	display: table-cell;
-	cursor: pointer;
+.researcher_result_list dd > p {
+	display: block;
 	padding: 0;
 	margin: 0;
-	width: 90px;
-	height: 50px;
-	border-radius: 10px;
-	text-decoration: none;
-	text-align: center;
-	vertical-align: middle;
-	font-size: 14px;
-	color: #232323;
-	font-weight: bold;
-}
-.researcher_result_list > ul > li > p {
-	background-color: antiquewhite;
-	display: none;
-	z-index: 2;
-	padding: 10px;
-	margin: 0 10px 0 10px;
-	width: 220px;
+	width: auto;
 	height: auto;
-	border-radius: 20px;
-	overflow: visible;
-	position: absolute;
-	top: -140px;
-	text-align: center;
+	overflow: hidden;
 	font-size: 12px;
 	font-style: normal;
+	color: #232323;
+}
+.researcher_result_list dt.dd-img img {
+	width: 50px;
+	height: 50px;
 }
 
 
@@ -457,7 +436,7 @@ body {
 	display: none;
 }
 #query_result_page > ul {
-	margin-top: 20px;
+	margin: 20px 0 0 0;
 	list-style: none;
 }
 #query_result_page > ul > li {
@@ -544,4 +523,12 @@ body {
 	height: 30px;
 	text-align: center;
 	font-size: 12px;
+}
+button.disabled {
+	pointer-events: none;
+	color: rgba(160, 160, 160, 0.3) !important;
+}
+input.disabled {
+	pointer-events: none;
+	color: rgba(160, 160, 160, 0.3) !important;
 }

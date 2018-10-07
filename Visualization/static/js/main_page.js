@@ -111,56 +111,55 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 			$('.researcher_result_list').empty();
 
 			// 对返回结果的每个元素，增添到html_template里
-			let html_template = '<p id="search_result_tag">搜索结果（点击以查看专家详细信息）：</p>' +
+			let html_template = '<p id="search_result_tag">搜索结果 - 按影响力排序（点击以查看专家详细信息）：</p>' +
 				'<p id="search_result_info">共 ' + result.length +
 				' 条结果，分 ' + result_page_total + ' 页显示，' +
-				'当前为第 ' + result_page_current + ' 页。</p><ul>';
+				'当前为第 ' + result_page_current + ' 页。</p>';
 
 			// 先渲染第一页，至多20位专家学者
 			let i;
 			for(i = 0 ; i < 20 && i < result.length ; i++) {
+				html_template += '<dl><hr />';
 				let this_score = parseFloat(result[i].score).toFixed(0);
 				// 判断专家有没有头像URL
 				if(!result[i].img_url || result[i].img_url === "") {
-					html_template += '<li>' +
+					html_template +=
+						'<dt class="dd-img"><img src="static/image/default_expert_image.png" alt="researcher image" /></dt>' +
+						'<dd><a onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
+						result[i].id + '">' + result[i].name + '</a></dd>' +
 						// 使用默认头像
-						'<img src="static/image/default_expert_image.png" alt="researcher image" />' +
-						'<a onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
-						result[i].id + '">' + result[i].name + '</a>' +
-						'<p><strong>影响力</strong>' + this_score +
-						'；<br /><strong>学校</strong>：' + result[i].university +
-						'；<br /><strong>学院</strong>：' + result[i].college +
-						'；<br /><strong>研究方向</strong>：';
+						'<dd><p><strong>影响力：' + this_score + '</strong></p></dd>' +
+						'<dd><p><strong>学校</strong>：' + result[i].university + '</p></dd>' +
+						'<dd><p><strong>学院</strong>：' + result[i].college + '</p></dd>' +
+						'<dd><p><strong>研究方向</strong>：';
 					if(!result[i].theme_list || result[i].theme_list === "") {
-					    html_template += '无。</p>' + '</li>';
+					    html_template += '无。</p></dd>';
 					} else {
 						//html_template += result[i].theme_list.split("、", 1)[0] + '。</p>' +
-                        html_template += result[i].theme_list + '。</p>' +
-						'</li>';
+                        html_template += result[i].theme_list + '。</p></dd>';
 					}
 				} else {
-					html_template += '<li>' +
-						'<img src="' + result[i].img_url + '" alt="researcher image" />' +
-						'<a onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
-						result[i].id + '">' + result[i].name + '</a>' +
-						'<p><strong>影响力</strong>' + this_score +
-						'；<br /><strong>学校</strong>：' + result[i].university +
-						'；<br /><strong>学院</strong>：' + result[i].college +
-						'；<br /><strong>研究方向</strong>：';
+					html_template +=
+						'<dt class="dd-img"><img src="' + result[i].img_url + '" alt="researcher image" /></dt>' +
+						'<dd><a onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
+						result[i].id + '">' + result[i].name + '</a></dd>' +
+						'<dd><p><strong>影响力：' + this_score + '</strong></p></dd>' +
+						'<dd><p><strong>学校</strong>：' + result[i].university + '</p></dd>' +
+						'<dd><p><strong>学院</strong>：' + result[i].college + '</p></dd>' +
+						'<dd><p><strong>研究方向</strong>：';
 					if(!result[i].theme_list || result[i].theme_list === "") {
-					    html_template += '无。</p>' + '</li>';
+					    html_template += '无。</p></dd>';
 					} else {
 						//html_template += result[i].theme_list.split("、", 1)[0] + '。</p>' +
-                        html_template += result[i].theme_list + '。</p>' +
-						'</li>';
+                        html_template += result[i].theme_list + '。</p></dd>';
 					}
 				}
+				html_template += '</dl>';
 			}
-			html_template += '</ul>';
 			// 增添子元素到researcher_result_list结点
 			$('.researcher_result_list').append(html_template);
 			// 根据展示的数据量确定页数div的显示位置
-			$('#query_result_page').css({"margin": 90 * ( Math.floor((i-1)/4)+1 ) - 20 + "px 0 0 0"});
+			$('#query_result_page').css({"margin": 200 * (Math.floor((i - 1) / 2) + 1) + 100 + "px 0 0 0"});
 			// 出现页数div
 			$('#query_result_page').css({"display": "block"});
 			// 重置页码(第1页～第10页)
@@ -178,17 +177,52 @@ function query_list_ajax(qi, qt, qs, r, f, rc, org) {
 			$('#query_result_page input.page_number_button').css("border", "1px solid #6495ed");
 
 			$('#query_result_page_1').css("border", "3px solid #000");
-			// 给新增的列表项加上动态效果
-			//$('.researcher_result_list > ul > li > button').mouseover(function () {
-			$('.researcher_result_list > ul > li > a').mouseover(function () {
-				//$(this).css({"background-color": "#6495ed"});
-				$(this).css({"background-color": "rgba(0, 180, 70, 0.8)"});
-				$(this).parent().find("p").animate({opacity: "show", top: "-120"}, "slow");
-			}).mouseout(function () {
-				//$(this).css({"background-color": "#232323"});
-				$(this).css({"background-color": "rgba(0, 180, 70, 0.3)"});
-				$(this).parent().find("p").animate({opacity: "hide", top: "-140"}, "fast");
-			});
+
+			// 使上一页按钮不可选
+			if(!$('#query_result_page_pre').hasClass("disabled")) {
+				$('#query_result_page_pre').addClass("disabled");
+			}
+
+			// 若总共仅一页,则使下一页按钮和跳转按钮都不可选
+			if(result_page_total === 1) {
+				if(!$('#query_result_page_next').hasClass("disabled")) {
+					$('#query_result_page_next').addClass("disabled");
+				}
+				if(!$('#query_result_page_button').hasClass("disabled")) {
+					$('#query_result_page_button').addClass("disabled");
+				}
+			} else {
+				// 否则去除"不可选"类
+				if($('#query_result_page_next').hasClass("disabled")) {
+					$('#query_result_page_next').removeClass("disabled");
+				}
+				if($('#query_result_page_button').hasClass("disabled")) {
+					$('#query_result_page_button').removeClass("disabled");
+				}
+			}
+
+			// 若总共页数小于10,则使部分1～10按钮不可用
+			if(result_page_total > 0 || result_page_total < 10) {
+				let i = 1;
+				for(i = 1 ; i <= result_page_total ; i++) {
+					if($('#query_result_page_' + i).hasClass("disabled")) {
+						$('#query_result_page_' + i).removeClass("disabled");
+					}
+				}
+				for(i = result_page_total + 1 ; i <= 10 ; i++) {
+					if(!$('#query_result_page_' + i).hasClass("disabled")) {
+						$('#query_result_page_' + i).addClass("disabled");
+					}
+				}
+			} else {
+				// 否则使得1～10按钮都可选
+				let i = 1;
+				for(i = 1 ; i <= 10 ; i++) {
+					if($('#query_result_page_' + i).hasClass("disabled")) {
+						$('#query_result_page_' + i).removeClass("disabled");
+					}
+				}
+			}
 		},
 		error: function(xhr, status, error) {
 			// 隐藏loading动画
@@ -238,14 +272,41 @@ function toggle_query_type_function() {
 		// 增添输入框
 		$('#advanced_input_list').css({"opacity": "0"});
 		let html = $(
-			'<span class="input_left"><p>学者姓名:</p><input type="text" id="researcher_input" name="researcher_input" value=""  placeholder="请输入专家学者姓名" /></span>' +
-			'<span class="input_right"><p>所属机构:</p><input type="text" id="organization_input" name="organization_input"  placeholder="请输入学者所属机构" /></span><br />' +
-			'<span class="input_left"><p>钻研领域:</p><input type="text" id="field_input" name="field_input" value="" placeholder="请输入学者钻研领域" /></span>' +
-			'<span class="input_right"><p>研究内容:</p><input type="text" id="research_content_input" name="research_content_input" value="" placeholder="请输入学者研究内容" /></span>'
+			'<span class="input_left"><p>学者姓名:</p><input type="text" id="researcher_input" name="researcher_input" class="advanced-input" value=""  placeholder="请输入专家学者姓名" /></span>' +
+			'<span class="input_right"><p>所属机构:</p><input type="text" id="organization_input" name="organization_input" class="advanced-input" value=""  placeholder="请输入学者所属机构" /></span><br />' +
+			'<span class="input_left"><p>钻研领域:</p><input type="text" id="field_input" name="field_input" class="advanced-input" value="" placeholder="请输入学者钻研领域" /></span>' +
+			'<span class="input_right"><p>研究内容:</p><input type="text" id="research_content_input" name="research_content_input" class="advanced-input" value="" placeholder="请输入学者研究内容" /></span>'
 		);
 		$('#advanced_input_list').append(html);
 		$('#advanced_input_list').animate({opacity: 1}, 500);
-		//html.fadeIn(800);
+		// input框获取焦点时清除placeholder
+		$("input#researcher_input").focus(function() {
+			$("input#researcher_input").attr({"placeholder": ""});
+		});
+		$("input#researcher_input").blur(function() {
+			$("input#researcher_input").attr({"placeholder": "请输入专家学者姓名"});
+		});
+
+		$("input#organization_input").focus(function() {
+			$("input#organization_input").attr({"placeholder": ""});
+		});
+		$("input#organization_input").blur(function() {
+			$("input#organization_input").attr({"placeholder": "请输入学者所属机构"});
+		});
+
+		$("input#field_input").focus(function() {
+			$("input#field_input").attr({"placeholder": ""});
+		});
+		$("input#field_input").blur(function() {
+			$("input#field_input").attr({"placeholder": "请输入学者钻研领域"});
+		});
+
+		$("input#research_content_input").focus(function() {
+			$("input#research_content_input").attr({"placeholder": ""});
+		});
+		$("input#research_content_input").blur(function() {
+			$("input#research_content_input").attr({"placeholder": "请输入学者研究内容"});
+		});
 	} else {
 		$('.load-container').css({"padding": "20px 0 20px 0"});
 		$('#query_type').val('normal');
@@ -292,67 +353,54 @@ function change_query_result_page() {
 	$('.researcher_result_list').empty();
 
 	// 对返回结果的每个元素，增添到html_template里
-	let html_template = '<p id="search_result_tag">搜索结果（点击以查看专家详细信息）：</p>' +
+	let html_template = '<p id="search_result_tag">搜索结果 - 按影响力排序（点击以查看专家详细信息）：</p>' +
 		'<p id="search_result_info">共 ' + result.length +
 		' 条结果，分 ' + result_total_page + ' 页显示，' +
 		'当前为第 ' + result_now_page + ' 页。</p><ul>';
 
 	// 渲染新页面
 	for(let i = parseInt(content_start_index, 10) ; i <= parseInt(content_end_index, 10) ; i++) {
+		html_template += '<dl><hr />';
+		let this_score = parseFloat(result[i].score).toFixed(0);
 		// 判断专家有没有头像URL
 		if(!result[i].img_url || result[i].img_url === "") {
-			html_template += '<li>' +
+			html_template +=
+				'<dt class="dd-img"><img src="static/image/default_expert_image.png" alt="researcher image" /></dt>' +
+				'<dd><a onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
+				result[i].id + '">' + result[i].name + '</a></dd>' +
 				// 使用默认头像
-				'<img src="static/image/default_expert_image.png" alt="researcher image" />' +
-				// '<button onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
-				'<a href="expert/detail?id=' + result[i].id + '" id="researcher_' +
-				result[i].id + '">' + result[i].name + '</a>' +
-				'<p><strong>学校</strong>：' + result[i].university +
-				'；<br /><strong>学院</strong>：' + result[i].college +
-				// 只展示数据库中的第一个研究方向
-				'；<br /><strong>研究方向</strong>：';
+				'<dd><p><strong>影响力：' + this_score + '</strong></p></dd>' +
+				'<dd><p><strong>学校</strong>：' + result[i].university + '</p></dd>' +
+				'<dd><p><strong>学院</strong>：' + result[i].college + '</p></dd>' +
+				'<dd><p><strong>研究方向</strong>：';
 			if(!result[i].theme_list || result[i].theme_list === "") {
-                html_template += '无。</p>' + '</li>';
-            } else {
-                //html_template += result[i].theme_list.split("、", 1)[0] + '。</p>' +
-                html_template += result[i].theme_list + '。</p>' +
-                '</li>';
-            }
+				html_template += '无。</p></dd>';
+			} else {
+				//html_template += result[i].theme_list.split("、", 1)[0] + '。</p>' +
+				html_template += result[i].theme_list + '。</p></dd>';
+			}
 		} else {
-			html_template += '<li>' +
-				'<img src="' + result[i].img_url + '" alt="researcher image" />' +
-				// '<button onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
-				'<a href="expert/detail?id=' + result[i].id + '" id="researcher_' +
-				result[i].id + '">' + result[i].name + '</a>' +
-				'<p><strong>学校</strong>：' + result[i].university +
-				'；<br /><strong>学院</strong>：' + result[i].college +
-				// 只展示数据库中的第一个研究方向
-				'；<br /><strong>研究方向</strong>：';
+			html_template +=
+				'<dt class="dd-img"><img src="' + result[i].img_url + '" alt="researcher image" /></dt>' +
+				'<dd><a onclick="query_detail_ajax(' + result[i].id + ')" id="researcher_' +
+				result[i].id + '">' + result[i].name + '</a></dd>' +
+				'<dd><p><strong>影响力：' + this_score + '</strong></p></dd>' +
+				'<dd><p><strong>学校</strong>：' + result[i].university + '</p></dd>' +
+				'<dd><p><strong>学院</strong>：' + result[i].college + '</p></dd>' +
+				'<dd><p><strong>研究方向</strong>：';
 			if(!result[i].theme_list || result[i].theme_list === "") {
-                html_template += '无。</p>' + '</li>';
-            } else {
-                //html_template += result[i].theme_list.split("、", 1)[0] + '。</p>' +
-                html_template += result[i].theme_list + '。</p>' +
-                '</li>';
-            }
+				html_template += '无。</p></dd>';
+			} else {
+				//html_template += result[i].theme_list.split("、", 1)[0] + '。</p>' +
+				html_template += result[i].theme_list + '。</p></dd>';
+			}
 		}
+		html_template += '</dl>';
 	}
-	html_template += '</ul>';
 	// 增添子元素到researcher_result_list结点
 	$('.researcher_result_list').append(html_template);
 	// 根据展示的数据量确定页数div的显示位置
-	$('#query_result_page').css({"margin": 90 * ( Math.floor((content_total-1)/4)+1 ) - 20 + "px 0 0 0"});
-	// 给新增的列表项加上动态效果
-	//$('.researcher_result_list > ul > li > button').mouseover(function () {
-	$('.researcher_result_list > ul > li > a').mouseover(function () {
-		//$(this).css({"background-color": "#6495ed"});
-		$(this).css({"background-color": "rgba(0, 180, 70, 0.8)"});
-		$(this).parent().find("p").animate({opacity: "show", top: "-100"}, "slow");
-	}).mouseout(function () {
-		//$(this).css({"background-color": "#232323"});
-		$(this).css({"background-color": "rgba(0, 180, 70, 0.3)"});
-		$(this).parent().find("p").animate({opacity: "hide", top: "-120"}, "fast");
-	});
+	$('#query_result_page').css({"margin": 200 * (Math.floor((content_total - 1) / 2) + 1) + 100 + "px 0 0 0"});
 }
 
 
@@ -382,7 +430,7 @@ $(function() {
 		 window.history.pushState(location.href, document.title);
 	 }
 
-	//切换标签
+	// 切换标签
 	$('#query_selection_list ul li').click(function() {
 		$(this).addClass('active').siblings().removeClass('active');
 	});
@@ -424,7 +472,21 @@ $(function() {
 	}).mouseout(function () {
 		$(this).css({"background-color": "#87cefa"});
 	});
-	
+
+	// input框获取焦点时清除placeholder
+	$("input#query_input").focus(function() {
+		$("input#query_input").attr({"placeholder": ""});
+	});
+	$("input#query_input").blur(function() {
+		$("input#query_input").attr({"placeholder": "请输入关键词以查询"});
+	});
+
+	$("input#query_result_page_input").focus(function() {
+		$("input#query_result_page_input").attr({"placeholder": ""});
+	});
+	$("input#query_result_page_input").blur(function() {
+		$("input#query_result_page_input").attr({"placeholder": "页码"});
+	});
 	
 	// 页面跳转按钮-鼠标悬停移开事件
 	$('#query_result_page > ul > li > button').mouseover(function () {
@@ -435,13 +497,14 @@ $(function() {
 	
 	// 页面跳转按钮-点击事件-上一页
 	$('#query_result_page_pre').click(function() {
+		let jq_query_result_page_pre = $('#query_result_page_pre');
+		let jq_query_result_page_next = $('#query_result_page_next');
 		// 获取当前两边的按钮所指页数
 		let left_button = $('#query_result_page_1').val();
 		let i = 0;
 		
 		if(!result_page_current || result_page_current <= 0 || result_page_current > result_page_total) {
 			console.log('pre_page_error! result_page_current is out of range.');
-			//alert('pre_page_error! result_page_current is out of range.');
 			return false;
 		} else if(parseInt(result_page_current, 10) === 1) {
 			alert('当前页已经是第一页了');
@@ -466,11 +529,22 @@ $(function() {
 				console.log('pre_page_error!');
 				return false;
 			}
+			// 若按上一页之后到了第一页,则使上一页按钮不可选
+			if(result_page_current === 1 && !jq_query_result_page_pre.hasClass("disabled")) {
+				jq_query_result_page_pre.addClass("disabled");
+			}
+
+			// 若下一页按钮之前有disabled属性,则撤销之
+			if(jq_query_result_page_next.hasClass("disabled")) {
+				jq_query_result_page_next.removeClass("disabled");
+			}
 		}
 	});
 	
 	// 页面跳转按钮-点击事件-下一页
 	$('#query_result_page_next').click(function() {
+		let jq_query_result_page_pre = $('#query_result_page_pre');
+		let jq_query_result_page_next = $('#query_result_page_next');
 		// 获取当前两边的按钮所指页数
 		let left_button = $('#query_result_page_1').val();
 		let right_button = $('#query_result_page_10').val();
@@ -501,6 +575,15 @@ $(function() {
 			} else {
 				console.log('next_page_error!');
 				return false;
+			}
+			// 若按下一页之后到了最后一页,则使下一页按钮不可选
+			if(result_page_current === result_page_total && !jq_query_result_page_next.hasClass("disabled")) {
+				jq_query_result_page_next.addClass("disabled");
+			}
+
+			// 若上一页按钮之前有disabled属性,则撤销之
+			if(jq_query_result_page_pre.hasClass("disabled")) {
+				jq_query_result_page_pre.removeClass("disabled");
 			}
 		}
 	});
