@@ -14,7 +14,7 @@ config = {
 connection = pymysql.connect(**config)
 
 p = 1000
-st = 0
+st = 413532
 ed = 907000
 
 
@@ -186,18 +186,16 @@ def do_select_paper(cntid, arg, cursor):
     # print(is_a5_cork)
     # print(is_a5_date)
 
-    sql = "INSERT INTO paper_relation VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    sql = "INSERT INTO paper_relation VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s) \
+        ON DUPLICATE KEY UPDATE id = %s"
     cursor.execute(sql, (arg['id'],
                          str(is_a1_coid), str(is_a1_cork), str(is_a1_date),
                          str(is_a2_coid), str(is_a2_cork), str(is_a2_date),
                          str(is_a3_coid), str(is_a3_cork), str(is_a3_date),
                          str(is_a4_coid), str(is_a4_cork), str(is_a4_date),
-                         str(is_a5_coid), str(is_a5_cork), str(is_a5_date)
+                         str(is_a5_coid), str(is_a5_cork), str(is_a5_date),
+                         arg['id']
                          ))
-
-def do_insert_relation(cursor):
-
-    pass
 
 
 if __name__ == "__main__":
