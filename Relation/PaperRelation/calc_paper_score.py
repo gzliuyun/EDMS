@@ -1,3 +1,4 @@
+# 考虑专家作为第I作者时，合并同年同合作学者的prs
 # -*- coding: utf-8 -*-
 
 import string
@@ -7,20 +8,21 @@ MIN_YEAR = "1990"
 MAX_YEAR = "2089"
 
 # 一作加分系数
-IS_A1_SCORE = [0, 80, 20, 20, 20]
+IS_A1_SCORE = [0, 80, 30, 20, 20]
 # 二作加分系数
-IS_A2_SCORE = [100, 0, 20, 20, 20]
+IS_A2_SCORE = [100, 0, 30, 20, 20]
 # 三作加分系数
 IS_A3_SCORE = [100, 80, 0, 20, 20]
 # 四作加分系数
-IS_A4_SCORE = [100, 80, 20, 0, 20]
+IS_A4_SCORE = [100, 80, 30, 0, 20]
 # 五作加分系数
-IS_A5_SCORE = [100, 80, 20, 20, 0]
+IS_A5_SCORE = [100, 80, 30, 20, 0]
 
 class PaperRelationScore():
-    coid = None
-    score = None
     year = None
+    score = None
+    coid = None
+
 
     def __init__(self, _c, _y, _s):
         self.coid = _c
@@ -28,13 +30,40 @@ class PaperRelationScore():
         self.score = _s
 
     def __eq__(self, other):
-        if isinstance(other, PaperRelationScore):
+        return self.coid == other.coid and \
+               self.year == other.year and \
+               self.score == other.score
+
+    def __lt__(self, other):
+        if self.year < other.year:
+            return True
+        if self.year > other.year:
+            return False
+        if self.year == other.year:
+            if self.score > other.score:
+                return True
+            if self.score < other.score:
+                return False
+            if self.score == other.score:
+                return self.coid < other.coid
+
+# 同一人同一年合并分数，以此为标记
+class PaperRelationTag():
+    coid = None
+    year = None
+
+    def __init__(self, _c, _y):
+        self.coid = _c
+        self.year = _y
+
+    def __eq__(self, other):
+        if isinstance(other, PaperRelationTag):
             return ((self.coid == other.coid) and (self.year == other.year))
         else:
             return False
 
     def __hash__(self):
-        return hash(str(self.coid) + " " + str(self.year))
+        return hash(str(self.coid)+" "+str(self.year))
 
 
 class PaperRelationYear():
@@ -61,129 +90,82 @@ def _test_calc_paper_score(record):
     pry4_list = get_pry_list(record['is_a4_coid'], record['is_a4_cork'], record['is_a4_date'])
     pry5_list = get_pry_list(record['is_a5_coid'], record['is_a5_cork'], record['is_a5_date'])
 
-    # 该学者为一作
-    # print("*******************该学者为一作*******************")
-    prs1set = set()
-    if pry1_list != None:
-        for pry1 in pry1_list:
-            tmp = PaperRelationScore(pry1.coid, pry1.year, IS_A1_SCORE[pry1.cork-1])
-            if tmp in prs1set:
-                tmp.score = updatescore(tmp, prs1set)
-                prs1set.remove(tmp)
-            prs1set.add(tmp)
+    # print("############一作############")
+    prs1_list = get_prsi_list(pry1_list, IS_A1_SCORE)
+    # print("############二作############")
+    prs2_list = get_prsi_list(pry2_list, IS_A2_SCORE)
+    # print("############三作############")
+    prs3_list = get_prsi_list(pry3_list, IS_A3_SCORE)
+    # print("############四作############")
+    prs4_list = get_prsi_list(pry4_list, IS_A4_SCORE)
+    # print("############五作############")
+    prs5_list = get_prsi_list(pry5_list, IS_A5_SCORE)
 
-        # for prs1 in prs1set:
-        #     print(prs1.coid)
-        #     print(prs1.year)
-        #     print(prs1.score)
+    # 合并所有prsi_list
+    prs_list = []
+    merge_prsi_list(prs_list, prs1_list)
+    merge_prsi_list(prs_list, prs2_list)
+    merge_prsi_list(prs_list, prs3_list)
+    merge_prsi_list(prs_list, prs4_list)
+    merge_prsi_list(prs_list, prs5_list)
 
-    # 该学者为二作
-    # print("*******************该学者为二作*******************")
-    prs2set = set()
-    if pry2_list != None:
-        for pry2 in pry2_list:
-            tmp = PaperRelationScore(pry2.coid, pry2.year, IS_A2_SCORE[pry2.cork-1])
-            if tmp in prs2set:
-                tmp.score = updatescore(tmp, prs2set)
-                prs2set.remove(tmp)
-            prs2set.add(tmp)
+    # print(len(prs_list))
+    prs_list.sort()
+    # for prs in prs_list:
+    #     print(prs.coid, prs.year, prs.score)
+    return prs_list
 
-        # for prs2 in prs2set:
-        #     print(prs2.coid)
-        #     print(prs2.year)
-        #     print(prs2.score)
+def get_prsi_list(pryi_list, IS_Ai_SCORE):
+    if pryi_list == None:
+        return []
 
-    # 该学者为三作
-    # print("*******************该学者为三作*******************")
-    prs3set = set()
-    if pry3_list != None:
-        for pry3 in pry3_list:
-            tmp = PaperRelationScore(pry3.coid, pry3.year, IS_A3_SCORE[pry3.cork-1])
-            if tmp in prs3set:
-                tmp.score = updatescore(tmp, prs3set)
-                prs3set.remove(tmp)
-            prs3set.add(tmp)
+    prtiset = set()
+    for pryi in pryi_list:
+        tmp = PaperRelationTag(pryi.coid, pryi.year)
+        if tmp in prtiset:
+            prtiset.remove(tmp)
+        prtiset.add(tmp)
+    prsi_list = []
+    for prti in prtiset:
+        tmp = PaperRelationScore(prti.coid, prti.year, 0)
+        prsi_list.append(tmp)
 
-        # for prs3 in prs3set:
-        #     print(prs3.coid)
-        #     print(prs3.year)
-        #     print(prs3.score)
+    leni = len(prsi_list)
+    for pryi in pryi_list:
+        cur_coid = pryi.coid
+        cur_year = pryi.year
+        cur_cork = pryi.cork
+        for p in range(leni):
+            if cur_coid == prsi_list[p].coid and \
+                            cur_year == prsi_list[p].year:
+                prsi_list[p].score += IS_Ai_SCORE[cur_cork - 1]
+                break
 
-    # 该学者为四作
-    # print("*******************该学者为四作*******************")
-    prs4set = set()
-    if pry4_list != None:
-        for pry4 in pry4_list:
-            tmp = PaperRelationScore(pry4.coid, pry4.year, IS_A4_SCORE[pry4.cork-1])
-            if tmp in prs4set:
-                tmp.score = updatescore(tmp, prs4set)
-                prs4set.remove(tmp)
-            prs4set.add(tmp)
+    # for prsi in prsi_list:
+    #     print(prsi.coid)
+    #     print(prsi.year)
+    #     print(prsi.score)
 
-        # for prs4 in prs4set:
-        #     print(prs4.coid)
-        #     print(prs4.year)
-        #     print(prs4.score)
+    return prsi_list
 
-    # 该学者为五作
-    # print("*******************该学者为五作*******************")
-    prs5set = set()
-    if pry5_list != None:
-        for pry5 in pry5_list:
-            tmp = PaperRelationScore(pry5.coid, pry5.year, IS_A5_SCORE[pry5.cork-1])
-            if tmp in prs5set:
-                tmp.score = updatescore(tmp, prs5set)
-                prs5set.remove(tmp)
-            prs5set.add(tmp)
 
-        # for prs5 in prs5set:
-        #     print(prs5.coid)
-        #     print(prs5.year)
-        #     print(prs5.score)
+def merge_prsi_list(prs_list, prsi_list):
+    prs_len = len(prs_list)
+    for prsi in prsi_list:
+        cur_coid = prsi.coid
+        cur_year = prsi.year
+        cur_score = prsi.score
+        tag = -1
+        for p in range(prs_len):
+            if cur_coid == prs_list[p].coid and \
+                            cur_year == prs_list[p].year:
+                prs_list[p].score += cur_score
+                tag = 1
+                break
+        if tag == -1:
+            prs_list.append(prsi)
 
-    prsset = set()
-    for prs1 in prs1set:
-        tmp = prs1
-        if tmp in prsset:
-            tmp.score = updatescore(tmp, prsset)
-            prsset.remove(tmp)
-        prsset.add(tmp)
-    for prs2 in prs2set:
-        tmp = prs2
-        if tmp in prsset:
-            tmp.score = updatescore(tmp, prsset)
-            prsset.remove(tmp)
-        prsset.add(tmp)
-    for prs3 in prs3set:
-        tmp = prs3
-        if tmp in prsset:
-            tmp.score = updatescore(tmp, prsset)
-            prsset.remove(tmp)
-        prsset.add(tmp)
-    for prs4 in prs4set:
-        tmp = prs4
-        if tmp in prsset:
-            tmp.score = updatescore(tmp, prsset)
-            prsset.remove(tmp)
-        prsset.add(tmp)
-    for prs5 in prs5set:
-        tmp = prs5
-        if tmp in prsset:
-            tmp.score = updatescore(tmp, prsset)
-            prsset.remove(tmp)
-        prsset.add(tmp)
-
-    for prs in prsset:
-        print(prs.coid, prs.year, prs.score)
-    return prsset
-
-# PRS测试用合并分数函数
-def updatescore(tmp, prsset):
-    for prs in prsset:
-        if tmp.coid == prs.coid and tmp.year == prs.year:
-            return tmp.score + prs.score
-    return 0
-
+    pass
 
 # 将三组字符串形式的id-rk-date数组转化为PaperRelationYear格式的三元组
 def get_pry_list(is_ai_coid, is_ai_cork, is_ai_date):
@@ -208,6 +190,9 @@ def get_pry_list(is_ai_coid, is_ai_cork, is_ai_date):
             tmp.coid = is_ai_coid_list[i]
             tmp.cork = is_ai_cork_list[i]
             tmp.year = is_ai_year_list[i]
+            # print("coid "+str(tmp.coid))
+            # print("cork "+str(tmp.cork))
+            # print("year "+str(tmp.year))
             pryi_list.append(tmp)
         # print(pryi_list)
         return pryi_list
@@ -239,6 +224,7 @@ def trans_is_ai_date(raw):
     for tmp in is_ai_date:
         is_ai_year.append(extract_year(tmp))
     return is_ai_year
+
 
 # 提取date中的年份
 def extract_year(date):
