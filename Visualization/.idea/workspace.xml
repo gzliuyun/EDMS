@@ -30,8 +30,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/expert/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="435" lean-forward="true" selection-start-line="435" selection-end-line="435" />
+            <state relative-caret-position="6345">
+              <caret line="435" selection-start-line="435" selection-end-line="435" />
               <folding>
                 <element signature="e#0#55#0" expanded="true" />
               </folding>
@@ -42,8 +42,8 @@
       <file leaf-file-name="detail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/expert/templates/detail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
+            <state relative-caret-position="3165">
+              <caret line="211" selection-start-line="211" selection-end-line="211" />
             </state>
           </provider>
         </entry>
@@ -51,8 +51,8 @@
       <file leaf-file-name="detail_page.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/expert/static/css/detail_page.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="2706" lean-forward="true" selection-start-line="2706" selection-end-line="2706" />
+            <state relative-caret-position="40590">
+              <caret line="2706" selection-start-line="2706" selection-end-line="2706" />
             </state>
           </provider>
         </entry>
@@ -60,8 +60,8 @@
       <file leaf-file-name="detail_page.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/expert/static/js/detail_page.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
-              <caret line="646" column="10" lean-forward="true" selection-start-line="646" selection-start-column="10" selection-end-line="646" selection-end-column="10" />
+            <state relative-caret-position="916">
+              <caret line="628" column="35" selection-start-line="628" selection-start-column="35" selection-end-line="628" selection-end-column="35" />
               <folding>
                 <element signature="n#!!block;n#query_detail_ajax#0" />
                 <element signature="n#!!block;n#previousPaperPage#0" />
@@ -191,7 +191,7 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="219" />
+    <option name="x" value="98" />
     <option name="y" value="23" />
     <option name="width" value="1221" />
     <option name="height" value="828" />
@@ -204,6 +204,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -277,7 +278,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -365,7 +365,7 @@
     <option name="totallyTimeSpent" value="8000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="219" y="23" width="1221" height="828" extended-state="0" />
+    <frame x="98" y="23" width="1221" height="828" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -375,7 +375,7 @@
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25275657" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25699747" />
       <window_info anchor="right" id="R Packages" order="5" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="R Graphics" order="4" />
@@ -579,9 +579,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#48#94#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -609,16 +606,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
-          <folding>
-            <element signature="e#628#660#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/expert/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="435" lean-forward="true" selection-start-line="435" selection-end-line="435" />
+        <state relative-caret-position="6345">
+          <caret line="435" selection-start-line="435" selection-end-line="435" />
           <folding>
             <element signature="e#0#55#0" expanded="true" />
           </folding>
@@ -627,22 +621,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/expert/static/css/detail_page.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="2706" lean-forward="true" selection-start-line="2706" selection-end-line="2706" />
+        <state relative-caret-position="40590">
+          <caret line="2706" selection-start-line="2706" selection-end-line="2706" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/expert/templates/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
+        <state relative-caret-position="3165">
+          <caret line="211" selection-start-line="211" selection-end-line="211" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/expert/static/js/detail_page.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="646" column="10" lean-forward="true" selection-start-line="646" selection-start-column="10" selection-end-line="646" selection-end-column="10" />
+        <state relative-caret-position="916">
+          <caret line="628" column="35" selection-start-line="628" selection-start-column="35" selection-end-line="628" selection-end-column="35" />
           <folding>
             <element signature="n#!!block;n#query_detail_ajax#0" />
             <element signature="n#!!block;n#previousPaperPage#0" />
