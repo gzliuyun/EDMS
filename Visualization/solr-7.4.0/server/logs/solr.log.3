@@ -1,0 +1,755 @@
+2018-11-20 01:39:35.080 INFO  (main) [   ] o.e.j.u.log Logging initialized @2327ms to org.eclipse.jetty.util.log.Slf4jLog
+2018-11-20 01:39:35.449 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.10.v20180503; built: 2018-05-03T15:56:21.710Z; git: daa59876e6f384329b122929e70a80934569428c; jvm 1.8.0_73-b02
+2018-11-20 01:39:35.506 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/buaat/Desktop/solr/solr-7.4.0/server/contexts/] at interval 0
+2018-11-20 01:39:36.322 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2018-11-20 01:39:36.335 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2018-11-20 01:39:36.335 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2018-11-20 01:39:36.338 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
+2018-11-20 01:39:36.434 INFO  (main) [   ] o.a.s.u.c.SSLCredentialProviderFactory Processing SSL Credential Provider chain: env;sysprop
+2018-11-20 01:39:36.500 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2018-11-20 01:39:36.516 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr? version 7.4.0
+2018-11-20 01:39:36.518 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2018-11-20 01:39:36.519 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\buaat\Desktop\solr\solr-7.4.0
+2018-11-20 01:39:36.520 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2018-11-20T01:39:36.520Z
+2018-11-20 01:39:36.596 INFO  (main) [   ] o.a.s.c.SolrResourceLoader Using system property solr.solr.home: C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr
+2018-11-20 01:39:36.633 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\solr.xml
+2018-11-20 01:39:36.784 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27, but no JMX reporters were configured - adding default JMX reporter.
+2018-11-20 01:39:38.330 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
+2018-11-20 01:39:38.337 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
+2018-11-20 01:39:38.597 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 01:39:38.598 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 01:39:38.632 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 01:39:38.712 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 5 core definitions underneath C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr
+2018-11-20 01:39:38.714 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [academic_info, influence_info, organization_info, paper_info, test]
+2018-11-20 01:39:38.964 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.c.SolrResourceLoader [academic_info] Added 57 libs to classloader, from paths: [/C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/clustering/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/extraction/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/langid/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/velocity/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/dist]
+2018-11-20 01:39:38.963 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.c.SolrResourceLoader [influence_info] Added 57 libs to classloader, from paths: [/C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/clustering/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/extraction/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/langid/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/velocity/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/dist]
+2018-11-20 01:39:38.965 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.c.SolrResourceLoader [organization_info] Added 57 libs to classloader, from paths: [/C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/clustering/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/extraction/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/langid/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/velocity/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/dist]
+2018-11-20 01:39:39.681 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.c.SolrConfig Using Lucene MatchVersion: 7.4.0
+2018-11-20 01:39:39.714 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.c.SolrConfig Using Lucene MatchVersion: 7.4.0
+2018-11-20 01:39:39.724 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.c.SolrConfig Using Lucene MatchVersion: 7.4.0
+2018-11-20 01:39:40.412 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.s.IndexSchema [organization_info] Schema name=default-config
+2018-11-20 01:39:40.444 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.s.IndexSchema [academic_info] Schema name=default-config
+2018-11-20 01:39:40.478 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.s.IndexSchema [influence_info] Schema name=default-config
+2018-11-20 01:39:41.678 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@38102d01{/solr,file:///C:/Users/buaat/Desktop/solr/solr-7.4.0/server/solr-webapp/webapp/,AVAILABLE}{file:///C:/Users/buaat/Desktop/solr/solr-7.4.0/server//solr-webapp/webapp}
+2018-11-20 01:39:41.759 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@abf688e{HTTP/1.1,[http/1.1]}{0.0.0.0:8983}
+2018-11-20 01:39:41.759 INFO  (main) [   ] o.e.j.s.Server Started @9010ms
+2018-11-20 01:39:43.469 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2018-11-20 01:39:43.469 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2018-11-20 01:39:43.490 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2018-11-20 01:39:43.592 INFO  (qtp343856911-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=737
+2018-11-20 01:39:43.611 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.c.CoreContainer Creating SolrCore 'influence_info' using configuration from instancedir C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\influence_info, trusted=true
+2018-11-20 01:39:43.646 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.c.CoreContainer Creating SolrCore 'organization_info' using configuration from instancedir C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\organization_info, trusted=true
+2018-11-20 01:39:43.682 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.influence_info' (registry 'solr.core.influence_info') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 01:39:43.713 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.organization_info' (registry 'solr.core.organization_info') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 01:39:43.716 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.c.CoreContainer Creating SolrCore 'academic_info' using configuration from instancedir C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\academic_info, trusted=true
+2018-11-20 01:39:43.717 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.academic_info' (registry 'solr.core.academic_info') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 01:39:43.727 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.c.SolrCore solr.RecoveryStrategy.Builder
+2018-11-20 01:39:43.727 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.c.SolrCore solr.RecoveryStrategy.Builder
+2018-11-20 01:39:43.728 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.c.SolrCore solr.RecoveryStrategy.Builder
+2018-11-20 01:39:43.742 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.c.SolrCore [[influence_info] ] Opening new SolrCore at [C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\influence_info], dataDir=[C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\influence_info\data\]
+2018-11-20 01:39:43.742 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.c.SolrCore [[organization_info] ] Opening new SolrCore at [C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\organization_info], dataDir=[C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\organization_info\data\]
+2018-11-20 01:39:43.742 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.c.SolrCore [[academic_info] ] Opening new SolrCore at [C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\academic_info], dataDir=[C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\academic_info\data\]
+2018-11-20 01:39:43.849 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.r.XSLTResponseWriter xsltCacheLifetimeSeconds=5
+2018-11-20 01:39:43.851 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.r.XSLTResponseWriter xsltCacheLifetimeSeconds=5
+2018-11-20 01:39:43.853 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.r.XSLTResponseWriter xsltCacheLifetimeSeconds=5
+2018-11-20 01:39:45.113 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2018-11-20 01:39:45.113 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2018-11-20 01:39:45.113 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2018-11-20 01:39:45.114 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2018-11-20 01:39:45.114 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2018-11-20 01:39:45.116 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2018-11-20 01:39:45.168 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+2018-11-20 01:39:45.169 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2018-11-20 01:39:45.169 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+2018-11-20 01:39:45.170 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2018-11-20 01:39:45.177 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+2018-11-20 01:39:45.178 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2018-11-20 01:39:45.340 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.s.SolrIndexSearcher Opening [Searcher@3bbeeb59[academic_info] main]
+2018-11-20 01:39:45.375 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\academic_info\conf
+2018-11-20 01:39:45.450 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2018-11-20 01:39:45.466 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.s.SolrIndexSearcher Opening [Searcher@5178fb10[organization_info] main]
+2018-11-20 01:39:45.470 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\organization_info\conf
+2018-11-20 01:39:45.470 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2018-11-20 01:39:45.474 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2018-11-20 01:39:45.475 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2018-11-20 01:39:45.500 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.h.ReplicationHandler Commits will be reserved for 10000ms.
+2018-11-20 01:39:45.506 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.h.ReplicationHandler Commits will be reserved for 10000ms.
+2018-11-20 01:39:45.515 INFO  (searcherExecutor-11-thread-1-processing-x:organization_info) [   x:organization_info] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@5178fb10[organization_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_0(7.4.0):C2233)))}
+2018-11-20 01:39:45.516 INFO  (searcherExecutor-11-thread-1-processing-x:organization_info) [   x:organization_info] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2018-11-20 01:39:45.516 INFO  (searcherExecutor-11-thread-1-processing-x:organization_info) [   x:organization_info] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2018-11-20 01:39:45.549 INFO  (searcherExecutor-12-thread-1-processing-x:academic_info) [   x:academic_info] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@3bbeeb59[academic_info] main{ExitableDirectoryReader(UninvertingDirectoryReader())}
+2018-11-20 01:39:45.549 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1617615111375028224
+2018-11-20 01:39:45.551 INFO  (searcherExecutor-12-thread-1-processing-x:academic_info) [   x:academic_info] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2018-11-20 01:39:45.551 INFO  (searcherExecutor-12-thread-1-processing-x:academic_info) [   x:academic_info] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2018-11-20 01:39:45.555 INFO  (searcherExecutor-11-thread-1-processing-x:organization_info) [   x:organization_info] o.a.s.c.SolrCore [organization_info] Registered new searcher Searcher@5178fb10[organization_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_0(7.4.0):C2233)))}
+2018-11-20 01:39:45.556 INFO  (searcherExecutor-12-thread-1-processing-x:academic_info) [   x:academic_info] o.a.s.c.SolrCore [academic_info] Registered new searcher Searcher@3bbeeb59[academic_info] main{ExitableDirectoryReader(UninvertingDirectoryReader())}
+2018-11-20 01:39:45.608 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.c.SolrResourceLoader [paper_info] Added 57 libs to classloader, from paths: [/C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/clustering/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/extraction/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/langid/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/velocity/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/dist]
+2018-11-20 01:39:45.638 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.c.SolrResourceLoader [test] Added 57 libs to classloader, from paths: [/C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/clustering/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/extraction/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/langid/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/velocity/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/dist]
+2018-11-20 01:39:45.724 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.c.SolrConfig Using Lucene MatchVersion: 7.4.0
+2018-11-20 01:39:45.748 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.c.SolrConfig Using Lucene MatchVersion: 7.4.0
+2018-11-20 01:39:45.876 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.s.IndexSchema [paper_info] Schema name=default-config
+2018-11-20 01:39:45.920 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.s.IndexSchema [test] Schema name=default-config
+2018-11-20 01:39:46.626 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2018-11-20 01:39:46.690 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2018-11-20 01:39:46.730 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.c.CoreContainer Creating SolrCore 'paper_info' using configuration from instancedir C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\paper_info, trusted=true
+2018-11-20 01:39:46.750 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.paper_info' (registry 'solr.core.paper_info') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 01:39:46.751 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.c.SolrCore solr.RecoveryStrategy.Builder
+2018-11-20 01:39:46.753 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.c.SolrCore [[paper_info] ] Opening new SolrCore at [C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\paper_info], dataDir=[C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\paper_info\data\]
+2018-11-20 01:39:46.781 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.r.XSLTResponseWriter xsltCacheLifetimeSeconds=5
+2018-11-20 01:39:46.808 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.c.CoreContainer Creating SolrCore 'test' using configuration from instancedir C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\test, trusted=true
+2018-11-20 01:39:46.809 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.test' (registry 'solr.core.test') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 01:39:46.809 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.c.SolrCore solr.RecoveryStrategy.Builder
+2018-11-20 01:39:46.809 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.c.SolrCore [[test] ] Opening new SolrCore at [C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\test], dataDir=[C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\test\data\]
+2018-11-20 01:39:46.828 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.r.XSLTResponseWriter xsltCacheLifetimeSeconds=5
+2018-11-20 01:39:46.981 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2018-11-20 01:39:46.981 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2018-11-20 01:39:46.992 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+2018-11-20 01:39:46.993 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2018-11-20 01:39:47.128 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2018-11-20 01:39:47.128 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2018-11-20 01:39:47.132 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+2018-11-20 01:39:47.132 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2018-11-20 01:39:47.302 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.s.SolrIndexSearcher Opening [Searcher@77168a60[influence_info] main]
+2018-11-20 01:39:47.304 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\influence_info\conf
+2018-11-20 01:39:47.305 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2018-11-20 01:39:47.306 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2018-11-20 01:39:47.309 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.h.ReplicationHandler Commits will be reserved for 10000ms.
+2018-11-20 01:39:47.310 INFO  (searcherExecutor-10-thread-1-processing-x:influence_info) [   x:influence_info] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@77168a60[influence_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_36(7.4.0):C245165/285:delGen=1) Uninverting(_57(7.4.0):C429005) Uninverting(_6b(7.4.0):C107856) Uninverting(_6v(7.4.0):C130711) Uninverting(_6m(7.4.0):C129615) Uninverting(_6u(7.4.0):C5295) Uninverting(_6w(7.4.0):C4947) Uninverting(_6x(7.4.0):C9675) Uninverting(_6y(7.4.0):C3984) Uninverting(_6z(7.4.0):C9615) Uninverting(_70(7.4.0):C4876) Uninverting(_71(7.4.0):C9922) Uninverting(_72(7.4.0):C2868)))}
+2018-11-20 01:39:47.310 INFO  (searcherExecutor-10-thread-1-processing-x:influence_info) [   x:influence_info] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2018-11-20 01:39:47.311 INFO  (searcherExecutor-10-thread-1-processing-x:influence_info) [   x:influence_info] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2018-11-20 01:39:47.312 INFO  (searcherExecutor-10-thread-1-processing-x:influence_info) [   x:influence_info] o.a.s.c.SolrCore [influence_info] Registered new searcher Searcher@77168a60[influence_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_36(7.4.0):C245165/285:delGen=1) Uninverting(_57(7.4.0):C429005) Uninverting(_6b(7.4.0):C107856) Uninverting(_6v(7.4.0):C130711) Uninverting(_6m(7.4.0):C129615) Uninverting(_6u(7.4.0):C5295) Uninverting(_6w(7.4.0):C4947) Uninverting(_6x(7.4.0):C9675) Uninverting(_6y(7.4.0):C3984) Uninverting(_6z(7.4.0):C9615) Uninverting(_70(7.4.0):C4876) Uninverting(_71(7.4.0):C9922) Uninverting(_72(7.4.0):C2868)))}
+2018-11-20 01:39:47.482 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@ff1c515[test] main]
+2018-11-20 01:39:47.485 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\test\conf
+2018-11-20 01:39:47.486 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2018-11-20 01:39:47.486 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2018-11-20 01:39:47.489 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.h.ReplicationHandler Commits will be reserved for 10000ms.
+2018-11-20 01:39:47.491 INFO  (searcherExecutor-26-thread-1) [   ] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@ff1c515[test] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_94(7.4.0):C668811/195656:delGen=180) Uninverting(_bn(7.4.0):C97027) Uninverting(_dv(7.4.0):C110772) Uninverting(_dl(7.4.0):c24471) Uninverting(_fu(7.4.0):C115853) Uninverting(_ht(7.4.0):c23472) Uninverting(_jh(7.4.0):c48707) Uninverting(_i4(7.4.0):c57566) Uninverting(_ix(7.4.0):c24446) Uninverting(_j7(7.4.0):c31285) Uninverting(_kc(7.4.0):c50442) Uninverting(_kw(7.4.0):c32729) Uninverting(_kv(7.4.0):C1768) Uninverting(_kx(7.4.0):C1190) Uninverting(_ky(7.4.0):C367)))}
+2018-11-20 01:39:47.491 INFO  (searcherExecutor-26-thread-1) [   ] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2018-11-20 01:39:47.491 INFO  (searcherExecutor-26-thread-1) [   ] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2018-11-20 01:39:47.514 INFO  (searcherExecutor-26-thread-1) [   ] o.a.s.c.SolrCore [test] Registered new searcher Searcher@ff1c515[test] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_94(7.4.0):C668811/195656:delGen=180) Uninverting(_bn(7.4.0):C97027) Uninverting(_dv(7.4.0):C110772) Uninverting(_dl(7.4.0):c24471) Uninverting(_fu(7.4.0):C115853) Uninverting(_ht(7.4.0):c23472) Uninverting(_jh(7.4.0):c48707) Uninverting(_i4(7.4.0):c57566) Uninverting(_ix(7.4.0):c24446) Uninverting(_j7(7.4.0):c31285) Uninverting(_kc(7.4.0):c50442) Uninverting(_kw(7.4.0):c32729) Uninverting(_kv(7.4.0):C1768) Uninverting(_kx(7.4.0):C1190) Uninverting(_ky(7.4.0):C367)))}
+2018-11-20 01:39:47.630 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@4b4444d7[paper_info] main]
+2018-11-20 01:39:47.635 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\paper_info\conf
+2018-11-20 01:39:47.638 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2018-11-20 01:39:47.639 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2018-11-20 01:39:47.641 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.h.ReplicationHandler Commits will be reserved for 10000ms.
+2018-11-20 01:39:47.657 INFO  (searcherExecutor-25-thread-1) [   ] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@4b4444d7[paper_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_iq(7.4.0):C366523) Uninverting(_181(7.4.0):C720579) Uninverting(_1at(7.4.0):c95950) Uninverting(_1i1(7.4.0):c95135) Uninverting(_1dw(7.4.0):c19112) Uninverting(_1ep(7.4.0):c85705) Uninverting(_1nn(7.4.0):c99943) Uninverting(_1l4(7.4.0):c59302) Uninverting(_1qy(7.4.0):c34247) Uninverting(_1pv(7.4.0):c11494) Uninverting(_1sc(7.4.0):c55363) Uninverting(_1s6(7.4.0):C90) Uninverting(_1s7(7.4.0):C58) Uninverting(_1s8(7.4.0):C89) Uninverting(_1s9(7.4.0):C19) Uninverting(_1sa(7.4.0):C78) Uninverting(_1sb(7.4.0):C246) Uninverting(_1sd(7.4.0):C69) Uninverting(_1se(7.4.0):C673) Uninverting(_1sf(7.4.0):C445) Uninverting(_1sg(7.4.0):C37) Uninverting(_1sh(7.4.0):C224) Uninverting(_1si(7.4.0):C2858) Uninverting(_1sk(7.4.0):C652)))}
+2018-11-20 01:39:47.657 INFO  (searcherExecutor-25-thread-1) [   ] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2018-11-20 01:39:47.657 INFO  (searcherExecutor-25-thread-1) [   ] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2018-11-20 01:39:47.659 INFO  (searcherExecutor-25-thread-1) [   ] o.a.s.c.SolrCore [paper_info] Registered new searcher Searcher@4b4444d7[paper_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_iq(7.4.0):C366523) Uninverting(_181(7.4.0):C720579) Uninverting(_1at(7.4.0):c95950) Uninverting(_1i1(7.4.0):c95135) Uninverting(_1dw(7.4.0):c19112) Uninverting(_1ep(7.4.0):c85705) Uninverting(_1nn(7.4.0):c99943) Uninverting(_1l4(7.4.0):c59302) Uninverting(_1qy(7.4.0):c34247) Uninverting(_1pv(7.4.0):c11494) Uninverting(_1sc(7.4.0):c55363) Uninverting(_1s6(7.4.0):C90) Uninverting(_1s7(7.4.0):C58) Uninverting(_1s8(7.4.0):C89) Uninverting(_1s9(7.4.0):C19) Uninverting(_1sa(7.4.0):C78) Uninverting(_1sb(7.4.0):C246) Uninverting(_1sd(7.4.0):C69) Uninverting(_1se(7.4.0):C673) Uninverting(_1sf(7.4.0):C445) Uninverting(_1sg(7.4.0):C37) Uninverting(_1sh(7.4.0):C224) Uninverting(_1si(7.4.0):C2858) Uninverting(_1sk(7.4.0):C652)))}
+2018-11-20 01:39:55.570 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542638511734} status=0 QTime=2
+2018-11-20 01:39:55.740 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542638511735} status=0 QTime=156
+2018-11-20 01:39:55.740 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542638511735} status=0 QTime=147
+2018-11-20 01:39:57.580 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542638511734} status=0 QTime=0
+2018-11-20 01:39:57.645 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542638523458} status=0 QTime=10
+2018-11-20 01:39:57.671 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542638523463} status=0 QTime=20
+2018-11-20 01:39:57.715 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542638511735&ts=1542638511735} status=503 QTime=1
+2018-11-20 01:39:57.828 INFO  (qtp343856911-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542638511735} status=0 QTime=211
+2018-11-20 01:39:57.828 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542638523459} status=0 QTime=163
+2018-11-20 01:39:59.624 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542638511734} status=0 QTime=0
+2018-11-20 01:39:59.635 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542638525336} status=0 QTime=1
+2018-11-20 01:39:59.726 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542638511734} status=0 QTime=0
+2018-11-20 01:39:59.734 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542638525336} status=0 QTime=0
+2018-11-20 01:39:59.750 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542638525339} status=0 QTime=7
+2018-11-20 01:39:59.781 INFO  (qtp343856911-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542638511735} status=0 QTime=149
+2018-11-20 01:39:59.790 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:39:59.826 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542638511735} status=0 QTime=98
+2018-11-20 01:40:05.280 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.h.d.DataImporter Loading DIH Configuration: MyDataConfig.xml
+2018-11-20 01:40:05.293 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.h.d.DataImporter Data Configuration loaded successfully
+2018-11-20 01:40:05.318 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={core=paper_info&indent=on&commit=true&name=dataimport&clean=false&wt=json&command=full-import&entity=paper_info&_=1542638525339&verbose=false} status=0 QTime=39
+2018-11-20 01:40:05.318 INFO  (Thread-15) [   ] o.a.s.h.d.DataImporter Starting Full Import
+2018-11-20 01:40:05.328 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:05.351 WARN  (Thread-15) [   ] o.a.s.h.d.SimplePropertiesWriter Unable to read: dataimport.properties
+2018-11-20 01:40:05.439 INFO  (Thread-15) [   ] o.a.s.h.d.JdbcDataSource Creating a connection for entity paper_info with URL: jdbc:mysql://111.205.121.93:3306/EDMS
+2018-11-20 01:40:05.996 INFO  (Thread-15) [   ] o.a.s.h.d.JdbcDataSource Time taken for getConnection(): 556
+2018-11-20 01:40:08.319 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:10.309 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:12.320 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:12.948 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:13.914 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:14.313 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:16.313 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:18.313 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:20.319 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:22.314 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:24.315 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:26.315 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:28.318 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:30.317 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:32.317 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:34.322 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:36.331 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:38.330 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:40.330 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:42.330 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:44.332 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:46.333 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:48.334 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:50.333 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:52.337 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:54.336 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:56.338 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:40:58.335 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:00.348 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:02.348 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:04.341 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:06.340 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:08.342 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:10.342 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:12.342 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:14.343 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:16.343 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:18.344 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:20.344 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:22.346 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:24.345 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:26.345 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:28.348 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:31.280 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:33.279 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:35.281 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:37.594 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:39.617 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:41.617 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:43.619 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:45.628 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:47.623 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:49.624 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:51.623 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:53.627 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542638525339} status=0 QTime=0
+2018-11-20 01:41:54.252 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542638511734} status=0 QTime=1
+2018-11-20 01:41:54.408 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542638511735} status=0 QTime=149
+2018-11-20 01:41:54.408 INFO  (qtp343856911-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542638511735} status=0 QTime=141
+2018-11-20 01:42:32.751 INFO  (qtp343856911-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:42:32.995 INFO  (qtp343856911-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=232
+2018-11-20 01:42:32.994 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=238
+2018-11-20 01:42:37.025 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:42:37.039 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542678157001} status=0 QTime=5
+2018-11-20 01:42:37.078 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542678157002} status=0 QTime=14
+2018-11-20 01:42:37.096 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542678152509&ts=1542678152509} status=503 QTime=0
+2018-11-20 01:42:37.255 INFO  (qtp343856911-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=230
+2018-11-20 01:42:37.256 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542678157001} status=0 QTime=168
+2018-11-20 01:42:38.719 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:42:38.750 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678158663} status=0 QTime=0
+2018-11-20 01:42:38.822 INFO  (qtp343856911-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=86
+2018-11-20 01:42:38.946 INFO  (qtp343856911-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:42:38.982 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678158663} status=0 QTime=0
+2018-11-20 01:42:39.007 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542678158664} status=0 QTime=0
+2018-11-20 01:42:39.074 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=123
+2018-11-20 01:42:39.095 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:42:41.286 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:42:48.060 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:42:50.346 INFO  (qtp343856911-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:42:50.484 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={stats=true&wt=json&_=1542678158663} status=0 QTime=125
+2018-11-20 01:42:50.513 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=161
+2018-11-20 01:42:51.248 INFO  (qtp343856911-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:42:51.368 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=112
+2018-11-20 01:42:53.028 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/select params={q=*:*&_=1542678171122} hits=1648891 status=0 QTime=73
+2018-11-20 01:43:40.599 INFO  (qtp343856911-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:43:40.611 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678158663} status=0 QTime=0
+2018-11-20 01:43:40.732 INFO  (qtp343856911-51) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=128
+2018-11-20 01:43:40.935 INFO  (qtp343856911-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:43:40.961 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678158663} status=0 QTime=0
+2018-11-20 01:43:40.965 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542678158664} status=0 QTime=1
+2018-11-20 01:43:41.034 INFO  (qtp343856911-51) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=94
+2018-11-20 01:43:41.057 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:43:47.076 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:43:48.630 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:43:50.632 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:43:52.635 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:43:54.628 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:43:56.629 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:43:58.629 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:00.630 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:02.630 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:04.632 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:06.635 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:08.633 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:10.634 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:12.634 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:14.635 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:16.634 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:18.637 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:20.639 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:22.640 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:24.637 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:26.639 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:28.639 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:30.639 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:32.639 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:34.639 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:36.639 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:38.640 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:40.641 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:42.643 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:44.646 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:46.649 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:48.646 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:50.649 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:52.652 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:54.649 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:56.651 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:44:58.649 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:00.649 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:02.649 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:04.654 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:06.656 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:08.653 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:10.654 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:12.655 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:14.655 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:16.654 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:18.656 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:20.656 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:22.656 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:24.657 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:27.258 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:29.262 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:32.271 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:34.281 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:36.287 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:39.293 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:41.231 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:43.222 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:45.229 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:45:46.068 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:45:46.247 INFO  (qtp343856911-51) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=173
+2018-11-20 01:45:46.248 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=155
+2018-11-20 01:45:51.086 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:45:51.101 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542678157001} status=0 QTime=0
+2018-11-20 01:45:51.122 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542678157002} status=0 QTime=13
+2018-11-20 01:45:51.131 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542678152509&ts=1542678152509} status=503 QTime=0
+2018-11-20 01:45:51.275 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542678157001} status=0 QTime=152
+2018-11-20 01:45:51.276 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=185
+2018-11-20 01:45:53.569 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=1
+2018-11-20 01:45:53.581 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678158663} status=0 QTime=0
+2018-11-20 01:45:53.675 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=101
+2018-11-20 01:45:53.745 INFO  (qtp343856911-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:45:53.764 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678158663} status=0 QTime=0
+2018-11-20 01:45:53.778 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542678158664} status=0 QTime=1
+2018-11-20 01:45:53.824 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=73
+2018-11-20 01:45:53.825 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:46:41.532 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:46:42.931 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:50:35.391 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:50:37.733 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:50:37.887 INFO  (qtp343856911-51) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=145
+2018-11-20 01:50:37.887 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=150
+2018-11-20 01:50:40.752 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:50:41.569 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542678157001} status=0 QTime=0
+2018-11-20 01:50:41.570 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542678157002} status=0 QTime=806
+2018-11-20 01:50:41.570 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542678152509&ts=1542678152509} status=503 QTime=0
+2018-11-20 01:50:41.655 INFO  (qtp343856911-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=893
+2018-11-20 01:50:41.723 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542678157001} status=0 QTime=146
+2018-11-20 01:50:43.475 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:50:43.500 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678158663} status=0 QTime=0
+2018-11-20 01:50:43.603 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=126
+2018-11-20 01:50:43.663 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:50:43.672 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678158663} status=0 QTime=0
+2018-11-20 01:50:43.673 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542678158664} status=0 QTime=1
+2018-11-20 01:50:43.741 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:50:43.756 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=86
+2018-11-20 01:50:45.381 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:51:06.409 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:51:07.958 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:51:08.168 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=134
+2018-11-20 01:51:08.168 INFO  (qtp343856911-51) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=180
+2018-11-20 01:51:13.047 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:51:13.056 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542678157001} status=0 QTime=3
+2018-11-20 01:51:13.109 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542678157002} status=0 QTime=11
+2018-11-20 01:51:13.143 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542678152509&ts=1542678152509} status=503 QTime=0
+2018-11-20 01:51:13.268 INFO  (qtp343856911-51) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=217
+2018-11-20 01:51:13.268 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542678157001} status=0 QTime=132
+2018-11-20 01:51:15.235 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:51:15.241 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678158663} status=0 QTime=0
+2018-11-20 01:51:15.342 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=103
+2018-11-20 01:51:15.356 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:51:15.367 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678158663} status=0 QTime=0
+2018-11-20 01:51:15.383 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542678158664} status=0 QTime=1
+2018-11-20 01:51:15.442 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=84
+2018-11-20 01:51:15.488 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:51:17.550 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:52:49.562 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678158664} status=0 QTime=0
+2018-11-20 01:52:56.169 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678152506} status=0 QTime=0
+2018-11-20 01:52:56.353 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=174
+2018-11-20 01:52:56.354 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678152509} status=0 QTime=182
+2018-11-20 01:53:31.441 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 01:53:31.701 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=250
+2018-11-20 01:53:31.701 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=248
+2018-11-20 01:53:41.332 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 01:53:41.355 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542678821307} status=0 QTime=0
+2018-11-20 01:53:41.372 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542678821309} status=0 QTime=13
+2018-11-20 01:53:41.380 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542678811116&ts=1542678811116} status=503 QTime=0
+2018-11-20 01:53:41.575 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=235
+2018-11-20 01:53:41.575 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542678821308} status=0 QTime=199
+2018-11-20 01:53:43.034 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 01:53:43.054 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 01:53:43.291 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=241
+2018-11-20 01:53:43.337 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 01:53:43.383 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 01:53:43.390 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542678822984} status=0 QTime=1
+2018-11-20 01:53:43.438 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 01:53:43.441 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=89
+2018-11-20 01:53:46.006 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 01:55:24.349 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 01:56:46.435 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 01:56:47.988 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 01:56:48.164 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=172
+2018-11-20 01:56:48.165 INFO  (qtp343856911-51) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=152
+2018-11-20 01:56:55.448 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 01:56:55.477 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542678821307} status=0 QTime=0
+2018-11-20 01:56:55.496 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542678821309} status=0 QTime=11
+2018-11-20 01:56:55.512 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542678811116&ts=1542678811116} status=503 QTime=0
+2018-11-20 01:56:55.711 INFO  (qtp343856911-51) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=259
+2018-11-20 01:56:55.712 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542678821308} status=0 QTime=224
+2018-11-20 01:56:57.610 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 01:56:57.621 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 01:56:57.723 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=108
+2018-11-20 01:56:57.809 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 01:56:57.819 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 01:56:57.835 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542678822984} status=0 QTime=0
+2018-11-20 01:56:57.898 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 01:56:57.901 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=85
+2018-11-20 01:57:00.100 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:00:41.130 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:00:44.215 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:00:44.469 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=242
+2018-11-20 02:00:44.473 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=238
+2018-11-20 02:00:50.461 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:00:50.492 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542678821307} status=0 QTime=1
+2018-11-20 02:00:50.510 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542678811116&ts=1542678811116} status=503 QTime=0
+2018-11-20 02:00:50.529 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542678821309} status=0 QTime=29
+2018-11-20 02:00:50.665 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542678821308} status=0 QTime=160
+2018-11-20 02:00:50.666 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=193
+2018-11-20 02:00:52.182 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:00:52.188 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 02:00:52.306 INFO  (qtp343856911-51) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=120
+2018-11-20 02:00:52.343 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:00:52.407 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 02:00:52.417 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542678822984} status=0 QTime=3
+2018-11-20 02:00:52.435 INFO  (qtp343856911-51) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=89
+2018-11-20 02:00:53.096 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:24.666 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:25.448 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:25.984 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:26.744 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:26.747 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:26.819 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:26.979 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:27.114 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:27.257 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:27.408 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:27.551 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:27.720 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:27.863 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:28.012 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:28.170 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:28.321 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:28.474 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:28.631 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:28.777 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:28.935 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:29.111 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:29.895 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:29.897 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:29.902 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:29.906 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:29.960 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:30.415 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:30.609 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:30.776 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:30.935 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:31.112 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:31.264 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:31.416 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:31.735 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:31.900 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=2
+2018-11-20 02:01:32.047 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:32.215 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:32.860 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:33.025 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:33.026 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:33.037 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:33.210 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:33.388 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:33.527 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:33.688 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:33.855 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:34.015 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:34.192 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:34.352 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:34.513 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:34.676 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:34.840 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:35.031 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:35.231 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:35.400 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:36.150 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:36.159 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=2
+2018-11-20 02:01:36.153 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:36.150 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:36.229 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:36.393 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:36.554 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:36.719 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:36.891 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:37.047 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:37.208 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:37.400 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:39.505 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:39.999 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:40.495 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:41.056 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:42.352 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:43.056 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:01:43.671 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:03:12.804 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:03:14.131 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:03:15.982 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:03:16.138 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=149
+2018-11-20 02:03:16.139 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=149
+2018-11-20 02:03:20.796 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:03:20.887 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542678821307} status=0 QTime=1
+2018-11-20 02:03:20.928 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542678821309} status=0 QTime=25
+2018-11-20 02:03:21.009 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542678811116&ts=1542678811116} status=503 QTime=0
+2018-11-20 02:03:21.027 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=203
+2018-11-20 02:03:21.106 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542678821308} status=0 QTime=141
+2018-11-20 02:03:23.050 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:03:23.057 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 02:03:23.690 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:03:23.692 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 02:03:23.901 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542678822984} status=0 QTime=1
+2018-11-20 02:03:23.918 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=865
+2018-11-20 02:03:23.931 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:03:24.039 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=341
+2018-11-20 02:03:25.448 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:04:34.651 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:04:36.387 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:05:06.160 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:05:08.631 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:05:12.328 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:05:12.499 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=159
+2018-11-20 02:05:12.500 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=168
+2018-11-20 02:05:20.499 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:05:20.559 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542678821307} status=0 QTime=1
+2018-11-20 02:05:20.595 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542678821309} status=0 QTime=20
+2018-11-20 02:05:20.621 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542678811116&ts=1542678811116} status=503 QTime=0
+2018-11-20 02:05:20.765 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=266
+2018-11-20 02:05:20.766 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542678821308} status=0 QTime=165
+2018-11-20 02:05:22.739 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:05:22.748 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 02:05:22.836 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=94
+2018-11-20 02:05:22.844 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:05:22.878 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 02:05:22.885 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542678822984} status=0 QTime=1
+2018-11-20 02:05:22.906 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:05:22.925 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=79
+2018-11-20 02:05:25.815 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:05:58.759 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:05:59.528 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:00.093 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:00.711 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:01.183 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:01.401 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:01.569 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:01.703 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:01.841 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:01.983 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:02.144 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:02.288 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:02.439 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:02.615 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:02.760 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:02.920 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:03.073 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:03.281 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:03.897 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:03.899 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=1
+2018-11-20 02:06:03.899 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=2
+2018-11-20 02:06:04.510 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:06:43.243 INFO  (Thread-15) [   ] o.a.s.u.p.LogUpdateProcessorFactory [paper_info]  webapp=/solr path=/dataimport params={core=paper_info&indent=on&commit=true&name=dataimport&clean=false&wt=json&command=full-import&entity=paper_info&_=1542638525339&verbose=false} status=0 QTime=39{} 0 1597964
+2018-11-20 02:07:49.385 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:07:50.257 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:07:50.831 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:07:51.136 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:07:51.295 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:07:51.464 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:07:51.600 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:07:51.759 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:07:51.895 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:07:52.064 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:07:54.585 INFO  (qtp343856911-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542679674257} status=0 QTime=0
+2018-11-20 02:07:54.614 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1542679674565&since=0} status=0 QTime=7
+2018-11-20 02:07:54.773 INFO  (qtp343856911-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542679674261} status=0 QTime=181
+2018-11-20 02:09:20.282 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:21.015 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:21.551 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:22.151 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:22.719 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:23.159 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:23.511 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:23.757 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:23.935 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:24.095 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:24.247 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:24.407 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:24.559 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:24.695 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:25.000 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:25.208 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:25.383 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:25.544 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:25.711 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:25.895 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:26.046 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:26.215 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:26.376 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:26.623 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:28.204 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:09:28.349 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=141
+2018-11-20 02:09:28.350 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=133
+2018-11-20 02:09:37.311 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:09:37.334 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542678821307} status=0 QTime=0
+2018-11-20 02:09:37.372 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542678821309} status=0 QTime=39
+2018-11-20 02:09:37.376 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542678811116&ts=1542678811116} status=503 QTime=0
+2018-11-20 02:09:37.497 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542678821308} status=0 QTime=151
+2018-11-20 02:09:37.497 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=185
+2018-11-20 02:09:38.835 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:09:38.848 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1542679778828&since=0} status=0 QTime=0
+2018-11-20 02:09:38.938 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=100
+2018-11-20 02:09:40.447 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:09:40.631 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=165
+2018-11-20 02:09:40.633 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=165
+2018-11-20 02:09:43.215 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:09:43.224 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542678821307} status=0 QTime=0
+2018-11-20 02:09:43.245 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542678811116&ts=1542678811116} status=503 QTime=0
+2018-11-20 02:09:43.251 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542678821309} status=0 QTime=20
+2018-11-20 02:09:43.412 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=192
+2018-11-20 02:09:43.412 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542678821308} status=0 QTime=174
+2018-11-20 02:09:46.961 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:09:46.995 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 02:09:47.064 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=95
+2018-11-20 02:09:47.077 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:09:47.084 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 02:09:47.090 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542678822984} status=0 QTime=1
+2018-11-20 02:09:47.154 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:47.159 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=78
+2018-11-20 02:09:48.528 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:09:49.294 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:30.187 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:30.991 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:31.495 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:31.734 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:31.903 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:32.073 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:32.215 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:32.374 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:32.526 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:32.665 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:32.815 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:32.984 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:33.119 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:33.272 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:33.416 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:33.568 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:33.719 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:33.870 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:34.049 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:34.215 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:34.448 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:34.672 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:34.904 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:35.679 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:36.183 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:12:39.320 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:12:39.477 INFO  (qtp343856911-51) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=154
+2018-11-20 02:12:39.477 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=150
+2018-11-20 02:12:42.282 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:12:42.287 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542678821307} status=0 QTime=0
+2018-11-20 02:12:42.313 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542678811116&ts=1542678811116} status=503 QTime=0
+2018-11-20 02:12:42.314 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542678821309} status=0 QTime=23
+2018-11-20 02:12:42.489 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542678821308} status=0 QTime=187
+2018-11-20 02:12:42.489 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=205
+2018-11-20 02:12:45.621 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542679965344} status=0 QTime=0
+2018-11-20 02:12:45.625 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1542679965603&since=0} status=0 QTime=0
+2018-11-20 02:12:45.724 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542679965357} status=0 QTime=102
+2018-11-20 02:14:18.212 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 02:14:18.215 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:14:18.305 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:14:18.309 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542678822982} status=0 QTime=0
+2018-11-20 02:14:18.312 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542678822984} status=0 QTime=1
+2018-11-20 02:14:18.357 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:14:18.381 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=161
+2018-11-20 02:14:18.420 INFO  (qtp343856911-51) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=112
+2018-11-20 02:14:19.719 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:14:20.350 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:14:20.799 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:18:00.539 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:18:01.241 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:18:26.368 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:19:00.402 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:19:01.063 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:19:30.816 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:20:51.167 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:20:51.750 INFO  (qtp343856911-51) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542678822984} status=0 QTime=0
+2018-11-20 02:21:29.114 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542678811115} status=0 QTime=0
+2018-11-20 02:21:29.276 INFO  (qtp343856911-51) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=152
+2018-11-20 02:21:29.277 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542678811116} status=0 QTime=140
+2018-11-20 02:21:32.793 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:21:33.020 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=224
+2018-11-20 02:21:33.021 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=222
+2018-11-20 02:21:35.481 INFO  (qtp343856911-53) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:21:35.488 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542680495463} status=0 QTime=1
+2018-11-20 02:21:35.501 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542680492409&ts=1542680492409} status=503 QTime=0
+2018-11-20 02:21:35.516 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542680495463} status=0 QTime=23
+2018-11-20 02:21:35.685 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542680495463} status=0 QTime=186
+2018-11-20 02:21:35.688 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=203
+2018-11-20 02:21:37.656 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:21:37.680 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542680497621} status=0 QTime=0
+2018-11-20 02:21:37.754 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=93
+2018-11-20 02:21:37.856 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:21:37.869 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542680497621} status=0 QTime=1
+2018-11-20 02:21:37.892 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542680497621} status=0 QTime=1
+2018-11-20 02:21:37.953 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=92
+2018-11-20 02:21:37.987 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:21:40.490 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:24:09.373 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:24:10.216 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:05.236 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:06.880 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:07.687 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:07.883 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:08.040 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:08.191 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:08.337 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:08.463 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:08.634 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:33.782 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:34.231 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:34.400 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:34.551 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:34.720 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:27:43.475 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@abf688e{HTTP/1.1,[http/1.1]}{0.0.0.0:8983}
+2018-11-20 02:27:43.476 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
+2018-11-20 02:27:43.506 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=2029680286
+2018-11-20 02:27:43.508 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node, tag=null
+2018-11-20 02:27:43.512 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@37efd131: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node / com.codahale.metrics.MetricRegistry@6001f2da
+2018-11-20 02:27:43.528 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm, tag=null
+2018-11-20 02:27:43.528 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@2101b44a: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm / com.codahale.metrics.MetricRegistry@2f50603e
+2018-11-20 02:27:43.538 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty, tag=null
+2018-11-20 02:27:43.538 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@2cc3ad05: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty / com.codahale.metrics.MetricRegistry@4028c02c
+2018-11-20 02:27:43.548 INFO  (coreCloseExecutor-35-thread-3) [   x:influence_info] o.a.s.c.SolrCore [influence_info]  CLOSING SolrCore org.apache.solr.core.SolrCore@1f503ef2
+2018-11-20 02:27:43.548 INFO  (coreCloseExecutor-35-thread-1) [   x:academic_info] o.a.s.c.SolrCore [academic_info]  CLOSING SolrCore org.apache.solr.core.SolrCore@49f62fb9
+2018-11-20 02:27:43.549 INFO  (coreCloseExecutor-35-thread-3) [   x:influence_info] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.influence_info, tag=1f503ef2
+2018-11-20 02:27:43.550 INFO  (coreCloseExecutor-35-thread-3) [   x:influence_info] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@843d67a: rootName = null, domain = solr.core.influence_info, service url = null, agent id = null] for registry solr.core.influence_info / com.codahale.metrics.MetricRegistry@37a8f6c2
+2018-11-20 02:27:43.549 INFO  (coreCloseExecutor-35-thread-4) [   x:test] o.a.s.c.SolrCore [test]  CLOSING SolrCore org.apache.solr.core.SolrCore@32b03f83
+2018-11-20 02:27:43.549 INFO  (coreCloseExecutor-35-thread-2) [   x:organization_info] o.a.s.c.SolrCore [organization_info]  CLOSING SolrCore org.apache.solr.core.SolrCore@73a8c09b
+2018-11-20 02:27:43.550 INFO  (coreCloseExecutor-35-thread-5) [   x:paper_info] o.a.s.c.SolrCore [paper_info]  CLOSING SolrCore org.apache.solr.core.SolrCore@2d8fe0f1
+2018-11-20 02:27:43.583 INFO  (coreCloseExecutor-35-thread-1) [   x:academic_info] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.academic_info, tag=49f62fb9
+2018-11-20 02:27:43.583 INFO  (coreCloseExecutor-35-thread-1) [   x:academic_info] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@37827bfe: rootName = null, domain = solr.core.academic_info, service url = null, agent id = null] for registry solr.core.academic_info / com.codahale.metrics.MetricRegistry@28bce7d5
+2018-11-20 02:27:43.596 INFO  (coreCloseExecutor-35-thread-4) [   x:test] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.test, tag=32b03f83
+2018-11-20 02:27:43.596 INFO  (coreCloseExecutor-35-thread-4) [   x:test] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@13767459: rootName = null, domain = solr.core.test, service url = null, agent id = null] for registry solr.core.test / com.codahale.metrics.MetricRegistry@3cfa7a6
+2018-11-20 02:27:43.608 INFO  (coreCloseExecutor-35-thread-2) [   x:organization_info] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.organization_info, tag=73a8c09b
+2018-11-20 02:27:43.608 INFO  (coreCloseExecutor-35-thread-2) [   x:organization_info] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@2e9ea4fd: rootName = null, domain = solr.core.organization_info, service url = null, agent id = null] for registry solr.core.organization_info / com.codahale.metrics.MetricRegistry@4091cd8b
+2018-11-20 02:27:43.621 INFO  (coreCloseExecutor-35-thread-5) [   x:paper_info] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.paper_info, tag=2d8fe0f1
+2018-11-20 02:27:43.621 INFO  (coreCloseExecutor-35-thread-5) [   x:paper_info] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@2699b713: rootName = null, domain = solr.core.paper_info, service url = null, agent id = null] for registry solr.core.paper_info / com.codahale.metrics.MetricRegistry@68c9a5a3
+2018-11-20 02:27:43.701 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@38102d01{/solr,null,UNAVAILABLE}{file:///C:/Users/buaat/Desktop/solr/solr-7.4.0/server//solr-webapp/webapp}

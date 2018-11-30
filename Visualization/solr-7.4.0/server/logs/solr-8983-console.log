@@ -1,0 +1,51 @@
+2018-11-27 11:48:30.002 INFO  (main) [   ] o.e.j.u.log Logging initialized @1287ms to org.eclipse.jetty.util.log.Slf4jLog
+2018-11-27 11:48:30.216 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.10.v20180503; built: 2018-05-03T15:56:21.710Z; git: daa59876e6f384329b122929e70a80934569428c; jvm 1.8.0_152-b16
+2018-11-27 11:48:30.257 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///Users/yinyuwei/github/gzliuyun/EDMS/Visualization/solr-7.4.0/server/contexts/] at interval 0
+2018-11-27 11:48:30.581 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2018-11-27 11:48:30.591 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2018-11-27 11:48:30.591 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2018-11-27 11:48:30.594 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
+2018-11-27 11:48:30.648 INFO  (main) [   ] o.a.s.u.c.SSLCredentialProviderFactory Processing SSL Credential Provider chain: env;sysprop
+2018-11-27 11:48:30.686 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2018-11-27 11:48:30.692 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr™ version 7.4.0
+2018-11-27 11:48:30.692 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2018-11-27 11:48:30.693 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: /Users/yinyuwei/github/gzliuyun/EDMS/Visualization/solr-7.4.0
+2018-11-27 11:48:30.693 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2018-11-27T11:48:30.693Z
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+loading conf files success.
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+loading conf files success.
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+loading conf files success.
+加载扩展词典：ext.dic
+加载扩展停止词典：stopword.dic
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+loading conf files success.
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+loading conf files success.
+loading conf files success.
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+loading conf files success.
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+loading conf files success.
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+loading conf files success.
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+loading conf files success.
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+loading conf files success.
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+loading conf files success.
+:::ik:::inform:::::::::::::::::::::::: ik.conf
+:::ik:::inform:::::::::::::::::::::::: ik.conf

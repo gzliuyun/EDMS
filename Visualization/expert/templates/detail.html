@@ -112,10 +112,14 @@
                                     <h2><a onclick="scrollAnchor('researcher_academic')">学术信息</a></h2>
                                 </div>
                                 <div class="meta">
-                                    <time class="published" datetime="2018-08-28">August 28, 2018</time>
-                                    <a class="author"><span class="this_researcher_name"></span>
+                                    <span class="author">
+                                        <div>
+                                            <p class="this_researcher_name"></p>
+                                            <p class="this_researcher_university"></p>
+                                            <p class="this_researcher_college"></p>
+                                        </div>
                                         <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
-                                    </a>
+                                    </span>
                                 </div>
                             </header>
                             <div class="content" id="researcher_academic_content">
@@ -156,35 +160,85 @@
                                     <h2><a onclick="scrollAnchor('researcher_relationship')">关系网络</a></h2>
                                 </div>
                                 <div class="meta">
-                                    <time class="published" datetime="2018-08-28">August 28, 2018</time>
-                                    <a class="author"><span class="this_researcher_name"></span>
+                                    <span class="author">
+                                        <div>
+                                            <p class="this_researcher_name"></p>
+                                            <p class="this_researcher_university"></p>
+                                            <p class="this_researcher_college"></p>
+                                        </div>
                                         <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
-                                    </a>
+                                    </span>
                                 </div>
                             </header>
                             <div id="relationship_picture_div">
-                                <svg id="relationship_svg" width="0" height="0">您的浏览器不支持svg，请升级浏览器。</svg>
+                                <div id="relationship_echarts"></div>
+{#                                <svg id="relationship_svg" width="0" height="0">您的浏览器不支持svg，请升级浏览器。</svg>#}
                             </div>
-                            <!-- TODO 关系网络分析、点击相关学者进行跳转 -->
-                            <div id="relationship_expert_div">
-                                <h3>相关学者</h3>
-                            </div>
-                            <div id="relationship_agency_div">
-                                <h3>相关机构</h3>
-                            </div>
+
+{#                            <!-- TODO 关系网络分析、点击相关学者进行跳转 -->#}
+{#                            <select class="relationship_select" id="relationship_type">#}
+{#                                <option value="co_expert_paper" selected>论文合作学者</option>#}
+{#                                <option value="co_agency">相关机构</option>#}
+{#                            </select>#}
+{##}
+{#                            <select class="relationship_select" id="relationship_year">#}
+{#                            </select>#}
+{##}
+{#                            <div id="relationship_div">#}
+{#                            </div>#}
+
                         </article>
 
-                    <!-- 3.学者观点模块 -->
+                    <!-- 3.关系网络模块 -->
+                        <article class="main-module" id="researcher_influence">
+                            <header>
+                                <div class="title">
+                                    <h2><a onclick="scrollAnchor('researcher_influence')">影响力曲线</a></h2>
+                                </div>
+                                <div class="meta">
+                                    <span class="author">
+                                        <div>
+                                            <p class="this_researcher_name"></p>
+                                            <p class="this_researcher_university"></p>
+                                            <p class="this_researcher_college"></p>
+                                        </div>
+                                        <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
+                                    </span>
+                                </div>
+                            </header>
+                            <div id="researcher_influence_div">
+                                <div id="influence_echarts"></div>
+                            </div>
+
+{#                            <!-- TODO 关系网络分析、点击相关学者进行跳转 -->#}
+{#                            <select class="relationship_select" id="relationship_type">#}
+{#                                <option value="co_expert_paper" selected>论文合作学者</option>#}
+{#                                <option value="co_agency">相关机构</option>#}
+{#                            </select>#}
+{##}
+{#                            <select class="relationship_select" id="relationship_year">#}
+{#                            </select>#}
+{##}
+{#                            <div id="relationship_div">#}
+{#                            </div>#}
+
+                        </article>
+
+                    <!-- 4.学者观点模块 -->
                         <article class="main-module" id="researcher_opinion">
                             <header>
                                 <div class="title">
                                     <h2><a onclick="scrollAnchor('researcher_opinion')">学者观点</a></h2>
                                 </div>
                                 <div class="meta">
-                                    <time class="published" datetime="2018-08-28">August 28, 2018</time>
-                                    <a class="author"><span class="this_researcher_name"></span>
+                                    <span class="author">
+                                        <div>
+                                            <p class="this_researcher_name"></p>
+                                            <p class="this_researcher_university"></p>
+                                            <p class="this_researcher_college"></p>
+                                        </div>
                                         <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
-                                    </a>
+                                    </span>
                                 </div>
                             </header>
                             <div class="content">
@@ -197,17 +251,21 @@
 {#                            </footer>#}
                         </article>
 
-                    <!-- 4.学者论文模块 -->
+                    <!-- 5.学者论文模块 -->
                         <article class="main-module" id="researcher_papers">
                             <header>
                                 <div class="title">
                                     <h2><a onclick="scrollAnchor('researcher_papers')">学者论文</a></h2>
                                 </div>
                                 <div class="meta">
-                                    <time class="published" datetime="2018-08-28">August 28, 2018</time>
-                                    <a class="author"><span class="this_researcher_name"></span>
+                                    <span class="author">
+                                        <div>
+                                            <p class="this_researcher_name"></p>
+                                            <p class="this_researcher_university"></p>
+                                            <p class="this_researcher_college"></p>
+                                        </div>
                                         <img class="researcher_image" src="{% static 'image/default_expert_image.png' %}" alt="researcher_image.png" />
-                                    </a>
+                                    </span>
                                 </div>
                             </header>
                             <ul class="papers"></ul>
@@ -322,6 +380,8 @@
     <!-- Scripts -->
     <script src="{% static 'js/jquery.min.js' %}"></script>
     <script src="{% static 'js/jquery.toast.js' %}"></script>
+    <script src="{% static 'js/echarts/echarts.js' %}"></script>
+    <script src="{% static 'js/echarts/echarts-gl.js' %}"></script>
     <script src="{% static 'js/d3.v4.min.js' %}"></script>
     <script src="{% static 'js/browser.min.js' %}"></script>
     <script src="{% static 'js/breakpoints.min.js' %}"></script>

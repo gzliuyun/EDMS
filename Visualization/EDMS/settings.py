@@ -78,20 +78,20 @@ DATABASES = {
     'default': {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'EDMS',
-        # 'USER': 'root',
-        # 'PASSWORD': 'root@buaa',
-        # 'HOST': '111.205.121.93',
-        # 'PORT': '3306',
         'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'myedms',
-        'NAME': 'edms',
+        'NAME': 'EDMS',
         'USER': 'root',
-        # 'PASSWORD': '2693702693',
-        'PASSWORD': 'yinyuwei',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'root@buaa',
+        'HOST': '111.205.121.93',
         'PORT': '3306',
+        # 'ENGINE': 'django.db.backends.mysql',
+        # # 'NAME': 'myedms',
+        # 'NAME': 'edms',
+        # 'USER': 'root',
+        # # 'PASSWORD': '2693702693',
+        # 'PASSWORD': 'yinyuwei',
+        # 'HOST': '127.0.0.1',
+        # 'PORT': '3306',
     }
 }
 
@@ -144,18 +144,18 @@ STATICFILES_FINDERS = (
 )
 
 # 查看django执行的SQL语句
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django.db.backends': {
-            'handlers': ['console'],
-            'level': 'DEBUG' if DEBUG else 'INFO',
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler',
+#         },
+#     },
+#     'loggers': {
+#         'django.db.backends': {
+#             'handlers': ['console'],
+#             'level': 'DEBUG' if DEBUG else 'INFO',
+#         },
+#     },
+# }

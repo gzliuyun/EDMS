@@ -16,10 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path, include
 from django.views.generic import TemplateView
+from expert.views import HomePageView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    re_path("^$", TemplateView.as_view(template_name="index.html"), name="index"),
+    re_path("^$", HomePageView.as_view(), name="index"),
     re_path("^expert/", include("expert.urls", namespace="expert")),
 ]

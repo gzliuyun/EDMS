@@ -196,9 +196,10 @@ input, select, textarea {
 		font-style: italic;
 	}
 
-	p {
-		margin: 0 0 2em 0;
-	}
+	/*p {*/
+		/*!*margin: 0 0 2em 0;*!*/
+		/*margin: 0;*/
+	/*}*/
 
 	h1, h2, h3, h4, h5, h6 {
 		color: #3c3b3b;
@@ -2031,7 +2032,6 @@ input, select, textarea {
 	input[type="password"],
 	input[type="email"],
 	input[type="tel"],
-	select,
 	textarea {
 		-moz-appearance: none;
 		-webkit-appearance: none;
@@ -2047,6 +2047,23 @@ input, select, textarea {
 		padding: 0 1em;
 		text-decoration: none;
 		width: 100%;
+	}
+
+	select {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		background: rgba(160, 160, 160, 0.075);
+		border: none;
+		border: solid 1px rgba(160, 160, 160, 0.3);
+		border-radius: 0;
+		color: inherit;
+		display: inline;
+		outline: 0;
+		padding: 0 1em;
+		text-decoration: none;
+		width: max-content;
 	}
 
 		input[type="text"]:invalid,
@@ -2688,10 +2705,17 @@ input, select, textarea {
 		position: relative;
 	}
 
-	#relationship_agency_div > p {
-		margin: 0.2em 0 0.2em 0;
-		padding: 0;
-	}
+	/*#relationship_div > h3 {*/
+		/*margin: 0.2em 0 0.1em 0;*/
+		/*padding: 0;*/
+		/*font-size: 1.2em;*/
+		/*font-weight: bold;*/
+	/*}*/
+
+	/*#relationship_div > p {*/
+		/*margin: 0.1em 0 0.1em 0;*/
+		/*padding: 0;*/
+	/*}*/
 
     #paper_pages > ul li.show_page {
         display: table-cell;
@@ -2748,7 +2772,7 @@ input, select, textarea {
 				}
 
 			.main-module > header .meta {
-				padding: 2.5em 3em 0.5em 3em;
+				padding: 0.5em 3em 0.5em 3em;
 				border-left: solid 1px rgba(160, 160, 160, 0.3);
 				min-width: 17em;
 				text-align: right;
@@ -2756,24 +2780,30 @@ input, select, textarea {
 			}
 
 				.main-module > header .meta > * {
-					margin: 0 0 1em 0;
+					margin: 0;
 				}
 
-				.main-module > header .meta > :last-child {
-					margin-bottom: 0;
+				.main-module > header .meta span {
+					display: flex;
 				}
 
-				.main-module > header .meta .published {
-					color: #3c3b3b;
-					display: block;
-					font-family: "Raleway", Helvetica, sans-serif;
-					font-size: 0.7em;
-					font-weight: 800;
-					letter-spacing: 0.25em;
-					margin-top: 0.5em;
-					text-transform: uppercase;
-					white-space: nowrap;
-				}
+					.main-module > header .meta span div {
+						margin: 0 1em 0 0;
+					}
+
+						.main-module > header .meta span div.p {
+							color: #3c3b3b;
+							display: block;
+							text-align: left;
+							font-family: "Raleway", Helvetica, sans-serif;
+							font-size: 0.7em;
+							font-weight: 800;
+							margin: 0.1em 0 0.1em 0 !important;
+							padding: 0 !important;
+							/*letter-spacing: 0.2em;*/
+							text-transform: uppercase;
+							white-space: nowrap;
+						}
 
         #relationship_expert_div h3 {
             color: #add8e6;
@@ -2892,7 +2922,7 @@ input, select, textarea {
 							padding-left: 0;
 						}
 
-						.main-module > header .meta .published {
+						.main-module > header .meta .p {
 							margin-bottom: 0;
 							margin-top: 0;
 						}
@@ -2990,8 +3020,8 @@ input, select, textarea {
 		font-size: 0.7em;
 		font-weight: 400;
 		letter-spacing: 0.25em;
-		line-height: 2.5;
-		margin-top: -1em;
+		/*line-height: 2.5;*/
+		/*margin-top: -1em;*/
 		text-transform: uppercase;
 	}
 
@@ -3701,12 +3731,3 @@ input, select, textarea {
 			}
 
 		}
-
-/* Researcher Name */
-    #main .this_researcher_name {
-        text-align: left;
-        text-decoration: none;
-        font-family: "Raleway", Helvetica, sans-serif;
-        font-size: 0.6em;
-        font-weight: 400;
-    }

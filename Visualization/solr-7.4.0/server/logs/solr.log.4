@@ -1,0 +1,659 @@
+2018-11-20 02:27:52.105 INFO  (main) [   ] o.e.j.u.log Logging initialized @3331ms to org.eclipse.jetty.util.log.Slf4jLog
+2018-11-20 02:27:52.463 INFO  (main) [   ] o.e.j.s.Server jetty-9.4.10.v20180503; built: 2018-05-03T15:56:21.710Z; git: daa59876e6f384329b122929e70a80934569428c; jvm 1.8.0_73-b02
+2018-11-20 02:27:52.549 INFO  (main) [   ] o.e.j.d.p.ScanningAppProvider Deployment monitor [file:///C:/Users/buaat/Desktop/solr/solr-7.4.0/server/contexts/] at interval 0
+2018-11-20 02:27:53.838 INFO  (main) [   ] o.e.j.w.StandardDescriptorProcessor NO JSP Support for /solr, did not find org.apache.jasper.servlet.JspServlet
+2018-11-20 02:27:53.851 INFO  (main) [   ] o.e.j.s.session DefaultSessionIdManager workerName=node0
+2018-11-20 02:27:53.852 INFO  (main) [   ] o.e.j.s.session No SessionScavenger set, using defaults
+2018-11-20 02:27:53.855 INFO  (main) [   ] o.e.j.s.session node0 Scavenging every 660000ms
+2018-11-20 02:27:53.928 INFO  (main) [   ] o.a.s.u.c.SSLCredentialProviderFactory Processing SSL Credential Provider chain: env;sysprop
+2018-11-20 02:27:54.001 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter Using logger factory org.apache.logging.slf4j.Log4jLoggerFactory
+2018-11-20 02:27:54.010 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter  ___      _       Welcome to Apache Solr? version 7.4.0
+2018-11-20 02:27:54.011 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter / __| ___| |_ _   Starting in standalone mode on port 8983
+2018-11-20 02:27:54.011 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter \__ \/ _ \ | '_|  Install dir: C:\Users\buaat\Desktop\solr\solr-7.4.0
+2018-11-20 02:27:54.013 INFO  (main) [   ] o.a.s.s.SolrDispatchFilter |___/\___/_|_|    Start time: 2018-11-20T02:27:54.012Z
+2018-11-20 02:27:54.065 INFO  (main) [   ] o.a.s.c.SolrResourceLoader Using system property solr.solr.home: C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr
+2018-11-20 02:27:54.079 INFO  (main) [   ] o.a.s.c.SolrXmlConfig Loading container configuration from C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\solr.xml
+2018-11-20 02:27:54.217 INFO  (main) [   ] o.a.s.c.SolrXmlConfig MBean server found: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27, but no JMX reporters were configured - adding default JMX reporter.
+2018-11-20 02:27:55.970 INFO  (main) [   ] o.a.s.c.TransientSolrCoreCacheDefault Allocating transient cache for 2147483647 transient cores
+2018-11-20 02:27:55.996 INFO  (main) [   ] o.a.s.h.a.MetricsHistoryHandler No .system collection, keeping metrics history in memory.
+2018-11-20 02:27:56.190 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.node' (registry 'solr.node') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 02:27:56.191 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jvm' (registry 'solr.jvm') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 02:27:56.212 INFO  (main) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.jetty' (registry 'solr.jetty') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 02:27:56.278 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Found 5 core definitions underneath C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr
+2018-11-20 02:27:56.279 INFO  (main) [   ] o.a.s.c.CorePropertiesLocator Cores are: [academic_info, influence_info, organization_info, paper_info, test]
+2018-11-20 02:27:56.731 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.c.SolrResourceLoader [academic_info] Added 57 libs to classloader, from paths: [/C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/clustering/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/extraction/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/langid/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/velocity/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/dist]
+2018-11-20 02:27:56.731 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.c.SolrResourceLoader [influence_info] Added 57 libs to classloader, from paths: [/C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/clustering/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/extraction/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/langid/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/velocity/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/dist]
+2018-11-20 02:27:56.731 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.c.SolrResourceLoader [organization_info] Added 57 libs to classloader, from paths: [/C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/clustering/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/extraction/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/langid/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/velocity/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/dist]
+2018-11-20 02:27:57.680 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.c.SolrConfig Using Lucene MatchVersion: 7.4.0
+2018-11-20 02:27:57.703 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.c.SolrConfig Using Lucene MatchVersion: 7.4.0
+2018-11-20 02:27:57.743 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.c.SolrConfig Using Lucene MatchVersion: 7.4.0
+2018-11-20 02:27:58.202 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.s.IndexSchema [organization_info] Schema name=default-config
+2018-11-20 02:27:58.223 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.s.IndexSchema [influence_info] Schema name=default-config
+2018-11-20 02:27:58.237 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.s.IndexSchema [academic_info] Schema name=default-config
+2018-11-20 02:27:59.014 INFO  (main) [   ] o.e.j.s.h.ContextHandler Started o.e.j.w.WebAppContext@38102d01{/solr,file:///C:/Users/buaat/Desktop/solr/solr-7.4.0/server/solr-webapp/webapp/,AVAILABLE}{file:///C:/Users/buaat/Desktop/solr/solr-7.4.0/server//solr-webapp/webapp}
+2018-11-20 02:27:59.219 INFO  (main) [   ] o.e.j.s.AbstractConnector Started ServerConnector@abf688e{HTTP/1.1,[http/1.1]}{0.0.0.0:8983}
+2018-11-20 02:27:59.220 INFO  (main) [   ] o.e.j.s.Server Started @10449ms
+2018-11-20 02:28:01.104 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json} status=0 QTime=488
+2018-11-20 02:28:01.635 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2018-11-20 02:28:01.635 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2018-11-20 02:28:01.715 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.c.CoreContainer Creating SolrCore 'academic_info' using configuration from instancedir C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\academic_info, trusted=true
+2018-11-20 02:28:01.722 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2018-11-20 02:28:01.730 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.c.CoreContainer Creating SolrCore 'influence_info' using configuration from instancedir C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\influence_info, trusted=true
+2018-11-20 02:28:01.763 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.academic_info' (registry 'solr.core.academic_info') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 02:28:01.763 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.influence_info' (registry 'solr.core.influence_info') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 02:28:01.788 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.c.SolrCore solr.RecoveryStrategy.Builder
+2018-11-20 02:28:01.788 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.c.SolrCore solr.RecoveryStrategy.Builder
+2018-11-20 02:28:01.811 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.c.SolrCore [[academic_info] ] Opening new SolrCore at [C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\academic_info], dataDir=[C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\academic_info\data\]
+2018-11-20 02:28:01.812 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.c.CoreContainer Creating SolrCore 'organization_info' using configuration from instancedir C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\organization_info, trusted=true
+2018-11-20 02:28:01.814 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.organization_info' (registry 'solr.core.organization_info') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 02:28:01.815 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.c.SolrCore solr.RecoveryStrategy.Builder
+2018-11-20 02:28:01.815 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.c.SolrCore [[organization_info] ] Opening new SolrCore at [C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\organization_info], dataDir=[C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\organization_info\data\]
+2018-11-20 02:28:01.818 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.c.SolrCore [[influence_info] ] Opening new SolrCore at [C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\influence_info], dataDir=[C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\influence_info\data\]
+2018-11-20 02:28:01.909 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.r.XSLTResponseWriter xsltCacheLifetimeSeconds=5
+2018-11-20 02:28:01.909 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.r.XSLTResponseWriter xsltCacheLifetimeSeconds=5
+2018-11-20 02:28:01.909 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.r.XSLTResponseWriter xsltCacheLifetimeSeconds=5
+2018-11-20 02:28:03.153 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2018-11-20 02:28:03.153 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2018-11-20 02:28:03.153 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2018-11-20 02:28:03.153 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2018-11-20 02:28:03.153 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2018-11-20 02:28:03.153 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2018-11-20 02:28:03.171 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+2018-11-20 02:28:03.171 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2018-11-20 02:28:03.183 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+2018-11-20 02:28:03.183 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2018-11-20 02:28:03.200 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+2018-11-20 02:28:03.200 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2018-11-20 02:28:03.358 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.s.SolrIndexSearcher Opening [Searcher@6a3520d2[academic_info] main]
+2018-11-20 02:28:03.398 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\academic_info\conf
+2018-11-20 02:28:03.481 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2018-11-20 02:28:03.499 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2018-11-20 02:28:03.537 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.h.ReplicationHandler Commits will be reserved for 10000ms.
+2018-11-20 02:28:03.551 INFO  (searcherExecutor-10-thread-1-processing-x:academic_info) [   x:academic_info] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@6a3520d2[academic_info] main{ExitableDirectoryReader(UninvertingDirectoryReader())}
+2018-11-20 02:28:03.551 INFO  (searcherExecutor-10-thread-1-processing-x:academic_info) [   x:academic_info] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2018-11-20 02:28:03.551 INFO  (searcherExecutor-10-thread-1-processing-x:academic_info) [   x:academic_info] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2018-11-20 02:28:03.566 INFO  (searcherExecutor-10-thread-1-processing-x:academic_info) [   x:academic_info] o.a.s.c.SolrCore [academic_info] Registered new searcher Searcher@6a3520d2[academic_info] main{ExitableDirectoryReader(UninvertingDirectoryReader())}
+2018-11-20 02:28:03.589 INFO  (coreLoadExecutor-9-thread-1) [   x:academic_info] o.a.s.u.UpdateLog Could not find max version in index or recent updates, using new clock 1617618150190219264
+2018-11-20 02:28:03.726 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.c.SolrResourceLoader [paper_info] Added 57 libs to classloader, from paths: [/C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/clustering/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/extraction/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/langid/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/velocity/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/dist]
+2018-11-20 02:28:03.773 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.s.SolrIndexSearcher Opening [Searcher@44354fee[organization_info] main]
+2018-11-20 02:28:03.774 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\organization_info\conf
+2018-11-20 02:28:03.776 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2018-11-20 02:28:03.776 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2018-11-20 02:28:03.780 INFO  (coreLoadExecutor-9-thread-3) [   x:organization_info] o.a.s.h.ReplicationHandler Commits will be reserved for 10000ms.
+2018-11-20 02:28:03.781 INFO  (searcherExecutor-12-thread-1-processing-x:organization_info) [   x:organization_info] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@44354fee[organization_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_0(7.4.0):C2233)))}
+2018-11-20 02:28:03.781 INFO  (searcherExecutor-12-thread-1-processing-x:organization_info) [   x:organization_info] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2018-11-20 02:28:03.781 INFO  (searcherExecutor-12-thread-1-processing-x:organization_info) [   x:organization_info] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2018-11-20 02:28:03.787 INFO  (searcherExecutor-12-thread-1-processing-x:organization_info) [   x:organization_info] o.a.s.c.SolrCore [organization_info] Registered new searcher Searcher@44354fee[organization_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_0(7.4.0):C2233)))}
+2018-11-20 02:28:03.826 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.c.SolrConfig Using Lucene MatchVersion: 7.4.0
+2018-11-20 02:28:03.935 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.c.SolrResourceLoader [test] Added 57 libs to classloader, from paths: [/C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/clustering/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/extraction/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/langid/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/contrib/velocity/lib, /C:/Users/buaat/Desktop/solr/solr-7.4.0/dist]
+2018-11-20 02:28:03.983 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.s.IndexSchema [paper_info] Schema name=default-config
+2018-11-20 02:28:04.013 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.c.SolrConfig Using Lucene MatchVersion: 7.4.0
+2018-11-20 02:28:04.093 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.s.IndexSchema [test] Schema name=default-config
+2018-11-20 02:28:04.340 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=2
+2018-11-20 02:28:04.564 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=226
+2018-11-20 02:28:04.641 INFO  (qtp343856911-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=219
+2018-11-20 02:28:05.085 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2018-11-20 02:28:05.171 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.s.IndexSchema Loaded schema default-config/1.6 with uniqueid field id
+2018-11-20 02:28:05.178 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.c.CoreContainer Creating SolrCore 'paper_info' using configuration from instancedir C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\paper_info, trusted=true
+2018-11-20 02:28:05.179 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.paper_info' (registry 'solr.core.paper_info') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 02:28:05.179 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.c.SolrCore solr.RecoveryStrategy.Builder
+2018-11-20 02:28:05.180 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.c.SolrCore [[paper_info] ] Opening new SolrCore at [C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\paper_info], dataDir=[C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\paper_info\data\]
+2018-11-20 02:28:05.196 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.r.XSLTResponseWriter xsltCacheLifetimeSeconds=5
+2018-11-20 02:28:05.327 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2018-11-20 02:28:05.328 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2018-11-20 02:28:05.328 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.c.CoreContainer Creating SolrCore 'test' using configuration from instancedir C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\test, trusted=true
+2018-11-20 02:28:05.328 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.m.r.SolrJmxReporter JMX monitoring for 'solr.core.test' (registry 'solr.core.test') enabled at server: com.sun.jmx.mbeanserver.JmxMBeanServer@551bdc27
+2018-11-20 02:28:05.328 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.c.SolrCore solr.RecoveryStrategy.Builder
+2018-11-20 02:28:05.329 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.c.SolrCore [[test] ] Opening new SolrCore at [C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\test], dataDir=[C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\test\data\]
+2018-11-20 02:28:05.349 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.r.XSLTResponseWriter xsltCacheLifetimeSeconds=5
+2018-11-20 02:28:05.420 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+2018-11-20 02:28:05.420 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2018-11-20 02:28:05.546 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.u.UpdateHandler Using UpdateLog implementation: org.apache.solr.update.UpdateLog
+2018-11-20 02:28:05.546 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.u.UpdateLog Initializing UpdateLog: dataDir= defaultSyncLevel=FLUSH numRecordsToKeep=100 maxNumLogsToKeep=10 numVersionBuckets=65536
+2018-11-20 02:28:05.552 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.u.CommitTracker Hard AutoCommit: if uncommited for 15000ms; 
+2018-11-20 02:28:05.552 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.u.CommitTracker Soft AutoCommit: disabled
+2018-11-20 02:28:06.093 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:28:06.113 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1542680886070&since=0} status=0 QTime=1
+2018-11-20 02:28:06.231 INFO  (qtp343856911-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=121
+2018-11-20 02:28:06.671 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.s.SolrIndexSearcher Opening [Searcher@66ca22a0[influence_info] main]
+2018-11-20 02:28:06.675 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\influence_info\conf
+2018-11-20 02:28:06.677 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2018-11-20 02:28:06.677 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2018-11-20 02:28:06.680 INFO  (coreLoadExecutor-9-thread-2) [   x:influence_info] o.a.s.h.ReplicationHandler Commits will be reserved for 10000ms.
+2018-11-20 02:28:06.681 INFO  (searcherExecutor-11-thread-1-processing-x:influence_info) [   x:influence_info] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@66ca22a0[influence_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_36(7.4.0):C245165/285:delGen=1) Uninverting(_57(7.4.0):C429005) Uninverting(_6b(7.4.0):C107856) Uninverting(_6v(7.4.0):C130711) Uninverting(_6m(7.4.0):C129615) Uninverting(_6u(7.4.0):C5295) Uninverting(_6w(7.4.0):C4947) Uninverting(_6x(7.4.0):C9675) Uninverting(_6y(7.4.0):C3984) Uninverting(_6z(7.4.0):C9615) Uninverting(_70(7.4.0):C4876) Uninverting(_71(7.4.0):C9922) Uninverting(_72(7.4.0):C2868)))}
+2018-11-20 02:28:06.682 INFO  (searcherExecutor-11-thread-1-processing-x:influence_info) [   x:influence_info] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2018-11-20 02:28:06.683 INFO  (searcherExecutor-11-thread-1-processing-x:influence_info) [   x:influence_info] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2018-11-20 02:28:06.687 INFO  (searcherExecutor-11-thread-1-processing-x:influence_info) [   x:influence_info] o.a.s.c.SolrCore [influence_info] Registered new searcher Searcher@66ca22a0[influence_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_36(7.4.0):C245165/285:delGen=1) Uninverting(_57(7.4.0):C429005) Uninverting(_6b(7.4.0):C107856) Uninverting(_6v(7.4.0):C130711) Uninverting(_6m(7.4.0):C129615) Uninverting(_6u(7.4.0):C5295) Uninverting(_6w(7.4.0):C4947) Uninverting(_6x(7.4.0):C9675) Uninverting(_6y(7.4.0):C3984) Uninverting(_6z(7.4.0):C9615) Uninverting(_70(7.4.0):C4876) Uninverting(_71(7.4.0):C9922) Uninverting(_72(7.4.0):C2868)))}
+2018-11-20 02:28:06.941 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@311ebb5[test] main]
+2018-11-20 02:28:06.943 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\test\conf
+2018-11-20 02:28:06.944 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2018-11-20 02:28:06.944 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2018-11-20 02:28:06.949 INFO  (coreLoadExecutor-9-thread-3) [   ] o.a.s.h.ReplicationHandler Commits will be reserved for 10000ms.
+2018-11-20 02:28:06.953 INFO  (searcherExecutor-28-thread-1) [   ] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@311ebb5[test] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_94(7.4.0):C668811/195656:delGen=180) Uninverting(_bn(7.4.0):C97027) Uninverting(_dv(7.4.0):C110772) Uninverting(_dl(7.4.0):c24471) Uninverting(_fu(7.4.0):C115853) Uninverting(_ht(7.4.0):c23472) Uninverting(_jh(7.4.0):c48707) Uninverting(_i4(7.4.0):c57566) Uninverting(_ix(7.4.0):c24446) Uninverting(_j7(7.4.0):c31285) Uninverting(_kc(7.4.0):c50442) Uninverting(_kw(7.4.0):c32729) Uninverting(_kv(7.4.0):C1768) Uninverting(_kx(7.4.0):C1190) Uninverting(_ky(7.4.0):C367)))}
+2018-11-20 02:28:06.959 INFO  (searcherExecutor-28-thread-1) [   ] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2018-11-20 02:28:06.959 INFO  (searcherExecutor-28-thread-1) [   ] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2018-11-20 02:28:06.960 INFO  (searcherExecutor-28-thread-1) [   ] o.a.s.c.SolrCore [test] Registered new searcher Searcher@311ebb5[test] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_94(7.4.0):C668811/195656:delGen=180) Uninverting(_bn(7.4.0):C97027) Uninverting(_dv(7.4.0):C110772) Uninverting(_dl(7.4.0):c24471) Uninverting(_fu(7.4.0):C115853) Uninverting(_ht(7.4.0):c23472) Uninverting(_jh(7.4.0):c48707) Uninverting(_i4(7.4.0):c57566) Uninverting(_ix(7.4.0):c24446) Uninverting(_j7(7.4.0):c31285) Uninverting(_kc(7.4.0):c50442) Uninverting(_kw(7.4.0):c32729) Uninverting(_kv(7.4.0):C1768) Uninverting(_kx(7.4.0):C1190) Uninverting(_ky(7.4.0):C367)))}
+2018-11-20 02:28:07.381 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:28:07.528 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@68d59bf4[paper_info] main]
+2018-11-20 02:28:07.530 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.r.ManagedResourceStorage File-based storage initialized to use dir: C:\Users\buaat\Desktop\solr\solr-7.4.0\server\solr\paper_info\conf
+2018-11-20 02:28:07.531 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.h.c.SpellCheckComponent Initializing spell checkers
+2018-11-20 02:28:07.531 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.s.DirectSolrSpellChecker init: {name=default,field=_text_,classname=solr.DirectSolrSpellChecker,distanceMeasure=internal,accuracy=0.5,maxEdits=2,minPrefix=1,maxInspections=5,minQueryLength=4,maxQueryFrequency=0.01}
+2018-11-20 02:28:07.534 INFO  (coreLoadExecutor-9-thread-1) [   ] o.a.s.h.ReplicationHandler Commits will be reserved for 10000ms.
+2018-11-20 02:28:07.544 INFO  (searcherExecutor-25-thread-1) [   ] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@68d59bf4[paper_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_iq(7.4.0):C366523) Uninverting(_181(7.4.0):C720579) Uninverting(_1at(7.4.0):c95950) Uninverting(_1i1(7.4.0):c95135) Uninverting(_1dw(7.4.0):c19112) Uninverting(_1ep(7.4.0):c85705) Uninverting(_1nn(7.4.0):c99943) Uninverting(_1l4(7.4.0):c59302) Uninverting(_1qy(7.4.0):c34247) Uninverting(_1pv(7.4.0):c11494) Uninverting(_1sc(7.4.0):c55363) Uninverting(_1s6(7.4.0):C90) Uninverting(_1s7(7.4.0):C58) Uninverting(_1s8(7.4.0):C89) Uninverting(_1s9(7.4.0):C19) Uninverting(_1sa(7.4.0):C78) Uninverting(_1sb(7.4.0):C246) Uninverting(_1sd(7.4.0):C69) Uninverting(_1se(7.4.0):C673) Uninverting(_1sf(7.4.0):C445) Uninverting(_1sg(7.4.0):C37) Uninverting(_1sh(7.4.0):C224) Uninverting(_1si(7.4.0):C2858) Uninverting(_1sk(7.4.0):C652)))}
+2018-11-20 02:28:07.544 INFO  (searcherExecutor-25-thread-1) [   ] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2018-11-20 02:28:07.544 INFO  (searcherExecutor-25-thread-1) [   ] o.a.s.h.c.SpellCheckComponent Loading spell index for spellchecker: default
+2018-11-20 02:28:07.554 INFO  (searcherExecutor-25-thread-1) [   ] o.a.s.c.SolrCore [paper_info] Registered new searcher Searcher@68d59bf4[paper_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_iq(7.4.0):C366523) Uninverting(_181(7.4.0):C720579) Uninverting(_1at(7.4.0):c95950) Uninverting(_1i1(7.4.0):c95135) Uninverting(_1dw(7.4.0):c19112) Uninverting(_1ep(7.4.0):c85705) Uninverting(_1nn(7.4.0):c99943) Uninverting(_1l4(7.4.0):c59302) Uninverting(_1qy(7.4.0):c34247) Uninverting(_1pv(7.4.0):c11494) Uninverting(_1sc(7.4.0):c55363) Uninverting(_1s6(7.4.0):C90) Uninverting(_1s7(7.4.0):C58) Uninverting(_1s8(7.4.0):C89) Uninverting(_1s9(7.4.0):C19) Uninverting(_1sa(7.4.0):C78) Uninverting(_1sb(7.4.0):C246) Uninverting(_1sd(7.4.0):C69) Uninverting(_1se(7.4.0):C673) Uninverting(_1sf(7.4.0):C445) Uninverting(_1sg(7.4.0):C37) Uninverting(_1sh(7.4.0):C224) Uninverting(_1si(7.4.0):C2858) Uninverting(_1sk(7.4.0):C652)))}
+2018-11-20 02:28:07.578 INFO  (qtp343856911-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=184
+2018-11-20 02:28:07.579 INFO  (qtp343856911-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=196
+2018-11-20 02:28:09.395 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:28:09.412 INFO  (qtp343856911-23) [   x:test] o.a.s.c.S.Request [test]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542680495463} status=0 QTime=10
+2018-11-20 02:28:09.429 INFO  (qtp343856911-20) [   x:test] o.a.s.c.S.Request [test]  webapp=/solr path=/replication params={wt=json&command=details&_=1542680495463} status=0 QTime=15
+2018-11-20 02:28:09.453 INFO  (qtp343856911-23) [   x:test] o.a.s.c.S.Request [test]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542680492409&ts=1542680492409} status=503 QTime=2
+2018-11-20 02:28:09.582 INFO  (qtp343856911-21) [   x:test] o.a.s.c.S.Request [test]  webapp=/solr path=/admin/system params={wt=json&_=1542680495463} status=0 QTime=165
+2018-11-20 02:28:09.587 INFO  (qtp343856911-18) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=188
+2018-11-20 02:28:10.934 INFO  (qtp343856911-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:28:10.948 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542680495463} status=0 QTime=2
+2018-11-20 02:28:10.972 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542680495463} status=0 QTime=14
+2018-11-20 02:28:11.014 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542680492409&ts=1542680492409} status=503 QTime=0
+2018-11-20 02:28:11.090 INFO  (qtp343856911-20) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=149
+2018-11-20 02:28:11.126 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542680495463} status=0 QTime=118
+2018-11-20 02:28:12.171 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:28:12.176 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542680497621} status=0 QTime=1
+2018-11-20 02:28:12.272 INFO  (qtp343856911-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=99
+2018-11-20 02:28:12.298 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:28:12.325 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542680497621} status=0 QTime=0
+2018-11-20 02:28:12.340 INFO  (qtp343856911-20) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542680497621} status=0 QTime=10
+2018-11-20 02:28:12.375 INFO  (qtp343856911-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=74
+2018-11-20 02:28:12.431 INFO  (qtp343856911-23) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:44.466 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.h.d.DataImporter Loading DIH Configuration: MyDataConfig.xml
+2018-11-20 02:29:44.484 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.h.d.DataImporter Data Configuration loaded successfully
+2018-11-20 02:29:44.529 INFO  (Thread-15) [   ] o.a.s.h.d.DataImporter Starting Full Import
+2018-11-20 02:29:44.529 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={core=paper_info&indent=on&commit=true&name=dataimport&clean=true&wt=json&command=full-import&entity=paper_info&_=1542680497621&verbose=false} status=0 QTime=65
+2018-11-20 02:29:44.563 WARN  (Thread-15) [   ] o.a.s.h.d.SimplePropertiesWriter Unable to read: dataimport.properties
+2018-11-20 02:29:44.567 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=1
+2018-11-20 02:29:45.146 INFO  (Thread-15) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@91de44f[paper_info] realtime]
+2018-11-20 02:29:45.205 INFO  (Thread-15) [   ] o.a.s.h.d.JdbcDataSource Creating a connection for entity paper_info with URL: jdbc:mysql://111.205.121.93:3306/EDMS
+2018-11-20 02:29:45.733 INFO  (Thread-15) [   ] o.a.s.h.d.JdbcDataSource Time taken for getConnection(): 527
+2018-11-20 02:29:46.282 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:47.040 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:47.527 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:47.680 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:47.831 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:47.976 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:48.127 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:48.263 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:48.409 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:48.556 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:48.690 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:48.832 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:49.634 INFO  (qtp343856911-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:29:49.812 INFO  (qtp343856911-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=172
+2018-11-20 02:29:49.812 INFO  (qtp343856911-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=139
+2018-11-20 02:29:52.556 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:29:52.588 INFO  (qtp343856911-17) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/replication params={wt=json&command=details&_=1542680495463} status=0 QTime=22
+2018-11-20 02:29:52.591 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/ping params={action=status&wt=json&_=1542680492409&ts=1542680492409} status=503 QTime=0
+2018-11-20 02:29:52.601 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/luke params={numTerms=0&show=index&wt=json&_=1542680495463} status=0 QTime=0
+2018-11-20 02:29:52.791 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/system params={wt=json&_=1542680495463} status=0 QTime=219
+2018-11-20 02:29:52.792 INFO  (qtp343856911-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=231
+2018-11-20 02:29:54.299 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:29:54.308 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:54.403 INFO  (qtp343856911-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=97
+2018-11-20 02:29:54.471 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:29:54.477 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:54.485 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542680497621} status=0 QTime=1
+2018-11-20 02:29:54.521 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:54.547 INFO  (qtp343856911-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=74
+2018-11-20 02:29:56.515 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:29:58.513 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:00.148 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:30:00.148 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:30:00.171 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@36d7076d[paper_info] realtime]
+2018-11-20 02:30:00.177 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:30:00.524 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:02.515 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:04.517 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:06.517 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:08.517 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:10.519 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:12.519 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:14.519 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:16.519 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:18.519 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:20.519 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:22.520 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:24.521 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:26.519 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:28.520 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:30.522 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:32.522 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:34.524 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:36.524 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:38.525 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:40.525 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:42.524 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:44.525 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:46.527 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:48.528 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:50.529 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:52.710 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:54.713 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:56.714 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:30:58.719 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:00.722 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:02.725 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:04.725 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:06.727 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:08.729 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:10.737 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:12.732 INFO  (qtp343856911-18) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:15.061 INFO  (qtp343856911-15) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:15.758 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542681075506} status=0 QTime=0
+2018-11-20 02:31:15.778 INFO  (qtp343856911-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/logging params={wt=json&_=1542681075744&since=0} status=0 QTime=1
+2018-11-20 02:31:15.875 INFO  (qtp343856911-14) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542681075510} status=0 QTime=114
+2018-11-20 02:31:17.621 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:19.661 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:21.623 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:23.649 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:24.512 INFO  (qtp343856911-19) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542681084224} status=0 QTime=0
+2018-11-20 02:31:24.723 INFO  (qtp343856911-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542681084226} status=0 QTime=208
+2018-11-20 02:31:24.723 INFO  (qtp343856911-23) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542681084226} status=0 QTime=201
+2018-11-20 02:31:26.405 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:28.417 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:28.679 INFO  (qtp343856911-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542681088431} status=0 QTime=0
+2018-11-20 02:31:28.897 INFO  (qtp343856911-15) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542681088431} status=0 QTime=202
+2018-11-20 02:31:28.897 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542681088431} status=0 QTime=216
+2018-11-20 02:31:30.414 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:32.417 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:35.009 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:37.007 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:39.012 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:41.015 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:43.017 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:45.020 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:47.022 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:53.724 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:55.388 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:57.390 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:31:59.392 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:01.394 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:03.394 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:05.397 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:08.396 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:10.405 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:12.401 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:14.405 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:16.408 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:18.411 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:20.412 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:22.468 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:24.467 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:26.489 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:28.722 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:30.776 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:32.776 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:34.790 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:36.755 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:32:36.756 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:32:36.834 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:39.126 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:41.054 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:43.068 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:44.613 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@3686c2bf[paper_info] realtime]
+2018-11-20 02:32:44.627 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:32:45.069 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:47.066 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:49.067 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:51.067 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:51.757 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:32:51.757 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:32:53.135 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:55.628 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@5c4a0426[paper_info] realtime]
+2018-11-20 02:32:55.644 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:32:56.100 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:32:58.100 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:00.116 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:02.117 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:04.285 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:06.289 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:06.760 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:33:06.760 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:33:08.297 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:10.316 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:11.262 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@7ae6ba66[paper_info] realtime]
+2018-11-20 02:33:11.279 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:33:12.317 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:14.324 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:16.324 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:18.328 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:20.329 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:21.821 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:33:21.821 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:33:22.358 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:24.362 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:26.124 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@6e705c9c[paper_info] realtime]
+2018-11-20 02:33:26.140 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:33:26.365 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:28.369 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:30.374 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:32.377 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:34.382 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:36.445 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:36.883 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:33:36.883 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:33:38.420 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:40.428 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:41.293 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@44a4615d[paper_info] realtime]
+2018-11-20 02:33:41.308 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:33:42.430 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:44.495 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:46.497 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:48.545 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:50.541 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:51.945 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:33:51.945 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:33:52.548 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:54.562 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:55.975 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@3065c5b2[paper_info] realtime]
+2018-11-20 02:33:55.991 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:33:56.559 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:33:58.586 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:00.588 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:02.602 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:04.606 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:06.607 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:06.950 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:34:06.950 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:34:08.611 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:10.616 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:10.973 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@8b60f03[paper_info] realtime]
+2018-11-20 02:34:10.986 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:34:12.617 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:14.668 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:16.676 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:18.679 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:20.681 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:21.952 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:34:21.953 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:34:22.706 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:24.708 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:26.009 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@4cf08295[paper_info] realtime]
+2018-11-20 02:34:26.026 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:34:26.712 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:28.713 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:30.922 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:32.923 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:34.928 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:36.999 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:34:37.001 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:37.000 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:34:38.989 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:41.052 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:41.430 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@3b1c376a[paper_info] realtime]
+2018-11-20 02:34:41.453 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:34:43.030 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:45.034 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:47.054 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:49.057 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:51.087 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:52.052 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:34:52.052 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:34:53.139 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:55.111 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:55.922 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@5899602f[paper_info] realtime]
+2018-11-20 02:34:55.933 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:34:57.113 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:34:59.128 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:01.128 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:03.131 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:05.181 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:07.054 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:35:07.054 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:35:07.202 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:09.204 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:11.216 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:11.829 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@47024b14[paper_info] realtime]
+2018-11-20 02:35:11.848 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:35:13.211 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:15.215 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:17.252 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:19.223 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:21.224 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:22.059 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:35:22.059 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:35:23.228 INFO  (qtp343856911-54) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:25.227 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:25.368 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@68a740ba[paper_info] realtime]
+2018-11-20 02:35:25.380 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:35:27.265 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:29.230 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:31.229 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:33.272 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:35.919 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:37.062 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:35:37.062 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:35:37.900 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:39.899 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:41.171 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@cd94db8[paper_info] realtime]
+2018-11-20 02:35:41.188 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:35:41.902 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:43.900 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:45.899 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:47.899 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:49.900 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:51.951 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:52.067 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:35:52.067 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:35:53.950 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:56.014 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:35:56.366 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@330141f8[paper_info] realtime]
+2018-11-20 02:35:56.400 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:35:58.545 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:00.545 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:02.567 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:04.571 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:06.571 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:07.070 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:36:07.070 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:36:08.600 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:10.582 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:10.699 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@450be2c9[paper_info] realtime]
+2018-11-20 02:36:10.871 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:36:12.581 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:14.584 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:17.638 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:19.637 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:21.700 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:22.072 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:36:22.072 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:36:23.644 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:24.450 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@4b801dc2[paper_info] realtime]
+2018-11-20 02:36:24.468 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:36:25.647 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:27.650 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:29.651 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:31.671 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:33.672 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:35.703 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:37.708 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:38.898 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:36:38.898 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:36:39.644 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@4c0c7f96[paper_info] realtime]
+2018-11-20 02:36:39.658 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:36:39.749 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:41.764 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:43.766 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:45.767 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:48.782 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:50.780 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:52.780 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:53.901 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:36:53.901 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:36:54.615 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@7e34e6c8[paper_info] realtime]
+2018-11-20 02:36:54.628 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:36:54.786 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:56.788 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:36:58.842 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:00.808 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:02.810 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:04.815 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:06.815 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:08.817 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:08.902 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:37:08.902 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:37:10.824 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:11.613 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@79bb15e0[paper_info] realtime]
+2018-11-20 02:37:11.633 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:37:12.829 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:14.838 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:16.903 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:18.947 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:21.005 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:23.028 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:25.042 INFO  (qtp343856911-53) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:26.165 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:37:26.165 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:37:27.055 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:28.454 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@1af6535d[paper_info] realtime]
+2018-11-20 02:37:28.473 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:37:29.046 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:31.090 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:33.080 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:35.081 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:37.084 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:39.085 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:41.087 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:42.624 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:37:42.624 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:37:43.092 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:43.598 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@401e97d9[paper_info] realtime]
+2018-11-20 02:37:43.891 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:37:45.094 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:47.099 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:49.099 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:51.102 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:53.104 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:55.107 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:57.137 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:37:57.652 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:37:57.653 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:37:58.718 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@250b89f[paper_info] realtime]
+2018-11-20 02:37:58.730 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:37:59.148 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:01.173 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:03.173 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:05.174 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:07.179 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:10.197 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:12.196 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:13.388 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:38:13.388 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:38:14.199 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:14.658 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@71af2f2a[paper_info] realtime]
+2018-11-20 02:38:14.808 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:38:16.203 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:18.203 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:20.241 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:22.244 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:24.323 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:26.309 INFO  (qtp343856911-19) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:28.309 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:28.390 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 start commit{,optimize=false,openSearcher=false,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:38:28.390 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:0
+2018-11-20 02:38:30.313 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:31.873 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@6a71c6ae[paper_info] realtime]
+2018-11-20 02:38:32.074 INFO  (commitScheduler-29-thread-1) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:38:32.316 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:34.319 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:36.324 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:38.326 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:40.330 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:42.330 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:42.985 INFO  (Thread-15) [   ] o.a.s.h.d.DocBuilder Import completed successfully
+2018-11-20 02:38:42.985 INFO  (Thread-15) [   ] o.a.s.u.DirectUpdateHandler2 start commit{_version_=1617618820645519360,optimize=false,openSearcher=true,waitSearcher=true,expungeDeletes=false,softCommit=false,prepareCommit=false}
+2018-11-20 02:38:42.985 INFO  (Thread-15) [   ] o.a.s.u.SolrIndexWriter Calling setCommitData with IW:org.apache.solr.update.SolrIndexWriter@b5b20e5 commitCommandVersion:1617618820645519360
+2018-11-20 02:38:44.330 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:45.444 INFO  (Thread-15) [   ] o.a.s.s.SolrIndexSearcher Opening [Searcher@57b7d261[paper_info] main]
+2018-11-20 02:38:45.447 INFO  (searcherExecutor-25-thread-1) [   ] o.a.s.c.QuerySenderListener QuerySenderListener sending requests to Searcher@57b7d261[paper_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_1t1(7.4.0):C1424209) Uninverting(_1tf(7.4.0):C406517) Uninverting(_1so(7.4.0):C32056) Uninverting(_1t0(7.4.0):C45421) Uninverting(_1t2(7.4.0):C137557) Uninverting(_1ts(7.4.0):C1820312) Uninverting(_1tg(7.4.0):C37626) Uninverting(_1u3(7.4.0):c68642) Uninverting(_1tr(7.4.0):C189321) Uninverting(_1tu(7.4.0):C190898) Uninverting(_1tx(7.4.0):C193699) Uninverting(_1tz(7.4.0):C196540) Uninverting(_1u0(7.4.0):C30928) Uninverting(_1u1(7.4.0):C11915) Uninverting(_1u2(7.4.0):C153099) Uninverting(_1u4(7.4.0):C35144) Uninverting(_1u5(7.4.0):C173683)))}
+2018-11-20 02:38:45.447 INFO  (searcherExecutor-25-thread-1) [   ] o.a.s.c.QuerySenderListener QuerySenderListener done.
+2018-11-20 02:38:45.459 INFO  (Thread-15) [   ] o.a.s.u.DirectUpdateHandler2 end_commit_flush
+2018-11-20 02:38:45.459 INFO  (searcherExecutor-25-thread-1) [   ] o.a.s.c.SolrCore [paper_info] Registered new searcher Searcher@57b7d261[paper_info] main{ExitableDirectoryReader(UninvertingDirectoryReader(Uninverting(_1t1(7.4.0):C1424209) Uninverting(_1tf(7.4.0):C406517) Uninverting(_1so(7.4.0):C32056) Uninverting(_1t0(7.4.0):C45421) Uninverting(_1t2(7.4.0):C137557) Uninverting(_1ts(7.4.0):C1820312) Uninverting(_1tg(7.4.0):C37626) Uninverting(_1u3(7.4.0):c68642) Uninverting(_1tr(7.4.0):C189321) Uninverting(_1tu(7.4.0):C190898) Uninverting(_1tx(7.4.0):C193699) Uninverting(_1tz(7.4.0):C196540) Uninverting(_1u0(7.4.0):C30928) Uninverting(_1u1(7.4.0):C11915) Uninverting(_1u2(7.4.0):C153099) Uninverting(_1u4(7.4.0):C35144) Uninverting(_1u5(7.4.0):C173683)))}
+2018-11-20 02:38:45.691 WARN  (Thread-15) [   ] o.a.s.h.d.SimplePropertiesWriter Unable to read: dataimport.properties
+2018-11-20 02:38:45.693 INFO  (Thread-15) [   ] o.a.s.h.d.SimplePropertiesWriter Wrote last indexed time to dataimport.properties
+2018-11-20 02:38:45.699 INFO  (Thread-15) [   ] o.a.s.h.d.DocBuilder Time taken = 0:9:1.134
+2018-11-20 02:38:45.699 INFO  (Thread-15) [   ] o.a.s.u.p.LogUpdateProcessorFactory [paper_info]  webapp=/solr path=/dataimport params={core=paper_info&indent=on&commit=true&name=dataimport&clean=true&wt=json&command=full-import&entity=paper_info&_=1542680497621&verbose=false} status=0 QTime=65{deleteByQuery=*:* (-1617618256161406976),add=[1000000004738 (1617618420837122048), 1000000004859 (1617618420895842304), 1000000008159 (1617618420897939456), 1000000009797 (1617618420898988032), 1000000009921 (1617618420900036608), 1000000010057 (1617618420901085184), 1000000010081 (1617618420902133760), 1000000013220 (1617618420903182336), 1000000016001 (1617618420903182337), 1000000019 (1617618420904230912), ... (5147567 adds)],commit=} 0 541235
+2018-11-20 02:38:46.333 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:48.333 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:50.335 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:53.336 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:55.337 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:57.339 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:38:59.345 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:01.344 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:03.349 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:05.348 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:07.352 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:09.355 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:11.364 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:13.364 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:15.365 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:17.368 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:19.368 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:21.370 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:23.372 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:25.374 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:27.379 INFO  (qtp343856911-14) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:29.402 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:31.390 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:33.392 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:35.395 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:37.398 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:39.397 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:41.399 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:44.401 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:46.406 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:48.407 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:50.411 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:52.412 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:54.416 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:56.416 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:39:58.417 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:40:00.420 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:40:02.419 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:40:04.420 INFO  (qtp343856911-22) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:40:05.728 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:40:10.665 INFO  (qtp343856911-22) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:40:10.781 INFO  (qtp343856911-52) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=109
+2018-11-20 02:40:12.993 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/select params={q=*:*&_=1542681610580} hits=5147567 status=0 QTime=50
+2018-11-20 02:40:18.580 INFO  (qtp343856911-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:40:18.580 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542680497621} status=0 QTime=0
+2018-11-20 02:40:18.697 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=111
+2018-11-20 02:40:18.713 INFO  (qtp343856911-21) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/cores params={indexInfo=false&wt=json&_=1542680492405} status=0 QTime=0
+2018-11-20 02:40:18.720 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/admin/mbeans params={cat=QUERY&wt=json&_=1542680497621} status=0 QTime=0
+2018-11-20 02:40:18.728 INFO  (qtp343856911-52) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=show-config&_=1542680497621} status=0 QTime=0
+2018-11-20 02:40:18.785 INFO  (qtp343856911-21) [   x:paper_info] o.a.s.c.S.Request [paper_info]  webapp=/solr path=/dataimport params={indent=on&wt=json&command=status&_=1542680497621} status=0 QTime=0
+2018-11-20 02:40:18.800 INFO  (qtp343856911-17) [   ] o.a.s.s.HttpSolrCall [admin] webapp=null path=/admin/info/system params={wt=json&_=1542680492409} status=0 QTime=85
+2018-11-20 02:40:28.847 INFO  (ShutdownMonitor) [   ] o.e.j.s.AbstractConnector Stopped ServerConnector@abf688e{HTTP/1.1,[http/1.1]}{0.0.0.0:8983}
+2018-11-20 02:40:28.847 INFO  (ShutdownMonitor) [   ] o.e.j.s.session node0 Stopped scavenging
+2018-11-20 02:40:28.850 INFO  (ShutdownMonitor) [   ] o.a.s.c.CoreContainer Shutting down CoreContainer instance=2029680286
+2018-11-20 02:40:28.851 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.node, tag=null
+2018-11-20 02:40:28.853 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@37efd131: rootName = null, domain = solr.node, service url = null, agent id = null] for registry solr.node / com.codahale.metrics.MetricRegistry@3c710c15
+2018-11-20 02:40:28.858 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jvm, tag=null
+2018-11-20 02:40:28.859 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@2101b44a: rootName = null, domain = solr.jvm, service url = null, agent id = null] for registry solr.jvm / com.codahale.metrics.MetricRegistry@483dd1bb
+2018-11-20 02:40:28.862 INFO  (ShutdownMonitor) [   ] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.jetty, tag=null
+2018-11-20 02:40:28.862 INFO  (ShutdownMonitor) [   ] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@2cc3ad05: rootName = null, domain = solr.jetty, service url = null, agent id = null] for registry solr.jetty / com.codahale.metrics.MetricRegistry@8bacb31
+2018-11-20 02:40:28.876 INFO  (coreCloseExecutor-35-thread-1) [   x:academic_info] o.a.s.c.SolrCore [academic_info]  CLOSING SolrCore org.apache.solr.core.SolrCore@57ba037
+2018-11-20 02:40:28.877 INFO  (coreCloseExecutor-35-thread-1) [   x:academic_info] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.academic_info, tag=57ba037
+2018-11-20 02:40:28.877 INFO  (coreCloseExecutor-35-thread-2) [   x:organization_info] o.a.s.c.SolrCore [organization_info]  CLOSING SolrCore org.apache.solr.core.SolrCore@5da02f6f
+2018-11-20 02:40:28.877 INFO  (coreCloseExecutor-35-thread-1) [   x:academic_info] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@1018dfbf: rootName = null, domain = solr.core.academic_info, service url = null, agent id = null] for registry solr.core.academic_info / com.codahale.metrics.MetricRegistry@11c3d988
+2018-11-20 02:40:28.877 INFO  (coreCloseExecutor-35-thread-3) [   x:influence_info] o.a.s.c.SolrCore [influence_info]  CLOSING SolrCore org.apache.solr.core.SolrCore@5e0ae0d
+2018-11-20 02:40:28.878 INFO  (coreCloseExecutor-35-thread-4) [   x:test] o.a.s.c.SolrCore [test]  CLOSING SolrCore org.apache.solr.core.SolrCore@11dcd2ce
+2018-11-20 02:40:28.881 INFO  (coreCloseExecutor-35-thread-5) [   x:paper_info] o.a.s.c.SolrCore [paper_info]  CLOSING SolrCore org.apache.solr.core.SolrCore@27bae2e3
+2018-11-20 02:40:28.897 INFO  (coreCloseExecutor-35-thread-2) [   x:organization_info] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.organization_info, tag=5da02f6f
+2018-11-20 02:40:28.897 INFO  (coreCloseExecutor-35-thread-2) [   x:organization_info] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@bf38e01: rootName = null, domain = solr.core.organization_info, service url = null, agent id = null] for registry solr.core.organization_info / com.codahale.metrics.MetricRegistry@79fb588
+2018-11-20 02:40:28.912 INFO  (coreCloseExecutor-35-thread-3) [   x:influence_info] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.influence_info, tag=5e0ae0d
+2018-11-20 02:40:28.913 INFO  (coreCloseExecutor-35-thread-3) [   x:influence_info] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@6a9ddeb2: rootName = null, domain = solr.core.influence_info, service url = null, agent id = null] for registry solr.core.influence_info / com.codahale.metrics.MetricRegistry@b20744e
+2018-11-20 02:40:28.928 INFO  (coreCloseExecutor-35-thread-4) [   x:test] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.test, tag=11dcd2ce
+2018-11-20 02:40:28.928 INFO  (coreCloseExecutor-35-thread-4) [   x:test] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@6bcd52ae: rootName = null, domain = solr.core.test, service url = null, agent id = null] for registry solr.core.test / com.codahale.metrics.MetricRegistry@49ceec71
+2018-11-20 02:40:28.945 INFO  (coreCloseExecutor-35-thread-5) [   x:paper_info] o.a.s.m.SolrMetricManager Closing metric reporters for registry=solr.core.paper_info, tag=27bae2e3
+2018-11-20 02:40:28.946 INFO  (coreCloseExecutor-35-thread-5) [   x:paper_info] o.a.s.m.r.SolrJmxReporter Closing reporter [org.apache.solr.metrics.reporters.SolrJmxReporter@52dd0a01: rootName = null, domain = solr.core.paper_info, service url = null, agent id = null] for registry solr.core.paper_info / com.codahale.metrics.MetricRegistry@623c8113
+2018-11-20 02:40:29.013 INFO  (ShutdownMonitor) [   ] o.e.j.s.h.ContextHandler Stopped o.e.j.w.WebAppContext@38102d01{/solr,null,UNAVAILABLE}{file:///C:/Users/buaat/Desktop/solr/solr-7.4.0/server//solr-webapp/webapp}

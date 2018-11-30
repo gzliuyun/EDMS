@@ -1,0 +1,122 @@
+<!-- <dataConfig>
+    <dataSource driver="org.hsqldb.jdbcDriver" url="jdbc:hsqldb:${solr.install.dir}/example/example-DIH/hsqldb/ex" user="sa" />
+    <document>
+        <entity name="item" query="select * from item"
+                deltaQuery="select id from item where last_modified > '${dataimporter.last_index_time}'">
+            <field column="NAME" name="name" />
+
+            <entity name="feature"  
+                    query="select DESCRIPTION from FEATURE where ITEM_ID='${item.ID}'"
+                    deltaQuery="select ITEM_ID from FEATURE where last_modified > '${dataimporter.last_index_time}'"
+                    parentDeltaQuery="select ID from item where ID=${feature.ITEM_ID}">
+                <field name="features" column="DESCRIPTION" />
+            </entity>
+            
+            <entity name="item_category"
+                    query="select CATEGORY_ID from item_category where ITEM_ID='${item.ID}'"
+                    deltaQuery="select ITEM_ID, CATEGORY_ID from item_category where last_modified > '${dataimporter.last_index_time}'"
+                    parentDeltaQuery="select ID from item where ID=${item_category.ITEM_ID}">
+                <entity name="category"
+                        query="select DESCRIPTION from category where ID = '${item_category.CATEGORY_ID}'"
+                        deltaQuery="select ID from category where last_modified > '${dataimporter.last_index_time}'"
+                        parentDeltaQuery="select ITEM_ID, CATEGORY_ID from item_category where CATEGORY_ID=${category.ID}">
+                    <field column="DESCRIPTION" name="cat" />
+                </entity>
+            </entity>
+        </entity>
+    </document>
+</dataConfig> -->
+
+<!-- MyConfig -->
+<dataConfig>
+	<dataSource driver="com.mysql.jdbc.Driver" 
+				url="jdbc:mysql://111.205.121.93:3306/EDMS"
+				user="root"
+				password="root@buaa"/>
+	<document>
+		<entity name="basic_info" query="select * from basic_info">
+			<field column="id" name="id" />
+			<field column="name" name="name" />
+			<field column="university" name="university" />
+			<field column="college" name="college" />
+			<field column="theme_list" name="theme_list" />
+			<field column="sub_list" name="sub_list" />
+			<field column="resume" name="resume" />
+			<field column="img_url" name="img_url" />
+			<field column="url1" name="url1" />
+			<field column="url2" name="url2" />
+		</entity>
+
+		<entity name="academic_info" query="select * from academic_info">
+			<field column="id" name="id" />
+			<field column="name" name="name" />
+			<field column="amount1" name="amount1" />
+			<field column="amount2" name="amount2" />
+			<field column="h_index" name="h_index" />
+			<field column="core" name="core" />
+			<field column="cssci" name="cssci" />
+			<field column="rdfybkzl" name="rdfybkzl" />
+			<field column="co_expert" name="co_expert" />
+			<field column="co_agency" name="co_agency" />
+		</entity>
+
+		<entity name="paper_info" query="select * from paper_info">
+			<field column="paper_id" name="paper_id" />
+			<field column="title" name="title" />
+			<field column="type" name="type" />
+			<field column="source" name="source" />
+			<field column="data1" name="data1" />
+			<field column="data2" name="data2" />
+			<field column="data3" name="data3" />
+			<field column="data4" name="data4" />
+			<field column="data5" name="data5" />
+			<field column="data" name="data" />
+			<field column="abstract" name="abstract" />
+			<field column="keyword" name="keyword" />
+			<field column="category" name="category" />
+			<field column="authors" name="authors" />
+			<field column="author1" name="author1" />
+			<field column="author2" name="author2" />
+			<field column="author3" name="author3" />
+			<field column="author4" name="author4" />
+			<field column="author5" name="author5" />
+		</entity>
+
+		<entity name="influence_info" query="select * from influence_info">
+			<field column="id" name="id" />
+			<field column="field" name="field" />
+			<field column="influ" name="influ" />
+			<field column="influ_19" name="influ_19" />
+			<field column="influ_1990" name="influ_1990" />
+			<field column="influ_1995" name="influ_1995" />
+			<field column="influ_2000" name="influ_2000" />
+			<field column="influ_2005" name="influ_2005" />
+			<field column="influ_2010" name="influ_2010" />
+			<field column="influ_2015" name="influ_2015" />
+		</entity>
+
+		<!-- <entity name="organization_info" query="select * from organization_info">
+			<field column="index" name="id" />
+			<field column="col" name="name" />
+			<field column="type" name="type" />
+			<field column="attach" name="attach" />
+			<field column="loc" name="loc" />
+			<field column="teach" name="teach" />
+			<field column="con" name="sub_list" />
+			<field column="img_url" name="sub_list" />
+			<field column="intro" name="sub_list" />
+		</entity>
+
+		<entity name="expert_intro" query="select * from expert_intro">
+			<field column="id" name="id" />
+			<field column="name" name="name" />
+			<field column="university" name="university" />
+			<field column="department" name="department" />
+			<field column="profile" name="profile" />
+			<field column="img_url" name="img_url" />
+			<field column="info_url" name="info_url" />
+		</entity> -->
+
+	</document>
+</dataConfig>
+

@@ -112,11 +112,46 @@ class PaperInfo(models.Model):
     def __str__(self):
         return self.title + " " + self.authors
 
+
 class InfluenceInfo(models.Model):
     id = models.CharField(primary_key=True, max_length=255)
     field = models.CharField(max_length=255, blank=True, null=True)
     influ = models.FloatField(blank=True, null=True)
+    influ_19 = models.FloatField(blank=True, null=True)
+    influ_1990 = models.FloatField(blank=True, null=True)
+    influ_1995 = models.FloatField(blank=True, null=True)
+    influ_2000 = models.FloatField(blank=True, null=True)
+    influ_2005 = models.FloatField(blank=True, null=True)
+    influ_2010 = models.FloatField(blank=True, null=True)
+    influ_2015 = models.FloatField(blank=True, null=True)
 
     class Meta:
         managed = False
         db_table = 'influence_info'
+
+
+class PaperRelation(models.Model):
+    id = models.CharField(primary_key=True, max_length=255)
+    coid_list = models.CharField(max_length=255, blank=True, null=True)
+    year_list = models.CharField(max_length=255, blank=True, null=True)
+    score_list = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'paper_relation_score'
+
+
+class OrganizationInfo(models.Model):
+    index = models.IntegerField(primary_key=True)
+    col = models.CharField(max_length=255, blank=True, null=True)
+    type = models.CharField(max_length=255, blank=True, null=True)
+    attach = models.CharField(max_length=255, blank=True, null=True)
+    loc = models.CharField(max_length=255, blank=True, null=True)
+    teach = models.CharField(max_length=255, blank=True, null=True)
+    con = models.CharField(max_length=255, blank=True, null=True)
+    img_url = models.CharField(max_length=255, blank=True, null=True)
+    intro = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'organization_info'
