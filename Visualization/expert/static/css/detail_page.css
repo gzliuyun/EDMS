@@ -2776,7 +2776,7 @@ input, select, textarea {
 				border-left: solid 1px rgba(160, 160, 160, 0.3);
 				min-width: 17em;
 				text-align: right;
-				width: 17em;
+				width: fit-content;
 			}
 
 				.main-module > header .meta > * {
@@ -3731,3 +3731,20 @@ input, select, textarea {
 			}
 
 		}
+
+.relationship-floating-div {
+	display: block;
+	height: fit-content;
+	width: fit-content;
+	max-width: 20em;
+	max-height: 50em;
+	background-color: #fafafa;
+	overflow: scroll;
+	border: 1px solid transparent;
+	/*border-radius: 1em;*/
+}
+
+	.relationship-floating-div p {
+		color: #4f94cd;
+	}
+

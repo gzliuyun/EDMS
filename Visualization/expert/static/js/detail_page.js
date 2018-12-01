@@ -16,7 +16,7 @@ function query_detail_ajax(expert_id) {
 	let server_url = "detail";
 
 	let post_data = {};
-	if(!expert_id || expert_id === "") {
+	if (!expert_id || expert_id === "") {
 		return false;
 	} else {
 		post_data.id = expert_id;
@@ -44,7 +44,7 @@ function query_detail_ajax(expert_id) {
 			// 隐藏loading动画
 			$('#intro .load-container').css({"display": "none"});
 
-			if(!result || result === "" || result.length === 0) {
+			if (!result || result === "" || result.length === 0) {
 				// TODO
 			    $.toast({
 					text: "抱歉，该专家无信息！",
@@ -169,24 +169,24 @@ function render_detail_page(result_ajax) {
     jq_total_pages.append(paper_page_total);
 
     // 使上一页按钮不可选
-	if(!jq_paper_previous_page.hasClass("disabled")) {
+	if (!jq_paper_previous_page.hasClass("disabled")) {
     	jq_paper_previous_page.addClass("disabled");
 	}
 
     // 若总共仅一页,则使下一页按钮也不可选
-    if(paper_page_total === 1 && !jq_paper_next_page.hasClass("disabled")) {
+    if (paper_page_total === 1 && !jq_paper_next_page.hasClass("disabled")) {
     	jq_paper_next_page.addClass("disabled");
 	}
 
     // 若数据库中有学者的头像,则将页面中的默认头像更换掉
 	let expert_image = result_ajax.expert_basic.img_url;
-	if(expert_image && expert_image !== '') {
+	if (expert_image && expert_image !== '') {
 		jq_this_researcher_image.attr({"src": expert_image});
 	}
 
 	// 学者简历信息
 	let expert_resume = result_ajax.expert_basic.resume;
-	if(expert_resume && expert_resume !== '') {
+	if (expert_resume && expert_resume !== '') {
 		jq_this_researcher_resume.append('<p>' + expert_resume + '</p>');
 	} else {
 		jq_this_researcher_resume.append('<p>无该学者简历数据.</p>');
@@ -205,27 +205,27 @@ function render_detail_page(result_ajax) {
 
     	// 获取作者id信息(在数据库中存在的作者才有id,否则只有名字)
 		let paper_authors_id = [];
-		if(paper_item.author1 && (paper_item.author1 !== '')) {
+		if (paper_item.author1 && (paper_item.author1 !== '')) {
 			paper_authors_id.push(paper_item.author1);
 		} else {
 			paper_authors_id.push('');
 		}
-		if(paper_item.author2 && (paper_item.author2 !== '')) {
+		if (paper_item.author2 && (paper_item.author2 !== '')) {
 			paper_authors_id.push(paper_item.author2);
 		} else {
 			paper_authors_id.push('');
 		}
-		if(paper_item.author3 && (paper_item.author3 !== '')) {
+		if (paper_item.author3 && (paper_item.author3 !== '')) {
 			paper_authors_id.push(paper_item.author3);
 		} else {
 			paper_authors_id.push('');
 		}
-		if(paper_item.author4 && (paper_item.author4 !== '')) {
+		if (paper_item.author4 && (paper_item.author4 !== '')) {
 			paper_authors_id.push(paper_item.author4);
 		} else {
 			paper_authors_id.push('');
 		}
-		if(paper_item.author5 && (paper_item.author5 !== '')) {
+		if (paper_item.author5 && (paper_item.author5 !== '')) {
 			paper_authors_id.push(paper_item.author5);
 		} else {
 			paper_authors_id.push('');
@@ -238,7 +238,7 @@ function render_detail_page(result_ajax) {
 		html_template += '<p>';
 		let i;
 		for(i = 0 ; i < paper_authors_name.length ; i++) {
-			if(paper_authors_id[i] === '') {
+			if (paper_authors_id[i] === '') {
 				// 若作者无id,表示该作者不在数据库中,故不做链接跳转
 				html_template += (paper_authors_name[i] || paper_authors_id[i]) + ' , ';
 			} else {
@@ -270,10 +270,10 @@ function previousPaperPage() {
     let jq_paper_previous_page = $('#paper_previous_page');
     let jq_paper_next_page = $('#paper_next_page');
 
-	if(!paper_page_current || paper_page_current <= 0 || paper_page_current > paper_page_total) {
+	if (!paper_page_current || paper_page_current <= 0 || paper_page_current > paper_page_total) {
 		console.log('pre_page_error! paper_page_current is out of range.');
 		return false;
-	} else if(paper_page_current === 1) {
+	} else if (paper_page_current === 1) {
 		$.toast({
 			text: "当前页已经是第一页了！",
 			showHideTransition: 'plain',
@@ -293,12 +293,12 @@ function previousPaperPage() {
 		jq_current_page.append(paper_page_current);
 
 		// 若按上一页之后到了第一页,则使上一页按钮不可选
-		if(paper_page_current === 1 && !jq_paper_previous_page.hasClass("disabled")) {
+		if (paper_page_current === 1 && !jq_paper_previous_page.hasClass("disabled")) {
 			jq_paper_previous_page.addClass("disabled");
 		}
 
 		// 若下一页按钮之前有disabled属性,则撤销之
-		if(jq_paper_next_page.hasClass("disabled")) {
+		if (jq_paper_next_page.hasClass("disabled")) {
 			jq_paper_next_page.removeClass("disabled");
 		}
 
@@ -316,10 +316,10 @@ function nextPaperPage() {
 	let jq_paper_previous_page = $('#paper_previous_page');
 	let jq_paper_next_page = $('#paper_next_page');
 
-	if(!paper_page_current || paper_page_current <= 0 || paper_page_current > paper_page_total) {
+	if (!paper_page_current || paper_page_current <= 0 || paper_page_current > paper_page_total) {
 		console.log('next_page_error! paper_page_current is out of range.');
 		return false;
-	} else if(paper_page_current === paper_page_total) {
+	} else if (paper_page_current === paper_page_total) {
 		$.toast({
 			text: "当前页已经是最后一页了！",
 			showHideTransition: 'plain',
@@ -339,12 +339,12 @@ function nextPaperPage() {
 		jq_current_page.append(paper_page_current);
 
 		// 若按下一页之后到了最后一页,则使下一页按钮不可选
-		if(paper_page_current === paper_page_total && !jq_paper_next_page.hasClass("disabled")) {
+		if (paper_page_current === paper_page_total && !jq_paper_next_page.hasClass("disabled")) {
 			jq_paper_next_page.addClass("disabled");
 		}
 
 		// 若上一页按钮之前有disabled属性,则撤销之
-		if(jq_paper_previous_page.hasClass("disabled")) {
+		if (jq_paper_previous_page.hasClass("disabled")) {
 			jq_paper_previous_page.removeClass("disabled");
 		}
 
@@ -363,10 +363,10 @@ function jumpPaperPage() {
 	let jq_paper_next_page = $('#paper_next_page');
 	let page_input = Math.floor( parseInt($('#paper_jump_input').val().toString().trim(), 10) );
 
-	if(!paper_page_current || paper_page_current <= 0 || paper_page_current > paper_page_total) {
+	if (!paper_page_current || paper_page_current <= 0 || paper_page_current > paper_page_total) {
 		console.log('input_jump_page_error! paper_page_current is out of range.');
 		return false;
-	} else if(!page_input || page_input === "") {
+	} else if (!page_input || page_input === "") {
 		$.toast({
 			text: "请输入合法页码！",
 			showHideTransition: 'plain',
@@ -379,7 +379,7 @@ function jumpPaperPage() {
 			position: 'mid-center'
 		});
 		return false;
-	} else if(parseInt(page_input, 10) <= 0 || parseInt(page_input, 10) > paper_page_total) {
+	} else if (parseInt(page_input, 10) <= 0 || parseInt(page_input, 10) > paper_page_total) {
 		$.toast({
 			text: "论文信息总共" + paper_page_total + "页，请输入该范围内的页码！",
 			showHideTransition: 'plain',
@@ -399,21 +399,21 @@ function jumpPaperPage() {
 		jq_current_page.append(paper_page_current);
 
 		// 若跳转到了第一页,则使上一页按钮不可选
-		if(paper_page_current === 1 && !jq_paper_previous_page.hasClass("disabled")) {
+		if (paper_page_current === 1 && !jq_paper_previous_page.hasClass("disabled")) {
 			jq_paper_previous_page.addClass("disabled");
 		}
 
 		// 若跳转到了最后一页,则使下一页按钮不可选
-		if(paper_page_current === paper_page_total && !jq_paper_next_page.hasClass("disabled")) {
+		if (paper_page_current === paper_page_total && !jq_paper_next_page.hasClass("disabled")) {
 			jq_paper_next_page.addClass("disabled");
 		}
 
 		// 若跳转到了中间页码,使上一页和下一页按钮都可选
-		if(paper_page_current > 1 && paper_page_current < paper_page_total) {
-			if(jq_paper_previous_page.hasClass("disabled")) {
+		if (paper_page_current > 1 && paper_page_current < paper_page_total) {
+			if (jq_paper_previous_page.hasClass("disabled")) {
 				jq_paper_previous_page.removeClass("disabled");
 			}
-			if(jq_paper_next_page.hasClass("disabled")) {
+			if (jq_paper_next_page.hasClass("disabled")) {
 				jq_paper_next_page.removeClass("disabled");
 			}
 		}
@@ -430,7 +430,7 @@ function jumpPaperPage() {
 function change_paper_page() {
 	'use strict';
 
-	if(!result_ajax_detail || result_ajax_detail.length === 0 || result_ajax_detail === "" ||
+	if (!result_ajax_detail || result_ajax_detail.length === 0 || result_ajax_detail === "" ||
 		paper_page_current <= 0 || paper_page_total <= 0 ||
 		paper_page_current > paper_page_total ) {
 		console.log('function change_paper_page() error: global variables error.');
@@ -456,27 +456,27 @@ function change_paper_page() {
 
     	// 获取作者id信息(在数据库中存在的作者才有id,否则只有名字)
 		let paper_authors_id = [];
-		if(paper_item.author1 && (paper_item.author1 !== '')) {
+		if (paper_item.author1 && (paper_item.author1 !== '')) {
 			paper_authors_id.push(paper_item.author1);
 		} else {
 			paper_authors_id.push('');
 		}
-		if(paper_item.author2 && (paper_item.author2 !== '')) {
+		if (paper_item.author2 && (paper_item.author2 !== '')) {
 			paper_authors_id.push(paper_item.author2);
 		} else {
 			paper_authors_id.push('');
 		}
-		if(paper_item.author3 && (paper_item.author3 !== '')) {
+		if (paper_item.author3 && (paper_item.author3 !== '')) {
 			paper_authors_id.push(paper_item.author3);
 		} else {
 			paper_authors_id.push('');
 		}
-		if(paper_item.author4 && (paper_item.author4 !== '')) {
+		if (paper_item.author4 && (paper_item.author4 !== '')) {
 			paper_authors_id.push(paper_item.author4);
 		} else {
 			paper_authors_id.push('');
 		}
-		if(paper_item.author5 && (paper_item.author5 !== '')) {
+		if (paper_item.author5 && (paper_item.author5 !== '')) {
 			paper_authors_id.push(paper_item.author5);
 		} else {
 			paper_authors_id.push('');
@@ -489,7 +489,7 @@ function change_paper_page() {
 		html_template += '<p>';
 		let i;
 		for(i = 0 ; i < paper_authors_name.length ; i++) {
-			if(paper_authors_id[i] === '') {
+			if (paper_authors_id[i] === '') {
 				// 若作者无id,表示该作者不在数据库中,故不做链接跳转
 				html_template += (paper_authors_name[i] || paper_authors_id[i]) + ' , ';
 			} else {
@@ -521,7 +521,7 @@ function change_paper_page() {
 function jumpToAnotherResearcher(expert_id) {
 	'use strict';
 	// 如果不是本页学者，则跳转
-	if(expert_id.toString() !== result_ajax_detail.expert_basic.id) {
+	if (expert_id.toString() !== result_ajax_detail.expert_basic.id) {
 		window.location.href = "detail?id=" + expert_id;
 		return true;
 	} else {
@@ -562,10 +562,10 @@ function relationshipNet(result_ajax) {
 	// jq_relationship_year = $('select#relationship_year');
 	// let year_list = [];	// 相关专家的年份列表
 	// co_expert_array.forEach(function (item, index) {
-	// 	if(year_list.length === 0) {
+	// 	if (year_list.length === 0) {
 	// 		year_list.push(item.co_year);
 	// 	} else {
-	// 		if(year_list.indexOf(item.co_year) === -1) {
+	// 		if (year_list.indexOf(item.co_year) === -1) {
 	// 			year_list.push(item.co_year);
 	// 		}
 	// 	}
@@ -610,25 +610,25 @@ function drawInfluenceEcharts(result_ajax) {
 
 	// 规整化影响力值
 	let influ_info = result_ajax.influ_info;
-	if(influ_info.influ_19 === -1) {
+	if (influ_info.influ_19 === -1) {
 		influ_info.influ_19 = 0;
 	}
-	if(influ_info.influ_1990 === -1) {
+	if (influ_info.influ_1990 === -1) {
 		influ_info.influ_1990 = influ_info.influ_19;
 	}
-	if(influ_info.influ_1995 === -1) {
+	if (influ_info.influ_1995 === -1) {
 		influ_info.influ_1995 = influ_info.influ_1990;
 	}
-	if(influ_info.influ_2000 === -1) {
+	if (influ_info.influ_2000 === -1) {
 		influ_info.influ_2000 = influ_info.influ_1995;
 	}
-	if(influ_info.influ_2005 === -1) {
+	if (influ_info.influ_2005 === -1) {
 		influ_info.influ_2005 = influ_info.influ_2000;
 	}
-	if(influ_info.influ_2010 === -1) {
+	if (influ_info.influ_2010 === -1) {
 		influ_info.influ_2010 = influ_info.influ_2005;
 	}
-	if(influ_info.influ_2015 === -1) {
+	if (influ_info.influ_2015 === -1) {
 		influ_info.influ_2015 = influ_info.influ_2010;
 	}
 	console.log(influ_info);
@@ -741,7 +741,26 @@ function drawInfluenceEcharts(result_ajax) {
 
 // 绘制 Echarts 关系图
 function drawNetworkEcharts(co_expert_array) {
+	// console.log(co_expert_array);
 	result_ajax = result_ajax_detail;
+
+	// 关系值归一化，y = sigmoid(x) = 1 / (1 + e ^ (-x))
+	// 1/(1+e^(5-x)) 会使得当x在 [0, 10] 的区间时，分值以 sigmoid 函数形态从约等于0增加到约等于1，之后的函数值都很接近1
+	co_expert_array.forEach(function (item, index) {
+		score = parseFloat(item.co_score);
+		if (isNaN(score)) {
+			// 数据有误！！！
+			console.error("关系值数据不是数字！！！");
+			// 设置一个默认数值
+			score = 2;
+		} else {
+			// 数据库100分时，score为10，结果约为1
+			score = score / 10;
+		}
+		score = 100 / (1 + Math.exp(5 - score));
+		// console.log(score);
+		co_expert_array[index].co_score = score.toFixed(2);
+    });
 
 	// 设置容器的宽高
 	let jq_relationship_canvas_div = $('#relationship_picture_div');
@@ -766,13 +785,27 @@ function drawNetworkEcharts(co_expert_array) {
 	let network_info = {
 		// 关系网类别
 		categories: [
-			{name: result_ajax.expert_basic.name},
-			],
+			{
+				name: result_ajax.expert_basic.name
+			},
+		],
 		// 节点
 		// category 与关系网类别索引对应，id 是自动生成的
 		nodes: [
-			{category: 0, name: result_ajax.expert_basic.name, value: 5, id: 0},
-			],
+			{
+				category: 0,
+				name: result_ajax.expert_basic.name,
+				value: "本页专家",
+				id: 0,
+				expert_id: result_ajax.expert_basic.id,
+				university: result_ajax.expert_basic.university,
+				college: result_ajax.expert_basic.college,
+				resume: result_ajax.expert_basic.resume,
+				img_url: result_ajax.expert_basic.img_url,
+				sub_list: result_ajax.expert_basic.sub_list,
+				theme_list: result_ajax.expert_basic.theme_list
+			},
+		],
 		// 节点之间连线
 		// source起始节点，0表示第一个节点
 		// target目标节点，1表示与索引(id)为1的节点进行连接
@@ -787,13 +820,14 @@ function drawNetworkEcharts(co_expert_array) {
 		network_info.nodes.push({
 			category: category_id,
 			name: item,
-			value: 3,	// TODO 节点 value
+			value: "相关机构",
 			id: node_id
 		});
 		network_info.links.push({
 			source: node_id,
 			target: 0,	// 连线目标都是 0
-			value: 3	// TODO 连线 value 随关系强度变化
+			co_score: item.co_score,	// TODO 目前还没有机构关系分数
+			value: "相关机构"
 		});
 		node_id ++;
     });
@@ -804,10 +838,10 @@ function drawNetworkEcharts(co_expert_array) {
 	// 获取所有合作学者的年份
 	let year_list = [];	// 相关专家的年份列表
 	co_expert_array.forEach(function (item, index) {
-		if(year_list.length === 0) {
+		if (year_list.length === 0) {
 			year_list.push(item.co_year);
 		} else {
-			if(year_list.indexOf(item.co_year) === -1) {
+			if (year_list.indexOf(item.co_year) === -1) {
 				year_list.push(item.co_year);
 			}
 		}
@@ -828,21 +862,28 @@ function drawNetworkEcharts(co_expert_array) {
 	year_list.forEach(function (this_year, index) {
 		flag = true;
 		co_expert_array.forEach(function (co_expert, index) {
-			if(co_expert.co_year === this_year) {
-				if(flag) {
+			// console.log(co_expert);
+			if (co_expert.co_year === this_year) {
+				if (flag) {
 					network_info.categories.push({name: this_year + "年 论文合作学者"});
 					flag = false;
 				}
 				network_info.nodes.push({
 					category: category_id,
 					name: co_expert.name,
-					value: "合作年份: " + this_year,	// TODO 节点 value
-					id: node_id
+					value: co_expert.co_score,	// 节点 value，据此设置节点大小，即 symbol 值
+					id: node_id,
+					expert_id: co_expert.id,
+					co_score: co_expert.co_score,
+					co_year: co_expert.co_year,
+					resume: co_expert.resume,
+					img_url: co_expert.img_url
 				});
 				network_info.links.push({
 					source: node_id,
 					target: 0,	// 连线目标都是 0
-					value: "关系强度: " + co_expert.co_score	// TODO 连线 value 随关系强度变化
+					co_score: co_expert.co_score,
+					value: "论文合作学者"
 				});
 				node_id ++;
 			}
@@ -864,7 +905,7 @@ function drawNetworkEcharts(co_expert_array) {
 	// 设置初始只显示相关机构和最近一年的合作学者
 	un_show_legend_list = {};
 	network_info.categories.forEach(function (item, index) {
-		if(index > 2) {
+		if (index > 2) {
 			un_show_legend_list[item.name] = false;
 		}
     });
@@ -923,34 +964,188 @@ function drawNetworkEcharts(co_expert_array) {
 			// 边两端的标记类型，可以是一个数组分别指定两端，也可以是单个统一指定。默认不显示标记，常见的可以设置为箭头，
 			// 如：edgeSymbol: ['circle', 'arrow']
 			edgeSymbol: ['none', 'none'],
-			edgeSymbolSize: 10	// 边两端的标记大小，可以是一个数组分别指定两端，也可以是单个统一指定。
+			edgeSymbolSize: 10,	// 边两端的标记大小，可以是一个数组分别指定两端，也可以是单个统一指定。
 
-			// symbol:'roundRect',	// 关系图节点标记的图形。ECharts 提供的标记类型包括 'circle'(圆形), 'rect'（矩形）,
+			// 关系图节点标记的图形。ECharts 提供的标记类型包括 'circle'(圆形), 'rect'（矩形）,
 			// 'roundRect'（圆角矩形）, 'triangle'（三角形）, 'diamond'（菱形）, 'pin'（大头针）, 'arrow'（箭头）.
 			// 也可以通过 'image://url' 设置为图片，其中 url 为图片的链接。'path:// 这种方式可以任意改变颜色并且抗锯齿
+			symbol: 'circle',
 
-			// symbolSize:10 ,		// 也可以用数组分开表示宽和高，例如 [20, 10] 如果需要每个数据的图形大小不一样，可以设置为如下格式的回调函数：(value: Array|number, params: Object) => number|Array
-			// symbolRotate:,		// 关系图节点标记的旋转角度。注意在 markLine 中当 symbol 为 'arrow' 时会忽略 symbolRotate 强制设置为切线的角度。
-			// symbolOffset:[0,0],	// 关系图节点标记相对于原本位置的偏移。[0, '50%']
+			// 关系图节点标记的大小，可以设置成诸如 10 这样单一的数字，也可以用数组分开表示宽和高，例如 [20, 10] 表示标记宽为20高为10。
+			// 如果需要每个数据的图形大小不一样，可以设置为如下格式的回调函数：
+			// (value: Array|number, params: Object) => number|Array
+			// 其中第一个参数 value 为 data 中的数据值。第二个参数 params 是其它的数据项参数。
+			symbolSize: (value, data) => {
+				// console.log(value);
+				// console.log(data);
+
+				// 如果是 0 类节点，则为本页专家（关系网络中心人物）
+				if (data.data.category === 0) {
+					return 50;
+				}
+				// 如果是 1 类节点，则为相关机构
+				if (data.data.category === 1) {
+					return 15;
+				}
+				// 检查 value 值类型
+				let size = 10;
+				if ((typeof value) != 'number') {
+					size = value / 3;
+				} else if ((typeof value) != 'string') {
+					size = parseFloat(value) / 3;
+                } else {
+					console.error("value值错误！！！");
+					return 10;
+				}
+				// 设置最低显示大小为 10
+				if (size < 10) {
+					size = 10;
+				}
+				return size;
+			}
+
+			// 关系图节点标记的旋转角度。注意在 markLine 中当 symbol 为 'arrow' 时会忽略 symbolRotate 强制设置为切线的角度。
+			// symbolRotate: ,
+
+			// 关系图节点标记相对于原本位置的偏移。[0, '50%']
+			// symbolOffset: [0, 0],
 		}],
 		tooltip: {
 			show: true,	// 默认显示
 			showContent :true,	// 是否显示提示框浮层
 			trigger: 'item',	// 触发类型，默认数据项触发
-			triggerOn: 'click',	// 提示触发条件，mousemove鼠标移至触发，还有click点击触发
+			triggerOn: 'mousemove',	// 提示触发条件，mousemove 鼠标移至触发，click 点击触发
 			alwaysShowContent: false,	// 默认离开提示框区域隐藏，true为一直显示
 			showDelay: 0,		// 浮层显示的延迟，单位为 ms，默认没有延迟，也不建议设置。在 triggerOn 为 'mousemove' 时有效。
 			hideDelay: 200,		// 浮层隐藏的延迟，单位为 ms，在 alwaysShowContent 为 true 的时候无效。
-			enterable: false,	// TODO 鼠标是否可进入提示框浮层中，默认为false，如需详情内交互，如添加链接、按钮，可设置为 true。
+			enterable: true,	// 鼠标是否可进入提示框浮层中，默认为false，如需详情内交互，如添加链接、按钮，可设置为 true。
 			position: 'right',	// 提示框浮层的位置，默认不设置时位置会跟随鼠标的位置。只在 trigger 为'item'的时候有效。
 			confine: false,		//是否将 tooltip 框限制在图表的区域内。外层的 dom 被设置为 'overflow: hidden'，或者移动端窄屏，
 			// 导致 tooltip 超出外界被截断时，此配置比较有用。
 			transitionDuration: 0.4,	// 提示框浮层的移动动画过渡时间，单位是 s，设置为 0 的时候会紧跟着鼠标移动。
+
+			// 用 formatter 回调函数自定义浮层内容
+			formatter: function (handler) {
+				// console.log(handler);
+
+				// let color = handler.color;		// 图例颜色
+				// let html ='<div class="relationship-floating-div" style="background-color: ' + color + '">';
+				let html = '<div class="relationship-floating-div">';
+
+				// 如果是边，则显示关系强度
+				if (handler.dataType === "edge") {
+					// TODO 目前还没有机构关系分数
+					if ((typeof handler.data.co_score) === 'undefined') {
+						return '';
+					} else {
+						html += '<p>关系分数：' + handler.data.co_score + '</p></div>';
+						return html;
+					}
+				}
+
+				//如果是节点
+				else if (handler.dataType === "node") {
+                    // 如果是本页专家
+                    if (handler.data.category === 0) {
+                        if ((handler.data.name != null) && ((typeof handler.data.name) != 'undefined')) {
+                            html += '<p><strong>姓名</strong>：' + handler.data.name + '</p>';
+                        } else {
+                            return '';
+                        }
+                        if ((handler.data.university != null) && ((typeof handler.data.university) != 'undefined')) {
+                            html += '<p><strong>学校</strong>：' + handler.data.university + '</p>';
+                        }
+                        if ((handler.data.college != null) && ((typeof handler.data.college) != 'undefined')) {
+                            html += '<p><strong>学院</strong>：' + handler.data.college + '</p>';
+                        }
+                        if ((handler.data.resume != null) && ((typeof handler.data.resume) != 'undefined')) {
+                            html += '<p><strong>简历</strong>：' + handler.data.resume + '</p>';
+                        }
+                    }
+                    // 如果是相关机构
+                    else if (handler.data.category === 1) {
+                        html += '<p><strong>机构名称</strong>：' + handler.data.name + '</p>';
+                    }
+                    // 如果是相关专家
+                    else {
+                        if ((handler.data.name != null) && ((typeof handler.data.name) != 'undefined')) {
+                            html += '<p><strong>专家姓名</strong>：' + handler.data.name + '</p>';
+                        } else {
+                            return '';
+                        }
+                        if ((handler.data.co_year != null) && ((typeof handler.data.co_year) != 'undefined')) {
+                            html += '<p><strong>合作年份</strong>：' + handler.data.co_year + '</p>';
+                        }
+                        if ((handler.data.co_score != null) && ((typeof handler.data.co_score) != 'undefined')) {
+                            html += '<p><strong>关系分数</strong>：' + handler.data.co_score + '</p>';
+                        }
+                        if ((handler.data.resume != null) && ((typeof handler.data.resume) != 'undefined')) {
+                            html += '<p><strong>专家简历</strong>：' + handler.data.resume + '</p>';
+                        }
+                    }
+
+                    html += '</div>';
+                    return html;
+                }
+
+                // 其它情况，异常
+				else {
+					console.error("既非 edge 也非 node，类型异常！！！");
+					return '';
+				}
+			}
 		}
 	};
 
 	// 使用刚指定的配置项和数据显示图表。
 	myChart.setOption(option);
+
+	// 给节点添加click事件
+	// 事件处理函数。格式为:(event: Object)
+	// 可选。回调函数内部的context，即this的指向。
+	myChart.on('click', function (handler) {
+		// console.log(handler);
+
+		// // 获取鼠标当前位置
+		// let e = event || window.event;
+		// mouse_x = e.screenX;
+		// mouse_y = e.screenY;
+
+		// 如果是边
+		if (handler.dataType === "edge") {
+			;
+		}
+
+		// 如果是节点
+		else if (handler.dataType === "node") {
+            // 如果是本页专家，则弹出该专家的详细信息
+            if (handler.data.category === 0) {
+                // 显示悬浮层
+                ;
+            }
+            // 如果是相关机构，则弹出该机构的详细信息
+            else if (handler.data.category === 1) {
+                ;
+            }
+            // 如果是相关专家，则弹出该专家的详细信息，并给出选项：
+            // TODO 1.展示该专家的相关节点；2.关闭该专家的相关相关节点；3.跳转该专家详情页面。
+            else {
+                // 目前只做跳转
+				if ((handler.data.expert_id != null) && ((typeof handler.data.expert_id) != 'undefined')) {
+					jumpToAnotherResearcher(handler.data.expert_id);
+				}
+            }
+        }
+
+        // 其它情况，异常
+        else {
+			console.error("既非 edge 也非 node，类型异常！！！");
+		}
+	});
+
+	// myChart.on('mousemove', function (handler) {
+	// 	console.log(handler);
+	// });
 }
 
 
@@ -969,16 +1164,16 @@ function getNodeListD3(co_expert_array) {
 	// 关系网络文字描述
 	let jq_relationship_div = $('#relationship_div');
 	let node_list = [];
-	if(relationship_type === 'co_expert_paper') {
+	if (relationship_type === 'co_expert_paper') {
 		// 如果当前选择了"论文合作学者"，那么使年份选择框可用
-		if(jq_relationship_year.attr('disabled') != false) {
+		if (jq_relationship_year.attr('disabled') != false) {
 			jq_relationship_year.attr('disabled', false);
 		}
 		// 点击学者名跳转到该学者详情页
 		let relationship_html = '<h3>' + relationship_year + '年 论文合作学者</h3><p>';
 		co_expert_array.forEach(function (item, index) {
 			// 对该学者在所学年份的论文合作学者设置跳转锚点
-			if(item.co_year === relationship_year) {
+			if (item.co_year === relationship_year) {
 				relationship_html += '<a onclick="jumpToAnotherResearcher(' + item.id + ')">' +
 					item.name + '</a>' + ' , ';
 				// TODO 目前仅把学者 id 加入到 node_list
@@ -990,9 +1185,9 @@ function getNodeListD3(co_expert_array) {
 
 		jq_relationship_div.empty();
 		jq_relationship_div.append(relationship_html);
-	} else if(relationship_type === 'co_agency') {
+	} else if (relationship_type === 'co_agency') {
 		// 如果当前选择了"相关机构"，那么使年份选择框不可用
-		if(jq_relationship_year.attr('disabled') != true) {
+		if (jq_relationship_year.attr('disabled') != true) {
 			jq_relationship_year.attr('disabled', true);
 		}
 		let co_agency_string = result_ajax.expert_academic.co_agency;
@@ -1160,7 +1355,7 @@ function drawNetworkD3(node_list) {
 	   d.fy = d3.event.y;
 	}
 	function dragended(d) {
-	   if(!d3.event.active) simulation.alphaTarget(0);
+	   if (!d3.event.active) simulation.alphaTarget(0);
 	   d.fx = null;
 	   d.fy = null;
 	}
@@ -1194,14 +1389,14 @@ function logIn() {
 	let password = jq_password.val().trim();
 	let choice = jq_a.text();
 
-	if(choice === '注销') {
-		if(confirm('确认注销')) {
+	if (choice === '注销') {
+		if (confirm('确认注销')) {
 			jq_username.show();
 			jq_password.show();
 			jq_a.text('登录');
 		}
-	} else if(choice === '登录') {
-		if(!username || username === '') {
+	} else if (choice === '登录') {
+		if (!username || username === '') {
 			$.toast({
 				text: "请您输入账号！",
 				showHideTransition: 'slide',
@@ -1214,7 +1409,7 @@ function logIn() {
 				position: 'mid-center'
 			});
 			jq_username.focus();
-		} else if(!password || password === '') {
+		} else if (!password || password === '') {
 			$.toast({
 				text: "请您输入密码！",
 				showHideTransition: 'slide',
@@ -1229,7 +1424,7 @@ function logIn() {
 			jq_password.focus();
 		} else {
 			// TODO 判断逻辑交由后台处理
-			if(username === 'yin' && password === 'yuwei') {
+			if (username === 'yin' && password === 'yuwei') {
 				jq_username.hide();
 				jq_password.hide();
 				jq_a.text('注销');
@@ -1302,13 +1497,13 @@ function isChrome() {
         let url_data = window.location.search;
         let index_start = url_data.indexOf("id=") + 3;
         let index_end = url_data.indexOf("#", index_start);
-        if(index_end === -1) {
+        if (index_end === -1) {
             expert_id = url_data.substring(url_data.lastIndexOf("id=") + 3, url_data.length);
         } else {
             expert_id = url_data.substring(url_data.lastIndexOf("id=") + 3, index_end);
         }
         // 检验id合法性(全是数字)
-        if(isNaN(expert_id)) {
+        if (isNaN(expert_id)) {
             alert("Error: id参数不合法");
             console.log("Error: id参数不合法");
             return false;
@@ -1341,7 +1536,6 @@ function isChrome() {
 		// 	co_expert_array.push(JSON.parse(item));
 		// });
 		// console.log(co_expert_array);
-    //
 		// // 绘力导向图
 		// drawNetworkEcharts(co_expert_array);
     // });
