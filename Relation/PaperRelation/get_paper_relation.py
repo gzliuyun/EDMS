@@ -53,7 +53,7 @@ def insert_prs_list(id, prs_list, cursor):
     cursor.execute(sql, (id, str(prs_coid_list), str(prs_year_list), str(prs_score_list), id))
 
 p = 1000
-st = 0
+st = 372815
 ed = 896455
 
 if __name__ == "__main__":
