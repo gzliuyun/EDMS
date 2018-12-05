@@ -189,7 +189,7 @@ def clean_school(row, clp_str):
     if (dxst+1 < dxed+2):
         return get_school_name(row[dxst+1:dxed+2])
     else:
-        return ''
+        return -1
 
 def school_sieve(row):
     ret_list = []
@@ -223,13 +223,16 @@ def school_sieve(row):
     clp_str3 = "专科学校"
     for ret in ret_list:
         tmp = clean_school(ret, clp_str1)
-        if (tmp != None and len(tmp) > 0):
+        # if (tmp != None and len(tmp) > 0):
+        if (tmp >= 0):
             cl_ret_list.add(tmp)
         tmp = clean_school(ret, clp_str2)
-        if (tmp != None and len(tmp) > 0):
+        # if (tmp != None and len(tmp) > 0):
+        if (tmp >= 0):
             cl_ret_list.add(tmp)
         tmp = clean_school(ret, clp_str3)
-        if (tmp != None and len(tmp) > 0):
+        # if (tmp != None and len(tmp) > 0):
+        if (tmp >= 0):
             cl_ret_list.add(tmp)
 
     return cl_ret_list

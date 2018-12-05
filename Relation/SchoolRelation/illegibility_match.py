@@ -70,10 +70,10 @@ def get_school_name(row):
             maxid = i
 
     if (maxid >= 0):
-        return school_list[maxid]
-        # return maxid
+        # return school_list[maxid]
+        return maxid
     else:
-        return None
+        return -1
 
 if __name__ == "__main__":
 
