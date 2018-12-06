@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+MAX_NUM = 2233
 school_list = [
     '北京大学',
     '中国人民大学',

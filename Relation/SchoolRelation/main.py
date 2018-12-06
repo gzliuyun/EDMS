@@ -49,6 +49,6 @@ def abstract_shcool(id, resume, cursor):
 
 
 if __name__ == "__main__":
-    st = 0
-    ed = 896455
+    st = 896897
+    ed = 1093249
     sele_resume(st, ed)
