@@ -48,7 +48,7 @@ def do_cal_similarity(str1, str2):
                 ans[i][j] = max(ans[i][j - 1], ans[i - 1][j])
     lcs = ans[len1][len2]
 
-    return lcs / min(len1, len2)
+    return (lcs / min(len1, len2))* 10 + lcs/len1 + lcs/len2
 
 
 def do_remove_noise(str):
