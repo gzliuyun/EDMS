@@ -1,5 +1,6 @@
-Crawler/ExpertPortrait/.idea
-Relation/PaperRelation/.idea
-Relation/SchoolRelation/.idea
+**/.idea
+**/.DS_Store
+**/__pycache__
+**/scrapy.cfg
 Crawler/ExpertPortrait/ExpertPortrait/traveled.txt
 Crawler/Align/*.txt
