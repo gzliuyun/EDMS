@@ -121,7 +121,6 @@ def ht_seive2(tmp, tlen):
                 return tmpht
 
 def ht_seive(row):
-    # print("---"*20)
 
     tmp = list(psg.cut(row))
     tlen = len(tmp)
