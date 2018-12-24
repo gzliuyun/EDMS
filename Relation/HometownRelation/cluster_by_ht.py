@@ -3,7 +3,7 @@
 from ht_dict import ht_dict
 from  ht_dict import  MAX_HT_NUM
 from ht_list import ht_list
-from ht_id_dict import ht_id_dict
+from ht_id_dict import get_index
 import pymysql.cursors
 
 config = {
@@ -34,17 +34,14 @@ def cluster(st, ed):
                         # print(res['id'])
                         extract(res['id'], res['hometown_id'], cursor)
                     cnt += 1
-                    print("extract:",cur + cnt)
+                    # print("extract:",cur + cnt)
                 cur += p + 1
-            # store(cursor)
+            store(cursor)
         connection.commit()
     finally:
         connection.close();
 
 cluster_set = [set() for i in range(MAX_HT_NUM)]
-
-def get_index(ht_id):
-    return ht_id_dict[ht_id]
 
 def extract(id, hometown_id, cursor):
     # print(id)
@@ -54,15 +51,20 @@ def extract(id, hometown_id, cursor):
     ht_id_list.add(hometown_id[:4]+"00")
 
     for ht_id in ht_id_list:
-        index = int(get_index(ht_id))
-        print(id, ht_id, index)
-        cluster_set[index].add(id)
+        tmpid = get_index(ht_id)
+        if tmpid != None:
+            index = int(tmpid)
+            # print(id, ht_id, index)
+            cluster_set[index].add(id)
 
 def store(cursor):
-    sql = "INSERT INTO hometown(list) VALUES(%s) ON DUPLICATE KEY UPDATE id = %s"
+    sql = "UPDATE hometown SET list = %s WHERE id = %s"
     for i in range(MAX_HT_NUM):
         htmate_list = cluster_set[i]
         id = ht_dict[ht_list[i]]
+        print("---"*20)
+        print(id)
+        print(htmate_list)
         cursor.execute(sql, (str(htmate_list), id))
 
 if __name__ == "__main__":

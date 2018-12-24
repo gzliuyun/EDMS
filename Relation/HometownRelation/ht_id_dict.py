@@ -3220,3 +3220,8 @@ ht_id_dict = {
     '810000':'3217',
     '820000':'3218'
 }
+
+def get_index(ht_id):
+    if ht_id in ht_id_dict.keys():
+        return ht_id_dict[ht_id]
+    return None

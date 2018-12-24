@@ -3,6 +3,7 @@
 from ht_dict import ht_dict
 from  ht_dict import  MAX_HT_NUM
 from ht_list import ht_list
+from ht_id_dict import get_index
 
 import pymysql.cursors
 
@@ -38,6 +39,10 @@ def store_ht():
                     tp2id = tid[:4] + "00"
 
                 # print(tid, tname, tlevel, tp2id, tp1id)
+                if get_index(tp1id) == None:
+                    tp1id = ""
+                if get_index(tp2id) == None:
+                    tp2id = ""
 
                 sql = "INSERT INTO hometown(id, name, level, p2id, p1id) VALUES(%s, %s, %s, %s, %s) ON DUPLICATE KEY UPDATE id = %s"
                 cursor.execute(sql, (tid, tname, tlevel, tp2id, tp1id, tid))
