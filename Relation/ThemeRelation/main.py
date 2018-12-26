@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pymysql.cursors
+from hash import hash_theme_id
 
 config = {
     'host': '111.205.121.93',
@@ -41,10 +42,11 @@ def insert_theme_relation(expert_id, theme_list, cursor):
 
     t_list = theme_list.split('、')
     # print(t_list)
-    sql = "INSERT INTO theme_relation(theme, expert_id) VALUES (%s, %s)"
+    sql = "INSERT INTO theme_relation VALUES(%s, %s, %s) ON DUPLICATE KEY UPDATE hash = %s"
 
     for theme in t_list:
-        cursor.execute(sql, (theme, expert_id))
+        hash_id = hash_theme_id(theme, expert_id)
+        cursor.execute(sql, (hash_id, theme, expert_id, hash_id))
 
 p = 1000
 st = 0
