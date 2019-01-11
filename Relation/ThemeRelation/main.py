@@ -49,8 +49,8 @@ def insert_theme_relation(expert_id, theme_list, cursor):
         cursor.execute(sql, (hash_id, theme, expert_id, hash_id))
 
 p = 1000
-st = 0
-ed = 108257
+st = 1006148
+ed = 1093257
 
 if __name__ == "__main__":
     sele_theme_relation(st, ed)
