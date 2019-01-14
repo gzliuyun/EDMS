@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import pymysql.cursors
-
+from findGroupAndCore import getCore
 
 config = {
     'host': '111.205.121.93',
@@ -23,7 +23,8 @@ def sele_paper_relation(st, ed):
                 result = cursor.fetchall()
                 cnt = 1
                 for res in result:
-                    print(res)
+                    core_ex_id = getCore(res)
+                    print(core_ex_id)
                     cnt += 1
                     # print(cur + cnt)
                 cur += p + 1
@@ -33,15 +34,10 @@ def sele_paper_relation(st, ed):
         connection.close();
 
 # 将每个专家的 小团体 存入数据库
-# def insert_prs_list(id, prs_list, cursor):
-#
-#
-#     sql = "INSERT INTO paper_relation_score VALUES(%s, %s, %s, %s) ON DUPLICATE KEY UPDATE id = %s"
-#     cursor.execute(sql, (id, str(prs_coid_list), str(prs_year_list), str(prs_score_list), id))
 
-p = 10
+p = 100
 st = 0
-ed = 10
+ed = 100
 
 if __name__ == "__main__":
     sele_paper_relation(st, ed)
