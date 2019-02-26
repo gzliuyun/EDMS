@@ -23,7 +23,7 @@ def sele_paper_relation(st, ed):
                 result = cursor.fetchall()
                 cnt = 1
                 for res in result:
-                    core_ex_id = getCore(res)
+                    core_ex_id = getCore(res, cursor)
                     print(core_ex_id)
                     cnt += 1
                     # print(cur + cnt)
@@ -35,9 +35,9 @@ def sele_paper_relation(st, ed):
 
 # 将每个专家的 小团体 存入数据库
 
-p = 100
+p = 1
 st = 0
-ed = 100
+ed = 1
 
 if __name__ == "__main__":
     sele_paper_relation(st, ed)

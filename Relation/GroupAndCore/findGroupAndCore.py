@@ -3,7 +3,8 @@
 # 获取总和学术关系分数超过500的最高核心专家
 # 若无满足对象，返回自己
 PAPER_RELATION_SCORE_THRESHOLD = 500
-def getCore(record):
+def getCore(record, cursor):
+    print(record)
     ex_id = record['id']
     coid_list = record['coid_list'].lstrip("['").rstrip("']").split("', '")
     year_list = record['year_list'].lstrip("['").rstrip("']").split("', '")
@@ -49,7 +50,13 @@ def getCore(record):
 
     for i,j in coid_dict.items():
         if j == maxs_id:
-            return i
+            sql = 'SELECT * FROM paper_relation_score WHERE id = ' + maxs_id
+            print(sql)
+            next_record = cursor.execute(sql)
+            print("********")
+            print(next_record)
+            print("--------")
+            # return getCore(next_record, cursor)
 
     return ex_id
 
