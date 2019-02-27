@@ -22,3 +22,8 @@ class ExpertInfoItem:
         self.school = school
         self.name = name
         self.id = id
+
+class SuppleItem(scrapy.Item):
+    id = scrapy.Field()
+    resume = scrapy.Field()
+    pic_url = scrapy.Field()
