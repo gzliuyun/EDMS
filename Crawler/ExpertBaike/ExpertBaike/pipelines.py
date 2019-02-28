@@ -42,5 +42,5 @@ class MysqlTwistedPipline(object):
         id = item['id']
         resume = item['resume']
         pic_url = item['pic_url']
-        sql = 'UPDATE basic_info(resume, img_url) VALUES (%s, %s) WHERE id = %s'
+        sql = 'UPDATE basic_info set resume = %s, img_url = %s WHERE id = %s'
         cursor.execute(sql, (resume, pic_url, id))

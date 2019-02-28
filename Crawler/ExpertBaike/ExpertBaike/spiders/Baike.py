@@ -14,7 +14,7 @@ class BaikeSpider(scrapy.Spider):
     keyword_dict = dict()
 
     def __init__(self):
-        with open('data.txt') as f:
+        with open('data1.txt', encoding='utf-8') as f:
             lines = f.readlines()
             for line in lines:
                 words = line.rstrip('\n').split(' ')
@@ -40,11 +40,16 @@ class BaikeSpider(scrapy.Spider):
         contents = sel.xpath('//*[@id="body_wrapper"]/div[1]/dl/dd[1]/a').extract()
 
         ckword1 = "result-title"
-        ckword2 = "<em>" + keyword.split('+')[0] + "</em>"
+        ckword2 = "<em>" + keyword.split('+')[1] + "</em>"
         ckword3 = "_百度百科"
+        # print(ckword1, ckword2, ckword3)
 
         for con in contents:
-            if con.find(ckword1) and con.find(ckword2) and con.find(ckword3) and (len(con) > 30):
+            # print(con)
+            if (con.find(ckword1) > 0) and \
+                    (con.find(ckword2) > 0) and \
+                    (con.find(ckword3) > 0) and \
+                    (len(con) > 30):
                 # 有搜索结果
                 # 搜索结果中有专家姓名
                 # 搜索结果是指向百度百科
@@ -53,33 +58,45 @@ class BaikeSpider(scrapy.Spider):
                     yield Request(next_url, callback=self.parse2, meta={'keyword': keyword})
 
     def parse2(self, response):
-        print("---"*20)
         url = response.url
         keyword = response.meta['keyword']
+        # print(keyword)
         # print(url)
         if keyword in self.keyword_dict:
             id = self.keyword_dict[keyword].id
             school = keyword.split('+')[0]
             name = keyword.split('+')[1]
+            # college = keyword.split('+')[2]
+            print("---" * 20)
             print(name, school, id)
             sel = Selector(response)
-            info_list = sel.xpath('//*[@class="basicInfo-item value"]//text()').extract()
-            ck_school = False
-            for info in info_list:
-                if info.find(school):
-                    ck_school = True
-                    break
-            if ck_school:
-                resume_list = sel.xpath('//*[@class="para"]//text()').extract()
-                resume = ""
-                for tmp in resume_list:
-                    resume += tmp
-                # print(resume)
-                pic_url = "https://baike.baidu.com" + \
-                          sel.xpath('//*[@class="summary-pic"]/a/@href').extract_first()
-                # print(pic_url)
+            # info_list = sel.xpath('//*[@class="basicInfo-item value"]//text()').extract()
+            # print(info_list)
+            # ck_school = False
+            # for info in info_list:
+            #     if info.find(school) > 0:
+            #         print(info.find(school))
+            #         print(school)
+            #         ck_school = True
+            #         break
+            # if ck_school:
+            resume_list = sel.xpath('//*[@class="para"]//text()').extract()
+            resume = ""
+            for tmp in resume_list:
+                resume += tmp
+            # print(resume)
+            if (resume.find(school) > 0):
+                suffix = sel.xpath('//*[@class="summary-pic"]/a/@href').extract_first()
+                pic_url = ""
+                if len(suffix) > 0:
+                    pic_url = "https://baike.baidu.com" + suffix
+                print(pic_url)
                 item = SuppleItem()
                 item['id'] = id
                 item['resume'] = resume
                 item['pic_url'] = pic_url
+                with open("record.txt", "a+", encoding='utf-8') as f:
+                    str = id + " " + name + " " + school + " " + url + "\n"
+                    f.write(str)
+                f.close()
                 yield item
