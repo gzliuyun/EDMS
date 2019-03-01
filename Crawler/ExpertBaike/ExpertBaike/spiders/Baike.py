@@ -14,7 +14,7 @@ class BaikeSpider(scrapy.Spider):
     keyword_dict = dict()
 
     def __init__(self):
-        with open('data1.txt', encoding='utf-8') as f:
+        with open('data4.txt', encoding='utf-8') as f:
             lines = f.readlines()
             for line in lines:
                 words = line.rstrip('\n').split(' ')
@@ -67,8 +67,6 @@ class BaikeSpider(scrapy.Spider):
             school = keyword.split('+')[0]
             name = keyword.split('+')[1]
             # college = keyword.split('+')[2]
-            print("---" * 20)
-            print(name, school, id)
             sel = Selector(response)
             # info_list = sel.xpath('//*[@class="basicInfo-item value"]//text()').extract()
             # print(info_list)
@@ -86,6 +84,8 @@ class BaikeSpider(scrapy.Spider):
                 resume += tmp
             # print(resume)
             if (resume.find(school) > 0):
+                print("---" * 20)
+                print(name, school, id)
                 suffix = sel.xpath('//*[@class="summary-pic"]/a/@href').extract_first()
                 pic_url = ""
                 if len(suffix) > 0:
