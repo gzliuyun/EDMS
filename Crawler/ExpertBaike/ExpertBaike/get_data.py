@@ -26,7 +26,7 @@ def get_school_name_id_college(st, p):
         connection.close()
 
 def write_data(res):
-    with open("data3.txt", "w+", encoding='utf-8') as f:
+    with open("data4.txt", "w+", encoding='utf-8') as f:
         for ri in res:
             str = ri['university'] + " " + \
                   ri['name'] + " " + \
@@ -35,7 +35,7 @@ def write_data(res):
             f.write(str)
     f.close()
 
-st = 130001       # 起始位置
+st = 300001       # 起始位置
 p  = 100000    # 偏移量
 
 if __name__ == "__main__":
