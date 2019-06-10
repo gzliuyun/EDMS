@@ -3,19 +3,23 @@
 import pymysql.cursors
 from school_sieve import school_sieve
 
+import sys
+sys.path.append("..")
+from init import config
+from init import st
+from init import ed
+from init import p
 
-config = {
-    'host': '111.205.121.93',
-    'user': 'root',
-    'password': 'root@buaa',
-    'db': 'EDMS',
-    'charset': 'utf8',
-    'cursorclass': pymysql.cursors.DictCursor,
-}
+# config = {
+#     'host': '111.205.121.93',
+#     'user': 'root',
+#     'password': 'root@buaa',
+#     'db': 'EDMS',
+#     'charset': 'utf8',
+#     'cursorclass': pymysql.cursors.DictCursor,
+# }
 
 connection = pymysql.connect(**config)
-
-p = 1000
 
 def sele_resume(st, ed):
     try:
@@ -40,6 +44,8 @@ def sele_resume(st, ed):
 
 def abstract_shcool(id, resume, cursor):
     sc_list = school_sieve(resume)
+    print(resume)
+    print(sc_list)
     sql = "INSERT INTO schoolmate_relation(id, school_list, profile) VALUES(%s, %s, %s) ON DUPLICATE KEY UPDATE id = %s"
     if (len(sc_list) > 0):
         # print(sc_list)
@@ -47,6 +53,4 @@ def abstract_shcool(id, resume, cursor):
 
 
 if __name__ == "__main__":
-    st = 576280
-    ed = 1093249
     sele_resume(st, ed)

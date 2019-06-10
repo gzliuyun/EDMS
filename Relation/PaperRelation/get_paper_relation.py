@@ -3,14 +3,21 @@
 import pymysql.cursors
 from calc_paper_score import calc_paper_score
 
-config = {
-    'host': '111.205.121.93',
-    'user': 'root',
-    'password': 'root@buaa',
-    'db': 'EDMS',
-    'charset': 'utf8',
-    'cursorclass': pymysql.cursors.DictCursor,
-}
+import sys
+sys.path.append("..")
+from init import config
+from init import st
+from init import ed
+from init import p
+
+# config = {
+#     'host': '111.205.121.93',
+#     'user': 'root',
+#     'password': 'root@buaa',
+#     'db': 'EDMS',
+#     'charset': 'utf8',
+#     'cursorclass': pymysql.cursors.DictCursor,
+# }
 
 connection = pymysql.connect(**config)
 
@@ -51,10 +58,6 @@ def insert_prs_list(id, prs_list, cursor):
 
     sql = "INSERT INTO paper_relation_score VALUES(%s, %s, %s, %s) ON DUPLICATE KEY UPDATE id = %s"
     cursor.execute(sql, (id, str(prs_coid_list), str(prs_year_list), str(prs_score_list), id))
-
-p = 1000
-st = 372815
-ed = 896455
 
 if __name__ == "__main__":
     sele_paper_relation(st, ed)

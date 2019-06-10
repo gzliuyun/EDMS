@@ -3,14 +3,21 @@
 import pymysql.cursors
 from hash import hash_theme_id
 
-config = {
-    'host': '111.205.121.93',
-    'user': 'root',
-    'password': 'root@buaa',
-    'db': 'EDMS',
-    'charset': 'utf8',
-    'cursorclass': pymysql.cursors.DictCursor,
-}
+import sys
+sys.path.append("..")
+from init import config
+from init import st
+from init import ed
+from init import p
+
+# config = {
+#     'host': '111.205.121.93',
+#     'user': 'root',
+#     'password': 'root@buaa',
+#     'db': 'EDMS',
+#     'charset': 'utf8',
+#     'cursorclass': pymysql.cursors.DictCursor,
+# }
 
 connection = pymysql.connect(**config)
 
@@ -47,10 +54,6 @@ def insert_theme_relation(expert_id, theme_list, cursor):
     for theme in t_list:
         hash_id = hash_theme_id(theme, expert_id)
         cursor.execute(sql, (hash_id, theme, expert_id, hash_id))
-
-p = 1000
-st = 1006148
-ed = 1093257
 
 if __name__ == "__main__":
     sele_theme_relation(st, ed)

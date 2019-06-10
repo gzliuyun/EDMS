@@ -3,19 +3,23 @@
 import pymysql.cursors
 from ht_seive import ht_seive
 
+import sys
+sys.path.append("..")
+from init import config
+from init import st
+from init import ed
+from init import p
 
-config = {
-    'host': '111.205.121.93',
-    'user': 'root',
-    'password': 'root@buaa',
-    'db': 'EDMS',
-    'charset': 'utf8',
-    'cursorclass': pymysql.cursors.DictCursor,
-}
+# config = {
+#     'host': '111.205.121.93',
+#     'user': 'root',
+#     'password': 'root@buaa',
+#     'db': 'EDMS',
+#     'charset': 'utf8',
+#     'cursorclass': pymysql.cursors.DictCursor,
+# }
 
 connection = pymysql.connect(**config)
-
-p = 1000
 
 def sele_resume(st, ed):
     try:
@@ -47,6 +51,5 @@ def abstract_hometown(id, resume, cursor):
         # print(ht_id)
 
 if __name__ == "__main__":
-    st = 0
-    ed = 1093249
+
     sele_resume(st, ed)

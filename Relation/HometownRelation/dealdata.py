@@ -7,14 +7,21 @@ from ht_id_dict import get_index
 
 import pymysql.cursors
 
-config = {
-    'host': '111.205.121.93',
-    'user': 'root',
-    'password': 'root@buaa',
-    'db': 'EDMS',
-    'charset': 'utf8',
-    'cursorclass': pymysql.cursors.DictCursor,
-}
+import sys
+sys.path.append("..")
+from init import config
+from init import st
+from init import ed
+from init import p
+
+# config = {
+#     'host': '111.205.121.93',
+#     'user': 'root',
+#     'password': 'root@buaa',
+#     'db': 'EDMS',
+#     'charset': 'utf8',
+#     'cursorclass': pymysql.cursors.DictCursor,
+# }
 
 connection = pymysql.connect(**config)
 

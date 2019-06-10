@@ -6,18 +6,23 @@ from ht_list import ht_list
 from ht_id_dict import get_index
 import pymysql.cursors
 
-config = {
-    'host': '111.205.121.93',
-    'user': 'root',
-    'password': 'root@buaa',
-    'db': 'EDMS',
-    'charset': 'utf8',
-    'cursorclass': pymysql.cursors.DictCursor,
-}
+import sys
+sys.path.append("..")
+from init import config
+from init import st
+from init import ed
+from init import p
+
+# config = {
+#     'host': '111.205.121.93',
+#     'user': 'root',
+#     'password': 'root@buaa',
+#     'db': 'EDMS',
+#     'charset': 'utf8',
+#     'cursorclass': pymysql.cursors.DictCursor,
+# }
 
 connection = pymysql.connect(**config)
-
-p = 1000
 
 def cluster(st, ed):
     try:
@@ -68,8 +73,7 @@ def store(cursor):
         cursor.execute(sql, (str(htmate_list), id))
 
 if __name__ == "__main__":
-    st = 0
-    ed = 12326
+
     cluster(st, ed)
 
     # for i in range(MAX_NUM):
